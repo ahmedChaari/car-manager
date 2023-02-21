@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="colored__light">
+	<div class="sign__wrapper w-full flex justify-between">
+		<div class="sign__left py-4 lg:py-10 px-4 pr-4 lg:px-10 flex flex-col justify-between">
+			<div class="sign__top">
+				<a href="#" class="inline-flex mb-6 lg:mb-12 xl:mb-24">
+					<img src="img/logosign.svg" alt="logosign">
+				</a>
+				<div class="step__wrapper w-100">
+					<div class="step__element flex items-start justify-start w-100 active__step">
+						<div class="step__span flex flex-col items-center  justify-center mr-4">
+							<div class="span__circle inline-flex items-center justify-center">
+								<img src="img/stepcheck.svg" alt="stepcheck">
+							</div>
+							<span class="stick"></span>
+						</div>
+						<div class="step__desc">
+							<p class="text-white font-semibold text-base">Step 1</p>
+							<span class="text-base">informations personnelles</span>
+						</div>
+					</div>
+					<div class="step__element flex items-start justify-start w-100 active__step">
+						<div class="step__span flex flex-col items-center  justify-center mr-4">
+							<div class="span__circle inline-flex items-center justify-center">
+								<span></span>
+							</div>
+							<span class="stick"></span>
+						</div>
+						<div class="step__desc">
+							<p class="text-white font-semibold text-base">Step 2</p>
+							<span class="text-base">informations sur le véhicule</span>
+						</div>
+					</div>
+
+					<div class="step__element flex items-start justify-start w-100">
+						<div class="step__span flex flex-col  justify-center mr-4">
+							<div class="span__circle inline-flex items-center justify-center">
+								<span></span>
+							</div>
+						</div>
+						<div class="step__desc">
+							<p class="text-white font-semibold text-base">Step 3</p>
+							<span class="text-base">validation</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sign__bottom mt-5 lg:mt-10">
+				<ul class="flex flex-col xl:flex-row  items-start xl:items-center justify-between">
+					<li  class="inline-flex mb-3 xl:mb-0">
+						<p class='text-sm	 text-white'>© voiturecash.ma 2022</p>
+					</li>
+					<li  class="inline-flex">
+						<a href="#" class="text-sm text-white inline-flex"><span class="inline-flex mr-2"><img src="img/envelope.svg" alt="envelope"></span>help@voiturecash.ma</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sign__right py-7 lg:py-10 w-full flex items-center justify-center px-4">
+			<form action="" class="w-full mx-auto">
+				<div class="head__sign mb-8 text-center">
+					<h6 class="mb-3 text-2xl lg:text-3xl font-semibold">Informations sur le véhicule</h6>
+					<p class="m-0 text-base">Quelque information à ajouter ici.</p>
+				</div>
+				<div class="form__box mx-auto">
+					<div class="group__input mb-5">
+						<input type="text" placeholder="Marque" class="text-base px-4 w-full bg-white h-11">
+					</div>
+					<div class="group__input mb-5">
+						<input type="text" placeholder="Modele" class="text-base px-4 w-full bg-white h-11">
+					</div>
+					<div class="group__input mb-5">
+						<input type="text" placeholder="Annee" class="text-base px-4 w-full bg-white h-11">
+					</div>
+					<div class="group__input group__dropdown relative mb-6">
+								<input type="hidden">
+								<a href="#" class="h-9 inline-flex items-center  justify-start relative w-full"><span class="text-base not__active">Odomètre (Compteur)</span> <img src="img/arrowdown.svg" alt="arrowdown" class="arrow"></a>
+								<div class="dropdown__box">
+									<ul class="px-2 py-2">
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">1</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">2</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">3</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">4</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">5</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">6</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">7</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">8</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">9</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">10</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">11</a></li>
+										<li class="flex w-full"><a class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm" href="#">12</a></li>
+									</ul>
+								</div>
+							</div>
+					<div class="group__submit">
+						<button type="submit" class="regular-btn w-full text-white font-semibold h-11">Continuer</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+  	<script src='js/ion.rangeSlider.min.js'></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
