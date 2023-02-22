@@ -8,6 +8,12 @@
         .swal-button--confirm {
             background-color: #a52b06 !important;
         }
+		
+		.style-popup-user{
+   font-weight: 700;
+    color: #385470;
+    text-decoration: underline;
+}
     </style>
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 	<script src="https://cdn.tailwindcss.com"></script>
@@ -16,6 +22,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="colored__back">
 	<div class="overlay"></div>
@@ -173,5 +180,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<script src="{{ asset('assets/js/ion.rangeSlider.min.js') }}"></script>
 	<script src="{{ asset('assets/js/script.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"  crossorigin="anonymous"></script>
 </body>
 </html>
