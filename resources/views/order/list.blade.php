@@ -91,9 +91,9 @@
 								</td>
 								<td  class="px-6 py-3 text-center">
 									<div class="remove__button flex items-center justify-center delete-confirm" >
-										<a href="{{ route('order.delete', $payment->id) }}"
+										<a href="{{ route('payment.delete', $payment->id) }}"
                                          class="delete-confirm"  title="supprimer">
-                                         <img src="img/remove.svg" class="delete-confirm"  alt="remove"></a>
+                                         <img src="img/remove.svg"  alt="remove"></a>
 									</div>
 								</td>
 							</tr>

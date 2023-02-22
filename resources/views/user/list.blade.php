@@ -450,7 +450,7 @@
 							<tr class="bg-white">
 								<td class="px-6 py-3">
 									<div class="person__wrapper flex items-center justify-start">
-										<span class="inline-flex items-center justify-center mr-4"><img src="{{ asset('asset/img/user1.png') }}" alt="user"></span>
+										<span class="inline-flex items-center justify-center mr-4"><img src="{{ asset('assets/img/user1.png') }}" alt="user"></span>
 										<p class="font-medium text-sm dark__grey">{{ $user->first_name }} {{ $user->last_name }}</p>
 									</div>
 								</td>

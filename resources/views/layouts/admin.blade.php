@@ -9,7 +9,7 @@
             background-color: #a52b06 !important;
         }
     </style>
-	<link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
@@ -171,7 +171,7 @@
   integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  	<script src="{{ asset('asset/js/ion.rangeSlider.min.js') }}"></script>
-	<script src="{{ asset('asset/js/script.js') }}"></script>
+  	<script src="{{ asset('assets/js/ion.rangeSlider.min.js') }}"></script>
+	<script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 </html>

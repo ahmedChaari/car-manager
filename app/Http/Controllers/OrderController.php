@@ -20,7 +20,7 @@ class OrderController extends Controller
 
         Order::find($id)->delete();
 
-        dd($id);
+       
 
         return redirect()->back();
     }
