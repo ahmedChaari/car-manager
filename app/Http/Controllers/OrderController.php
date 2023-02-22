@@ -25,10 +25,9 @@ class OrderController extends Controller
 
     public function updateOrder(Request $request,Order $order){
 
-        $userCreate  = Auth::user()->role_id === 1;
+        // $userCreate  = Auth::user()->role_id === 1;
 
         $order->update([
-
             'somme'        => $request->somme,
             'status'        => $request->status,
         ]);

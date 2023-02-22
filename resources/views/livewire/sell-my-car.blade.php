@@ -87,8 +87,8 @@
                             @enderror
                         </div>
                         <div class="group__input mb-5">
-                            <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
-                                <option value="" disabled selected>Type de vendeur :</option>
+                            <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11 select-type-sellers">
+                                <option value=""  selected>Type de vendeur :</option>
                                 <option value="particular">Particular</option>
                                 <option value="professional">Professional</option>
                             </select>
@@ -228,12 +228,14 @@
                         <div class="mb-6">
                             <div class="group__input relative flex items-center">
                                 {{-- <input wire:model="condition_car" type="text" placeholder="Etat de la voiture" class="text-base pl-4 pr-10 w-full bg-white h-11"> --}}
-                                <select wire:model="condition_car" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
-                                    <option value="">Etat de la voiture</option>
+                                <select wire:model="condition_car" 
+                                aria-label="Default select example"
+                                class="text-base px-4 w-full bg-white h-11 select-type-sellers">
+                                   <option value="" selected disabled>--------</option>
                                     <option value="excellent">Excellent</option>
-                                    <option value="very Good">Very Good</option>
+                                    <option value="very_Good">Very Good</option>
                                     <option value="damaged">Damaged</option>
-                                    <option value="For pieces">For pieces</option>
+                                    <option value="pieces">For pieces</option>
                                     <option value="correct">Correct</option>
                                 </select>
                                 {{-- <div class="tooltip__wrapper">
