@@ -44,7 +44,7 @@
 				</div>
 				<div class="header__right flex items-center justify-end">
                     <a href="{{ route('login') }}"  class="whitespace-nowrap log-style">Log in</a>
-					<a href="{{ route('register') }}" class="regular-btn h-12 py-3 px-5 text-white font-semibold rounded-md whitespace-nowrap inline-flex">Sign up</a>
+					<a href="{{ route('sellers.create') }}" class="regular-btn h-12 py-3 px-5 text-white font-semibold rounded-md whitespace-nowrap inline-flex">Sign up</a>
 					<div class="menu__button--header inline-flex ml-3 lg:hidden">
 						<a href="#" class="inline-flex flex-col justify-center items-center">
 							<span></span>
@@ -60,7 +60,10 @@
 		<div class="container__wrapper mx-auto px-4">
 			<div class="outer__home">
 				<div class="home__box">
-					<h1 class="text-2xl sm:text-3xl xl:text-6xl mb-3 sm:mb-6 font-semibold epilogue hyperlink">Vendre une voiture n'a jamais <span class="vector__wrapper">été aussi</span> facile.</h1>
+					<a href="{{ route('sellers.create') }}">
+
+						<h1 class="text-2xl sm:text-3xl xl:text-6xl mb-3 sm:mb-6 font-semibold epilogue hyperlink">Vendre une voiture n'a jamais <span class="vector__wrapper">été aussi</span> facile.</h1>
+					</a> 
 					<p class="text-base sm:text-lg xl:text-xl">Remplissez les informations de votre voiture en quelques secondes et vous serez contacté en moins de 24 heures.</p>
 					<div class="home__form w-full">
 						<form action="" class="w-full">

@@ -29,28 +29,14 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/listCar',[CarController::class, 'listCar'])->name('car.list')->middleware('auth');
-
+Route::get('/listCar', [CarController::class, 'listCar'])  ->name('car.list') ->middleware('auth');
 Route::get('/listUser',[UserController::class, 'listUser'])->name('user.list')->middleware('auth');
 
 
 //payment for order
-Route::get('/listPayment',       [OrderController::class, 'listPayment'])->name('order.list')->middleware('auth');
+Route::get('/listPayment',        [OrderController::class, 'listPayment'])->name('order.list')      ->middleware('auth');
 Route::post('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
 
-
-
-Route::controller(SellerController::class)->prefix('sellers')->as('sellers.')->group(function() {
-    Route::get('/', 'home')->name('home');
-    Route::get('create', 'create')->name('create');
-    Route::post('/', 'store')->name('store');
-});
-
-
-Route::controller(BuyerController::class)->prefix('buyers')->as('buyers.')->group(function() {
-    Route::get('/', 'home')->name('home');
-    Route::get('create', 'create')->name('create');
-    Route::post('/', 'store')->name('store');
-});
-
+// create new sallers
+Route::get('/create',             [SellerController::class, 'create'])->name('sellers.create');
 
