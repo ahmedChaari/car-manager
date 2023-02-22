@@ -31,7 +31,7 @@ class CarFactory extends Factory
             'first_hand'      => $this->faker->word(),
             'fuel'            => $this->faker->randomElement(['all','diasel','electric','lgp','hybrid']),
             'country_id'      => Country::all()->random()->id,
-            'condition_car'   => $this->faker->randomElement(['excellent','very Good','damaged','for pieces','correct']),
+            'condition_car'   => $this->faker->randomElement(['excellent','very_Good','damaged','pieces','correct']),
             'number_view'     => $this->faker->numberBetween(5,30),
             'number_click'    => $this->faker->numberBetween(5,40),
             'price'           => $this->faker->numberBetween(199,399),

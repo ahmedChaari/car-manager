@@ -10,6 +10,12 @@
             margin-right: 13px;
             font-weight: bold;
         }
+		.select-type-sellers{
+			border: 1px solid #D0D5DD !important;
+			-webkit-box-shadow: 0px 1px 2px rgb(16 24 40 / 5%) !important;
+			box-shadow: 0px 1px 2px rgb(16 24 40 / 5%) !important;
+			border-radius: 8px !important;
+		}
     </style>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">

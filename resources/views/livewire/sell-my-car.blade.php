@@ -87,7 +87,7 @@
                             @enderror
                         </div>
                         <div class="group__input mb-5">
-                            <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11">
+                            <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
                                 <option value="" disabled selected>Type de vendeur :</option>
                                 <option value="particular">Particular</option>
                                 <option value="professional">Professional</option>
@@ -149,7 +149,7 @@
                         </div>
                         <div class="group__input mb-5">
                             {{-- <input wire:model="date_car" type="date" placeholder="Annee" class="text-base px-4 w-full bg-white h-11"> --}}
-                            <select wire:model="date_car">
+                            <select wire:model="date_car" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
                                 <option value="">Annee</option>
                                 <option value="1986">1986</option>
                                 <option value="2000">2000</option>
@@ -160,7 +160,7 @@
                             @enderror
                         </div>
                         <div class="group__input group__dropdown relative mb-6">
-                            <select wire:model="mileage">
+                            <select wire:model="mileage" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
                                 <option value="">Odomètre (Compteur)</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -228,7 +228,7 @@
                         <div class="mb-6">
                             <div class="group__input relative flex items-center">
                                 {{-- <input wire:model="condition_car" type="text" placeholder="Etat de la voiture" class="text-base pl-4 pr-10 w-full bg-white h-11"> --}}
-                                <select wire:model="condition_car">
+                                <select wire:model="condition_car" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
                                     <option value="">Etat de la voiture</option>
                                     <option value="excellent">Excellent</option>
                                     <option value="very Good">Very Good</option>
