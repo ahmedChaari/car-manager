@@ -15,13 +15,14 @@
     text-decoration: underline;
 }
     </style>
-	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ @asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ @asset('assets/css/style.css') }}">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+	<link rel="stylesheet" href=" {{ @asset('css/ion.rangeSlider.min.css') }}">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="colored__back">
@@ -29,7 +30,7 @@
 	<div class="dashboard__wrapper flex items-start justify-between">
 		<div class="dashboard__side sticky top-0 flex flex-col justify-between bg-white">
 			<div class="dash__top">
-				<div class="logo__wrapper inline-flex items-center justify-center py-5 px-4"><a href="#" class="inline-flex items-center justify-center"><img src="img/logo.svg" alt="logo"></a></div>
+				<div class="logo__wrapper inline-flex items-center justify-center py-5 px-4"><a href="#" class="inline-flex items-center justify-center"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a></div>
 				<ul class="px-2">
 					<li class="flex w-full  mb-1 items-center"><a href="{{ route('dashboard') }}" class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm stroke"><span class="inline-flex mr-2 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,7 +124,7 @@
 						</a>
 					</div>
 					<div class="profile__wrapper relative">
-                        <a href="#" class="inline-flex items-center justify-center"><img src="img/profile.png" alt="profile"></a>
+                        <a href="#" class="inline-flex items-center justify-center"><img src="{{ asset('img/profile.png ') }}" alt="profile"></a>
                    
 					</div>
 					<div class="menu__button inline-flex items-center justify-center lg:hidden  ml-3">
@@ -178,8 +179,8 @@
   integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  	<script src="{{ asset('assets/js/ion.rangeSlider.min.js') }}"></script>
-	<script src="{{ asset('assets/js/script.js') }}"></script>
+  	<script src="{{ @asset('assets/js/ion.rangeSlider.min.js') }}"></script>
+	<script src="{{ @asset('assets/js/script.js') }}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"  crossorigin="anonymous"></script>
 </body>

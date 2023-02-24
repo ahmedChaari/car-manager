@@ -28,7 +28,7 @@ class CarFactory extends Factory
             'mileage'         =>  $this->faker->word(),
             'origin'          => $this->faker->word(),
             'date_cleared'    => $this->faker->dateTimeBetween('1970-01-01','2020-12-12'),
-            'first_hand'      => $this->faker->word(),
+            'first_hand'      => $this->faker->boolean(),
             'fuel'            => $this->faker->randomElement(['all','diasel','electric','lgp','hybrid']),
             'country_id'      => Country::all()->random()->id,
             'condition_car'   => $this->faker->randomElement(['excellent','very_Good','damaged','pieces','correct']),

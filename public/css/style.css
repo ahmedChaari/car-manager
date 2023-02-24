@@ -14,12 +14,10 @@ body * {
 .colored__light {
   background-color: #FAFDF7;
 }
-.select-type-sellers{
-  border: 1px solid #D0D5DD !important;
-  -webkit-box-shadow: 0px 1px 2px rgb(16 24 40 / 5%) !important;
-  box-shadow: 0px 1px 2px rgb(16 24 40 / 5%);
-  border-radius: 8px !important;
-
+.style-popup-user{
+   font-weight: 700;
+    color: #385470;
+    text-decoration: underline;
 }
 
 .epilogue {

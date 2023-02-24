@@ -37,9 +37,41 @@
 							@csrf
 							<div class="group__input group__dropdown relative">
 								<p class="font-semibold mb-1 text-sm">Fabricant</p>
-								<input type="text" style="padding-left: 12px;" name="brand" id="brand"
-								class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">	
-							</div>
+								
+
+
+
+
+
+
+
+
+                            <select name="brand" id="brand" class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
+                            <option class="vehicle-search" value="Make">-----</option>    
+                            <option class="vehicle-search" value="Make">Make</option>
+                                <option class="vehicle-search" value="BMW">BMW</option>
+                                <option class="vehicle-search" value="Daewoo">Daewoo</option>
+                                <option class="vehicle-search" value="Ford">Ford</option>
+                                <option class="vehicle-search" value="Holden">Holden</option>
+                                <option class="vehicle-search" value="Honda">Honda</option>
+                                <option class="vehicle-search" value="Hyundai">Hyundai</option>
+                                <option class="vehicle-search" value="Isuzu">Isuzu</option>
+                                <option class="vehicle-search" value="Kia">Kia</option>
+                                <option class="vehicle-search" value="Lexus">Lexus</option>
+                                <option class="vehicle-search" value="Mazda">Mazda</option>
+                                <option class="vehicle-search" value="Mitsubishi">Mitsubishi</option>
+                                <option class="vehicle-search" value="12">Nissan</option>
+                                <option class="vehicle-search" value="13">Peugeot</option>
+                                <option class="vehicle-search" value="14">Subaru</option>
+                                <option class="vehicle-search" value="15">Suzuki</option>
+                                <option class="vehicle-search" value="16">Toyota</option>
+                                <option class="vehicle-search" value="17">Volkswagen</option>
+                            </select>
+
+                            </div>
+
+
+
 							<div class="group__input group__dropdown relative">
 								<p class="font-semibold mb-1 text-sm"> Model</p>
 								<input type="text" style="padding-left: 12px;" name="model" id="model"
@@ -62,19 +94,19 @@
 								<div class="radio__wrapper flex items-center justify-start  flex-wrap">
 									<div class="elem__radio my-1 mr-3">
 										<label class="container__input cursor-pointer  flex items-center justify-start text-sm">All
-										  <input type="radio" checked="checked" name="first_hand" value="">
+										  <input type="radio" name="first_hand" value="">
 										  <span class="checkmark ml-1"></span>
 										</label>
 									</div>
 									<div class="elem__radio my-1 mr-3">
 										<label class="container__input  cursor-pointer flex items-center justify-start text-sm">oui
-										  <input type="radio" checked="checked" name="first_hand" value="0">
+										  <input type="radio" name="first_hand" value="0">
 										  <span class="checkmark ml-1"></span>
 										</label>
 									</div>
 									<div class="elem__radio my-1">
 										<label class="container__input cursor-pointer  flex items-center justify-start text-sm">no
-										  <input type="radio" checked="checked" name="first_hand" value="1">
+										  <input type="radio"  name="first_hand" value="1">
 										  <span class="checkmark ml-1"></span>
 										</label>
 									</div>
@@ -87,7 +119,7 @@
 								<div class="radio__wrapper flex items-center justify-start  flex-wrap">
 									<div class="elem__radio my-1 mr-3">
 										<label class="container__input cursor-pointer  flex items-center justify-start text-sm">All
-										  <input type="radio" checked="checked" name="radio1" value="all">
+										  <input type="radio" name="radio1" value="all">
 										  <span class="checkmark ml-1"></span>
 										</label>
 									</div>
@@ -123,7 +155,7 @@
 								<div class="radio__wrapper flex items-center justify-start  flex-wrap">
 									<div class="elem__checkbox my-1 mr-3">
 										<label class="container__input cursor-pointer  flex items-center justify-start text-sm">Excellent
-										  <input type="radio" checked="checked" name="condition_car" value="excellent">
+										  <input type="radio"  name="condition_car" value="excellent">
 										  <span class="checkmark ml-1"></span>
 										</label>
 									</div>
@@ -167,7 +199,7 @@
 								<div class="radio__wrapper flex items-center justify-start  flex-wrap">
 									<div class="elem__radio my-1 mr-3">
 										<label class="container__input cursor-pointer  flex items-center justify-start text-sm">All
-										  <input type="radio" checked="checked" name="fuel" value="all">
+										  <input type="radio" name="fuel" value="all">
 										  <span class="checkmark ml-1"></span>
 										</label>
 									</div>
@@ -251,7 +283,7 @@
 									justify-center text-sm font-medium"
 									style="float: right;">
 									<span class="inline-flex mr-2">
-										<img src="  {{ asset('assets/img/searchbutton.svg') }}" alt="">
+                                    <img src="  {{ asset('assets/img/searchbutton.svg') }}" alt="">
 										</span> Recherche
 									</button>
 								</div>
@@ -259,137 +291,7 @@
 						</form>
 					</div>
 				<!-- end search -->
-				<div class="gallery__wrapper mt-6 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-5">
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery flex items-center justify-center relative">
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/gallery1.webp" alt="gallery">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p class="mb-2 text-sm font-medium dark__grey">Land Rover Range Evoque</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery flex items-center justify-center relative">
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/gallery2.webp" alt="gallery">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p class="mb-2 text-sm font-medium dark__grey">Toyota Tundra</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery no__image--gallery flex items-center justify-center relative">
-							<span class="no__image font-medium text-xs">No images</span>
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/logo1.png" alt="gallery" style="max-height: 20px;">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p class="mb-2 text-sm font-medium dark__grey">Duster</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery no__image--gallery flex items-center justify-center relative">
-							<span class="no__image font-medium text-xs">No images</span>
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/logo2.png" alt="gallery" style="max-height: 110px;">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p class="mb-2 text-sm font-medium dark__grey">1 Series (F52)</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery flex items-center justify-center relative">
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/gallery3.webp" alt="gallery" >
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p class="mb-2 text-sm font-medium dark__grey">VW T-Roc</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery flex items-center justify-center relative">
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/gallery4.webp" alt="gallery">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p class="mb-2 text-sm font-medium dark__grey">Chevrolet Silverado</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery flex items-center justify-center relative">
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/gallery5.webp" alt="gallery">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p>A1</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery no__image--gallery flex items-center justify-center relative">
-							<span class="no__image font-medium text-xs">No images</span>
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/logo3.png" alt="gallery" style="max-height: 27px;">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p>1 Series (F52)</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-
-
-					<a href="#" class="elem__gallery bg-white">
-						<div class="image__gallery flex items-center justify-center relative">
-							<span class="views inline-flex items-center justify-center px-2 py-1 font-medium"><img src="img/views.svg" class="mr-1" alt="views"> 153</span>
-							<img src="img/gallery6.webp" alt="gallery">
-						</div>
-						<div class="gallery__desc px-3 pt-2 pb-3">
-							<p>Acura RDX</p>
-							<ul class="flex items-center justify-start flex-wrap">
-								<li  class="text-sm  mr-3 light__grey">Date Limite: <span class="dark__grey font-semibold">1 jour</span></li>
-								<li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li>
-							</ul>
-						</div>
-					</a>
-				</div>
+			
 
 				<div class="table__wrapper w-full mt-7">
 						<table class="regular-table w-full">
@@ -403,8 +305,8 @@
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">visite  
 								</th>
 							</tr>
-                            @if($cars->count() > 0 )
-                            @foreach($cars as $car)
+                            @if($carSearch->count() > 0 )
+                            @foreach($carSearch as $car)
 							<tr class="bg-white">
 								<td class="px-6 py-3">
 									<p class="dmsans text-sm font-medium dark__grey">{{ $car->brand }}</p>
@@ -433,7 +335,7 @@
                             @endif
 						</table>
                     </div>
-                    {{ $cars->links() }}
+                    {{ $carSearch->links() }}
 			</div>
 
 @endsection
