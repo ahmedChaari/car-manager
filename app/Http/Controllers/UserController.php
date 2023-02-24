@@ -11,8 +11,19 @@ class UserController extends Controller
     public function listUser(Request $request)
     {
         $users = User::orderBy('created_at', 'DESC')
+                    ->where('role_id',3)
                     ->paginate(10);
         return view('user.list' , compact('users'));
+    }
+
+    //
+
+    public function listAcheteurs(Request $request)
+    {
+        $users = User::orderBy('created_at', 'DESC')
+                    ->where('role_id',2)
+                    ->paginate(10);
+        return view('user.acheteur' , compact('users'));
     }
 
 
@@ -39,6 +50,20 @@ class UserController extends Controller
 
        
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+    }
+    public function seachUser(Request $request){
+
+        $users = User::when($request->filled('brand'), function ($query) use ($request) {
+            return $query->where('brand', $request->brand);
+            })->when($request->filled('model'), function ($query) use ($request) {
+                return $query->orWhere('model', $request->model);
+            })->when($request->filled('city'), function ($query) use ($request) {
+                return $query->orWhere('city', $request->city);
+            })
+        ->paginate(10);
+            
+            return view('car.search' , compact('users'));
+
     }
 
 

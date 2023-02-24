@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call([
+            BrandSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
             CountrySeeder::class,
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             PayementMethodSeeder::class,
             OrderSeeder::class,
             PackageSeeder::class,
+            
         ]);
     }
 }

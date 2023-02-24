@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Car;
+use App\Models\city;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -18,11 +20,31 @@ class CarController extends Controller
 
     public function listCar(Request $request)
     {
+
+        $cities = city::orderBy('ville', 'ASC')->get();
+        $brands = Brand::orderBy('brand', 'ASC')->get();
+ 
         $cars = Car::orderBy('created_at', 'DESC')
         
                         ->paginate(10);
         return view('car.list' , compact('cars'))
-        ->with('users', $this->users);
+        ->with('cities', $cities)
+        ->with('brands', $brands);
+    }
+
+    public function listCarNonValidate()
+    {
+
+        $cities = city::orderBy('ville', 'ASC')->get();
+        $brands = Brand::orderBy('brand', 'ASC')->get();
+ 
+        $cars = Car::orderBy('created_at', 'ASC')
+                ->where('published', null)
+                ->paginate(10);
+
+
+
+        return view('car.listNonValide' , compact('cars'));
     }
 
     public function careSearch(Request $request)

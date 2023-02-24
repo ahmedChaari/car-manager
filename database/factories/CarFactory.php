@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
+use App\Models\city;
 use App\Models\Country;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -17,15 +19,15 @@ class CarFactory extends Factory
     {
         return [
             'id'                => $this->faker->uuid,
-            'brand'            => $this->faker->word(),
+            'brand'            => Brand::all()->random()->brand,
             'model'            => $this->faker->word(),
             'date_car'         => $this->faker->dateTimeBetween('1970-01-01','2020-12-12'),
-            'city'             => $this->faker->city(),
+            'city'             => city::all()->random()->ville,
             'description'      => $this->faker->paragraph(),
             'gearbox'          => $this->faker->randomElement(['all','automatique','manual']),
             'gray_card_holder' => $this->faker->word(),
             'gray_card_number' => $this->faker->word(),
-            'mileage'         =>  $this->faker->word(),
+            'mileage'          =>  $this->faker->numerify('######'),
             'origin'          => $this->faker->word(),
             'date_cleared'    => $this->faker->dateTimeBetween('1970-01-01','2020-12-12'),
             'first_hand'      => $this->faker->boolean(),
