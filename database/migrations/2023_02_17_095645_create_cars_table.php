@@ -30,9 +30,9 @@ class CreateCarsTable extends Migration
             $table->enum('fuel',['all','diasel','electric','essence','lgp','hybrid'])->nullable();
             $table->foreignUuid('country_id')->nullable();
             $table->enum('condition_car',['excellent','very_Good','good','damaged','pieces','correct']);
-            $table->integer('number_view')->nullable();
-            $table->integer('number_click')->nullable();
-            $table->integer('price')->nullable();
+            $table->integer('number_view')->default(0);
+            $table->integer('number_click')->default(0);
+            $table->integer('price')->default(0);
             $table->foreignUuid('user_id');
             $table->boolean('visibility')->nullable();
             $table->boolean('published')->nullable();

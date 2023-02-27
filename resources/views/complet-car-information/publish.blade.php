@@ -28,7 +28,7 @@
                 <div class="product__description w-full">
                     <div class="head__description mb-5">
                         <h6 class="price font-bold active__color">Price : {{ $car->price }} DH</h6>
-                        <p class="font-semibold dark__grey text-xl md:text-2xl">Dodge Charger SXT AWD</p>
+                        <p class="font-semibold dark__grey text-xl md:text-2xl">{{$car->brand}} {{$car->model}}</p>
                         <span class="font-medium text-base md:text-lg">Price : <span class="font-semibold">{{ $car->price }} DH</span></span>
                     </div>
                     <div class="content__description mb-4">
@@ -38,7 +38,7 @@
                         <div class="row__wrapper">
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Boîte de vitesses</p>
-                                <span class="text-sm light__grey text-right">Automatique</span>
+                                <span class="text-sm light__grey text-right">{{ $car->gearbox }}</span>
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Date ajoutée</p>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Carburant</p>
-                                <span class="text-sm light__grey text-right">Essence</span>
+                                <span class="text-sm light__grey text-right">{{ $car->fuel }}</span>
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Ville</p>
@@ -73,18 +73,18 @@
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">État de la voiture</p>
-                                <span class="text-sm light__grey text-right">très bien</span>
+                                <span class="text-sm light__grey text-right">{{ $car->condition_car }}</span>
                             </div>
                             <div class="column__description flex items-center justify-between">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">année de fabrication</p>
-                                <span class="text-sm light__grey text-right">2013</span>
+                                <span class="text-sm light__grey text-right">{{ \Carbon\Carbon::parse($car->date_car)->format('Y') }}</span>
                             </div>
                         </div>
                     </div>
                     <form action="" class="mt-7 w-full">
                         <div class="bid__buttons w-full grid grid-cols-1 gap-y-3 sm:grid-cols-2  gap-x-3 xlgap-x-7">
-                            <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-sm text-white">acheter le lead</a>
-                            <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-white text-sm">Vehicule trop cher</a>
+                            <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-sm text-white">Acheter le lead</a>
+                            {{-- <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-white text-sm">Vehicule trop cher</a> --}}
                         </div>
                     </form>
                 </div>
@@ -127,6 +127,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="product__grid grid  grid-cols-1 gap-y-3 xl:grid-cols-3 gap-x-6 mt-6">
                 <div class="elem__product pl-3 md:pl-6 pr-3 py-4 bg-white flex items-center justify-start">
                     <span class="inline-flex items-center justify-center  mr-4"><img src="{{ @asset('img/icon1.svg') }}" alt="icon"></span>
@@ -163,11 +164,11 @@
                         <p class="light__grey text-sm font-medium">nombre de vues</p>
                         <div class="product__double flex-wrap flex items-start sm:items-center justify-start">
                             <div class="el__double">
-                                <p class="font-semibold text-lg sm:text-xl md:text-2xl ">7840 <span class="text-sm font-semibold">views</span></p>
+                                <p class="font-semibold text-lg sm:text-xl md:text-2xl ">{{ $car->number_view }} <span class="text-sm font-semibold">views</span></p>
                             </div>
                             <span  class=" mx-0 sm:mx-2">/</span>
                             <div class="el__double">
-                                <p class="font-semibold text-lg sm:text-xl md:text-2xl ">5600 <span class="text-sm font-semibold">Clicks</span></p>
+                                <p class="font-semibold text-lg sm:text-xl md:text-2xl ">{{ $car->number_click }} <span class="text-sm font-semibold">Clicks</span></p>
                             </div>
                         </div>
                     </div>
