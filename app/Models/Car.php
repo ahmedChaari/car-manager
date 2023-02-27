@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Car extends Model
@@ -20,9 +21,14 @@ class Car extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function carInfos(): ?HasMany
+    // public function carInfos(): ?HasMany
+    // {
+    //     return $this->hasMany(CarInfo::class);
+    // }
+
+    public function carInfo(): HasOne
     {
-        return $this->hasMany(CarInfo::class);
+        return $this->hasOne(CarInfo::class);
     }
 
     public function country(): ?BelongsTo
