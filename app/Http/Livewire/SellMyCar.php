@@ -72,6 +72,10 @@ class SellMyCar extends Component
         $this->is_finished = true;
     }
 
+    public function stepBack() {
+        $this->step--;
+    }
+
     public function storeUser() {
         $user = User::create([
             'first_name'    => $this->first_name,
@@ -91,7 +95,7 @@ class SellMyCar extends Component
     }
 
     public function storeCar() {
-        Car::create([
+        $car = Car::create([
             'brand'    => $this->brand,
             'model'    => $this->model,
             'date_car'    => $this->date_car,
@@ -103,6 +107,8 @@ class SellMyCar extends Component
             'condition_car'    => $this->condition_car,
             'user_id'       => $this->user_id,
         ]);
+
+        $this->car_id = $car->id;
     }
 
     public function render()

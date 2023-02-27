@@ -191,6 +191,7 @@
                         </div>
                         <div class="group__submit">
                             <button type="submit" class="regular-btn w-full text-white font-semibold h-11">Continuer</button>
+                            <span wire:click="stepBack" wire:loading.attr="disabled" class="cursor-pointer outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm regular-btn w-full font-semibold h-11">Retour</span>
                         </div>
                     </div>
                 </form>
@@ -228,7 +229,7 @@
                         <div class="mb-6">
                             <div class="group__input relative flex items-center">
                                 {{-- <input wire:model="condition_car" type="text" placeholder="Etat de la voiture" class="text-base pl-4 pr-10 w-full bg-white h-11"> --}}
-                                <select wire:model="condition_car" 
+                                <select wire:model="condition_car"
                                 aria-label="Default select example"
                                 class="text-base px-4 w-full bg-white h-11 select-type-sellers">
                                    <option value="" selected disabled>--------</option>
@@ -252,6 +253,7 @@
                         </div>
                         <div class="group__submit">
                             <button type="submit" class="regular-btn w-full text-white font-semibold h-11">Continuer</button>
+                            <span wire:click="stepBack" wire:loading.attr="disabled" class="cursor-pointer outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm regular-btn w-full font-semibold h-11">Retour</span>
                         </div>
                     </div>
                 </form>
@@ -263,7 +265,7 @@
                     <p class="m-0 text-base">Veuillez attendre un e-mail ou un SMS contenant vos identifiants de connexion dans les prochaines 24 heures</p>
                 </div>
                 <div class="button__submit flex justify-center items-center ">
-                    <a href="{{ route('dashboard') }}" class="regular-btn px-5 py-3 text-base font-bold text-white">Completer le profile de ma voiture</a>
+                    <a href="{{ route('complet-car-information.show-step1', ['id' => $car_id]) }}" class="regular-btn px-5 py-3 text-base font-bold text-white">Completer le profile de ma voiture</a>
                 </div>
             </form>
         @endif
