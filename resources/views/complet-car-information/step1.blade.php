@@ -13,50 +13,7 @@
                 {{-- <a href="#" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2"><img src="{{ @asset('img/public.svg') }}" alt="public"></span>Publier</a> --}}
             </div>
 
-            <div class="step__info py-3 lg:py-5  px-4 lg:px-11 mb-7">
-                <h6 class=" mb-3 text-2xl font-semibold">Dodge Charger SXT AWD</h6>
-                <div class="price flex items-center justify-start mb-3">
-                    <p class="  text-lg font-medium mb-0">Prix : <span class="font-semibold ">320 000 DH</span> </p><a href="#" class="ml-2 inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a>
-                </div>
-                <div class="grid__step grid  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-x-6 gap-y-2">
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">Année De Fabrication</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">mostafa tariki <a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">Fabrication</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">Dodge<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">An</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">2010<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">E-Mail</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">example@emai.com<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">Maquette</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">Charger SXT AWD<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">Kilométrage</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">154,200Km<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">Numéro De Téléphone</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">06 6XX XXXXX<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">Disponibilité</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">....<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                    <div class="elem__grid--step flex items-center justify-between">
-                        <span class="text-sm font-medium text-left">État De La Voiture</span>
-                        <p class="text-right text-sm flex items-center justify-end ml-2">Very good<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
-                    </div>
-                </div>
-            </div>
+            @livewire('update-car', ['car' => $car])
 
             <div class="information__block py-4 lg:py-4 px-4 lg:px-8">
                 <form method="POST" action="{{ route('complet-car-information.store-step1', ['id' => $car->id]) }}">
