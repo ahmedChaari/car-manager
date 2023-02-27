@@ -24,7 +24,7 @@
                 </form>
             </div>
 
-            <div class="product__wrapper bg-white flex-col-reverse md:flex-row  flex justify-between py-4 px-3 pr-3 ">     
+            <div class="product__wrapper bg-white flex-col-reverse md:flex-row  flex justify-between py-4 px-3 pr-3 ">
                 <div class="product__description w-full">
                     <div class="head__description mb-5">
                         <h6 class="price font-bold active__color">Price : {{ $car->price }} DH</h6>
@@ -173,276 +173,8 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="products__checkbox--wrapper bg-white px-3 md:px-5 py-3 md:py-6 mt-6">
-                {{-- <div class="grid__checkboxes grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-14 gap-y-2">
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Dvd / cd / mp3
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Système de navigation / gps
-                          <input type="checkbox"  checked="checked">
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Volant sport
-                          <input type="checkbox"  >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Alarme
-                          <input type="checkbox"  >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Vitres éléctriques
-                          <input type="checkbox"  >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Détecteur de pluie
-                          <input type="checkbox"  >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Aide parking
-                          <input type="checkbox" checked="checked" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Esp
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Direction assistée
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Abs
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Projecteurs xenon
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Ordinateur de bord
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Carnet d'entretien
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Toit ouvrant panoramique
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Régulateur de vitesse
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Anti patinage
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Intérieur cuir
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Affichage tête haute
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Capote électrique
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Siége electrique
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Frein de parking automatique
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Rétroviseur extérieur électrique
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Vitres surteintées
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Radar de recul
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Toit ouvrant
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Anti démarrage
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Verrouillage centralisé à distance
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Siège chauffant
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Contrôle de pression des pneus
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Jantes aluminium
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Siége sport
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Climatisation multizone
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Airbags
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Volant reglable
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Keyless go
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Climatisation auto
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Radio commande au volant
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Suspension sport
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Anti brouillard
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Non fumeur
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Limiteur de vitesse
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                    <div class="elem__checkbox">
-                        <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Système d'identification du conducteur
-                          <input type="checkbox" >
-                          <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
-
-                </div> --}}
                 <div class="grid__checkboxes grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-14 gap-y-2">
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Dvd / cd / mp3
@@ -576,21 +308,21 @@
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Vitres surteintées
                         <input disabled type="checkbox" value="1" name="tinted_windows" {{ old('tinted_windows', $carInfo->tinted_windows?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Radar de recul
                         <input disabled type="checkbox" value="1" name="reversing_radar" {{ old('reversing_radar', $carInfo->reversing_radar?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Toit ouvrant
                         <input disabled type="checkbox" value="1" name="sunroof" {{ old('sunroof', $carInfo->sunroof?? null) == 1 ? 'checked' : '' }}>
@@ -633,50 +365,50 @@
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Climatisation multizone
                         <input disabled type="checkbox" value="1" name="air_conditioning" {{ old('air_conditioning', $carInfo->air_conditioning?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Airbags
                         <input disabled type="checkbox" value="1" name="airbags" {{ old('airbags', $carInfo->airbags?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Volant reglable
                         <input disabled type="checkbox" value="1" name="adjustable_steering" {{ old('adjustable_steering', $carInfo->adjustable_steering?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Keyless go
                         <input disabled type="checkbox" value="1" name="keyless_go" {{ old('keyless_go', $carInfo->keyless_go?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Climatisation auto
                         <input disabled type="checkbox" value="1" name="auto_air_conditioning" {{ old('auto_air_conditioning', $carInfo->auto_air_conditioning?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
-    
+
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Radio commande au volant
                         <input disabled type="checkbox" value="1" name="radio_control_steering" {{ old('radio_control_steering', $carInfo->radio_control_steering?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Suspension sport
                         <input disabled type="checkbox" value="1" name="sports_suspension" {{ old('sports_suspension', $carInfo->sports_suspension?? null) == 1 ? 'checked' : '' }}>
@@ -695,14 +427,14 @@
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Limiteur de vitesse
                         <input disabled type="checkbox" value="1" name="speed_limiter" {{ old('speed_limiter', $carInfo->speed_limiter?? null) == 1 ? 'checked' : '' }}>
                         <span class="checkmark ml-1"></span>
                         </label>
                     </div>
-    
+
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Système d'identification du conducteur
                         <input disabled type="checkbox" value="1" name="driver_identification_system" {{ old('driver_identification_system', $carInfo->driver_identification_system?? null) == 1 ? 'checked' : '' }}>

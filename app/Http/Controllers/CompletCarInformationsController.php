@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class CompletCarInformationsController extends Controller
 {
-    public function showStep1($id) 
+    public function showStep1($id)
     {
         $car = Car::findOrFail($id);
         return view('complet-car-information.step1', [
@@ -17,7 +17,7 @@ class CompletCarInformationsController extends Controller
         ]);
     }
 
-    public function storeStep1(Request $request, $id) 
+    public function storeStep1(Request $request, $id)
     {
         $this->validate($request,[
             'origin'=>'required',
@@ -40,7 +40,7 @@ class CompletCarInformationsController extends Controller
         return redirect()->route('complet-car-information.show-step2', ['id' => $id]);
     }
 
-    public function showStep2($id) 
+    public function showStep2($id)
     {
         $car = Car::findOrFail($id);
 
@@ -50,7 +50,7 @@ class CompletCarInformationsController extends Controller
         ]);
     }
 
-    public function storeStep2(Request $request, $id) 
+    public function storeStep2(Request $request, $id)
     {
         $car = Car::findOrFail($id);
 
@@ -100,7 +100,7 @@ class CompletCarInformationsController extends Controller
             'driver_identification_system' => $request->has('driver_identification_system'),
         );
 
-        if ($car->carInfo() ->exists()) {
+        if ($car->carInfo()->exists()) {
             CarInfo::findOrFail($car->carInfo->id)->update($data);
         } else {
             CarInfo::create($data);
@@ -111,7 +111,7 @@ class CompletCarInformationsController extends Controller
         return redirect()->route('complet-car-information.show-step3', ['id' => $id]);
     }
 
-    public function showStep3($id) 
+    public function showStep3($id)
     {
         $car = Car::findOrFail($id);
 
@@ -120,7 +120,7 @@ class CompletCarInformationsController extends Controller
         ]);
     }
 
-    public function storeStep3(Request $request, $id) 
+    public function storeStep3(Request $request, $id)
     {
         // Save images
         $request->session()->flash('status', 'Les images des la voiture sont bien enregistrees');
@@ -128,7 +128,7 @@ class CompletCarInformationsController extends Controller
         return redirect()->route('complet-car-information.show-publish', ['id' => $id]);
     }
 
-    public function showPublishStep($id) 
+    public function showPublishStep($id)
     {
         $car = Car::findOrFail($id);
 
@@ -138,7 +138,7 @@ class CompletCarInformationsController extends Controller
         ]);
     }
 
-    public function publishOrDraftAction(Request $request, $id) 
+    public function publishOrDraftAction(Request $request, $id)
     {
         Car::findOrFail($id)->update([
             'visibility' => $request->visibility,
@@ -148,7 +148,7 @@ class CompletCarInformationsController extends Controller
         } else {
             $request->session()->flash('status', 'Votre Voiture en draft');
         }
-        
+
         return redirect()->route('complet-car-information.validation');
     }
     public function showValidation() {
