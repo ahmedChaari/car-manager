@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Car;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ImageFactory extends Factory
@@ -18,6 +19,7 @@ class ImageFactory extends Factory
             'id'           => $this->faker->uuid,
             'path'         => $path,
             'name'         => basename($path),
+            'car_id'       => Car::all()->random()->id,
             // 'path'   => $this->faker->image('public/storage/image/car', 400, 300, null, false),
         ];
     }

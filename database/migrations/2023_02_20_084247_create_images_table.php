@@ -17,6 +17,7 @@ class CreateImagesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('path');
+            $table->foreignUuid('car_id');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -21,10 +21,10 @@ class Car extends Model
         return $this->belongsTo(User::class);
     }
 
-    // public function carInfos(): ?HasMany
-    // {
-    //     return $this->hasMany(CarInfo::class);
-    // }
+    public function images(): ?HasMany
+    {
+        return $this->hasMany(Image::class);
+    }
 
     public function carInfo(): HasOne
     {
