@@ -25,8 +25,8 @@ class CarController extends Controller
         $brands = Brand::orderBy('brand', 'ASC')->get();
  
         $cars = Car::orderBy('created_at', 'DESC')
-        
-                        ->paginate(10);
+                    ->where('published' , 1)
+                        ->paginate(9);
         return view('car.list' , compact('cars'))
         ->with('cities', $cities)
         ->with('brands', $brands);
@@ -39,8 +39,8 @@ class CarController extends Controller
         $brands = Brand::orderBy('brand', 'ASC')->get();
  
         $cars = Car::orderBy('created_at', 'ASC')
-                ->where('published', null)
-                ->paginate(10);
+                ->where('published', 0)
+                ->paginate(9);
 
 
 
@@ -68,7 +68,30 @@ class CarController extends Controller
         ->paginate(10);
             
             return view('car.search' , compact('carSearch'));
-        
     }
+
+
+
+    public function validateCar(Car $car)
+    {
+        // return view('car.valid')->with('car',$car);
+
+        
+        return view('car.valid', [
+            'car' => $car,
+            'carInfo' => $car->carInfo,
+        ]);
+    }
+    public function publierCar(Request $request,Car $car)
+    {   
+        if ($car->published === 1 ) {
+            $car->update(['published' => 0]);
+        }else{
+            $car->update(['published' => 1]);
+        }
+        return redirect()->back();
+    }
+
+
 
 }

@@ -185,7 +185,7 @@
 						</div>
 					</div>
 					<div class="auction__wrapper px-4 py-4 pb-0 bg-white">
-						<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Enchères</p>
+						<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Voitures</p>
 						<div class="switcher__wrapper auction__switcher  mb-5">
 							<ul class="flex items-center justify-start">
 								<li class="mr-8  active__switcher"><a href="#" data-filter="container1" class="px-1 font-medium text-sm pb-4 inline-flex items-center justify-center relative">Jour</a></li>
@@ -361,7 +361,7 @@
 					</div>
 				</div>
 				<div class="users__signup py-5 px-4 bg-white mt-7">
-					<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Users sign up</p>
+					<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Les utilisateurs s'inscrivent</p>
 					<div class="switcher__wrapper graph__switcher mb-5">
 						<ul class="flex items-center justify-start">
 							<li class="mr-8  active__switcher"><a href="#" data-filter="filter1" class="px-1 font-medium text-sm pb-4 inline-flex items-center justify-center relative">Jour</a></li>
@@ -382,295 +382,68 @@
 					</div>
 				</div>
 				<div class="container__table py-5 px-4 bg-white mt-7">
-					<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">New cars</p>
+					<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Nouvelles Voitures</p>
 					<div class="table__wrapper w-full ">
-						<table class="regular-table w-full">
-							<tr>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">utilisateurs</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">fabricant</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">maquette</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">An</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">le prix</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Vérifier  <br>
-								exclusives</th>
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">Tarik farah</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dodge</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Charger SXT AWD</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">2010</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">320,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
+					<table class="regular-table w-full">
+						<tr>
+						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Propriétaire</th>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">auto</th>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Model</th>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">prix</th>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date Added</th>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de clôture  <br>
+							des enchères</th>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Status</th>
+						</tr>
+						@if($cars->count() > 0 )
+						@foreach($cars as $car)
+						<tr class="bg-white">
+							<td class="px-6 py-3">
+								<p class="dmsans text-sm font-medium dark__grey">{{ $car->user->first_name }} {{ $car->user->last_name }}</p>
+							</td>
+							<td class="px-6 py-3">
+								<p class="dmsans text-sm font-medium dark__grey">{{ $car->brand }}</p>
+							</td>
+							<td  class="px-6 py-3">
+								<p class="text-sm light__grey">{{ $car->model }}</p>
+							</td>
+							<td  class="px-6 py-3">
+								<p class="text-sm light__grey">{{ $car->price }} Dh</p>
+							</td>
+							<td   class="px-6 py-3">
+								<p class="text-sm light__grey">{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}</p>
+							</td>
+							<td  class="px-6 py-3 ">
+								<p class="text-sm light__grey">Jan. 31, 2008</p>
+							</td>
+							<!-- <td>
+								<p class="text-sm light__grey">{{ $car->user->role->name }}</p>
+							</td> -->
 
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">osama</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Lexus</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">CT</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">1990</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">730,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">Tarik farah</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dodge</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Charger SXT AWD</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">2010</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">320,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">osama</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Lexus</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">CT</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">1990</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">730,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">Tarik farah</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dodge</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Charger SXT AWD</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">2010</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">320,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">osama</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Lexus</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">CT</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">1990</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">730,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">Tarik farah</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dodge</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Charger SXT AWD</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">2010</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">320,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">osama</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Lexus</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">CT</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">1990</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">730,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">Tarik farah</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dodge</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Charger SXT AWD</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">2010</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">320,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">osama</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Lexus</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">CT</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">1990</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">730,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">Tarik farah</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dodge</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Charger SXT AWD</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">2010</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">320,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">osama</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Lexus</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">CT</p>
-								</td>
-								<td   class="px-6 py-3">
-									<p class="text-sm light__grey">1990</p>
-								</td>
-								<td  class="px-6 py-3 text-center">
-									<p class="text-sm light__grey">730,000DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm validated">Vérifier</p>
-								</td>
-							</tr>
-
+							<td  class="px-6 py-3 text-center">
+							<div class="payment__status flex items-center justify-center">
+								@if ($car->user->role_id === 1)
+								<p class="confirmed text-xs font-medium">Administrateur</p>
+								@elseif($car->user->role_id === 2)
+								<p class="canceled text-xs font-medium">Acheteur</p>
+								@else($car->user->role_id === 3)
+								<p class="waiting text-xs font-medium">Vendeur</p>
+								@endif
+							</div>
+						</td>
 							
-						</table>
+						</tr>
+						@endforeach
+						@else
+						<h3 class="text-center mt-5 mb-5">Pas encore du voitures</h3>
+						@endif
+					</table>
+				</div>
+			{{ $cars->links() }}
+	</div>
 					</div>
 				</div>
-				<div class="pagination flex items-center justify-between flex-col  lg:flex-row px-6 mt-3">
-					<p class="m-0 mr-0 mb-2 lg:mb-0 lg:mr-3 text-xs sm:text-sm text-center lg:text-left">Affichage de 1 à 10 sur 97 résultats</p>
-					<ul class="flex items-center justify-end rounded-md  ">
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-sm relative"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 5.29289C13.0976 5.68342 13.0976 6.31658 12.7071 6.70711L9.41421 10L12.7071 13.2929C13.0976 13.6834 13.0976 14.3166 12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L7.29289 10.7071C6.90237 10.3166 6.90237 9.68342 7.29289 9.29289L11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289Z" fill="#6B7280"/>
-						</svg>
-						</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">1</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">2</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">3</a></li>
-						<li class="inline-flex items-center  justify-center bg-white dots">...</li>
-					 	<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">8</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">9</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">10</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full font-medium text-sm relative"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M7.29289 14.7071C6.90237 14.3166 6.90237 13.6834 7.29289 13.2929L10.5858 10L7.29289 6.70711C6.90237 6.31658 6.90237 5.68342 7.29289 5.29289C7.68342 4.90237 8.31658 4.90237 8.70711 5.29289L12.7071 9.29289C13.0976 9.68342 13.0976 10.3166 12.7071 10.7071L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071Z" fill="#6B7280"/>
-						</svg>
-						</a></li>
-					</ul>
-				</div>
+				
 			</div>
 
 @endsection

@@ -33,4 +33,12 @@ class OrderController extends Controller
         ]);
         return redirect()->back();
     }
+
+
+    public function listSupply(Request $request)
+    {
+        // $payments = Order::orderBy('created_at', 'DESC')
+        //             ->paginate(10);
+        return view('payment.list' );
+    }
 }

@@ -3,7 +3,7 @@
 
 <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
 				<div class="validate__user">
-					<h6 class="font-medium m-0  mb-3 lg:mb-6 text-base lg:text-lg dark__grey">Choose a user to validate</h6>
+					<h6 class="font-medium m-0  mb-3 lg:mb-6 text-base lg:text-lg dark__grey">Choisissez un utilisateur à valider</h6>
 					<div class="table__wrapper w-full">
 						<table class="regular-table w-full">
 							<tr>
@@ -50,7 +50,10 @@
 								</td>
 								<td  class="px-6 py-3">
 									<div class="status">
-										<p class="text-center validated text-sm">valider</p>
+										<a href="{{ route('car.validCar', $car->id) }}">
+										
+											<p class="text-center validated text-sm">valider</p>
+										</a>
 									</div>
 								</td>
 							</tr>

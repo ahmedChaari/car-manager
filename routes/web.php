@@ -6,6 +6,7 @@ use App\Http\Controllers\CompletCarInformationsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
+use App\Models\Car;
 use App\Models\city;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+
+    $cars = Car::orderBy('created_at', 'DESC')
+        
+                        ->paginate(10);
+        
+    return view(('dashboard'), compact('cars'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -36,15 +42,24 @@ Route::get('/car',        [CarController::class, 'listCar'])   ->name('car.list'
 Route::post('/car/search',[CarController::class, 'careSearch'])->name('car.search')->middleware('auth');
 Route::get('/car/valid', [CarController::class, 'listCarNonValidate'])->name('car.valid')->middleware('auth');
 
+Route::put('/publier/car/{car}',    [CarController::class, 'publierCar'])->name('car.publier')->middleware('auth');
+
+Route::get('/car/valid/user/{car}', [CarController::class, 'validateCar'])->name('car.validCar')->middleware('auth');
+
 //user
 Route::get('/vendeurs',    [UserController::class, 'listUser'])->name('user.list')->middleware('auth');
 Route::get('/acheteurs',   [UserController::class, 'listAcheteurs'])->name('user.acheteur')->middleware('auth');
+Route::get('/delete-user/{id}',   [UserController::class, 'deleteUser'])->name('user.delete')->middleware('auth');
 
 
 //payment for order route
 Route::get('/payment',            [OrderController::class, 'listPayment'])->name('order.list')      ->middleware('auth');
 Route::post('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
 Route::put('/updateOrder/{order}',[OrderController::class, 'updateOrder'])->name('order.update')->middleware('auth');
+
+Route::get('/supply',             [OrderController::class, 'listSupply'])->name('supply.list')      ->middleware('auth');
+
+
 
 // create new sallers
 Route::get('/create',             [SellerController::class, 'create'])->name('sellers.create');

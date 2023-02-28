@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,18 +11,23 @@ class UserController extends Controller
 {
     public function listUser(Request $request)
     {
-        $users = User::orderBy('created_at', 'DESC')
-                    ->where('role_id',3)
+        $users = Car::orderBy('created_at', 'DESC')
+                    ->whereHas('user', function ($query)  {
+                        $query->where('role_id', 3);
+                    })
                     ->paginate(10);
         return view('user.list' , compact('users'));
     }
 
-    //
+   
 
     public function listAcheteurs(Request $request)
     {
-        $users = User::orderBy('created_at', 'DESC')
-                    ->where('role_id',2)
+        // $roleId = $user->
+        $users = Car::orderBy('created_at', 'DESC')
+                    ->whereHas('user', function ($query)  {
+                        $query->where('role_id', 2);
+                    })
                     ->paginate(10);
         return view('user.acheteur' , compact('users'));
     }
@@ -64,6 +70,12 @@ class UserController extends Controller
             
             return view('car.search' , compact('users'));
 
+    }
+
+    public function deleteUser($id){
+        User::find($id)->delete();
+
+        return redirect()->back();
     }
 
 
