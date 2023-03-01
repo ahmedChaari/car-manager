@@ -74,7 +74,7 @@
 						<form action="">
 							<div class="head__information mb-6">
 								<h2 class="text-xl font-semibold">Informations de base</h2>
-								<p class="text-sm light__grey">Téléchargez des photos de votre véhicule</p>
+								<p class="text-sm light__grey">Informations de base du véhicule</p>
 							</div>
 							<div class="grid__information grid  grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 sm:gap-x-12 xl:gap-x-20 gap-y-5 sm:gap-y-8 xl:gap-y-12">
 								<div class="group__input group__dropdown relative">
@@ -86,20 +86,14 @@
 									<p  class="font-semibold mb-1 text-sm">Première main</p>
 									<div class="radio__wrapper flex items-center justify-start  flex-wrap">
 										<div class="elem__radio my-1 mr-3">
-											<label class="container__input cursor-pointer  flex items-center justify-start text-sm">All
-											<input type="radio" name="automatique" value="automatique" disabled {{ ($car->gearbox =="automatique")? "checked" : "" }} >
-											  <span class="checkmark ml-1"></span>
-											</label>
-										</div>
-										<div class="elem__radio my-1 mr-3">
 											<label class="container__input  cursor-pointer flex items-center justify-start text-sm">oui
-											  <input type="radio" name="radio">
+											<input type="radio" name="first_hand" value="1" disabled {{ ($car->first_hand =="1")? "checked" : "" }} >
 											  <span class="checkmark ml-1"></span>
 											</label>
 										</div>
 										<div class="elem__radio my-1">
 											<label class="container__input cursor-pointer  flex items-center justify-start text-sm">no
-											  <input type="radio" name="radio">
+											<input type="radio" name="first_hand" value="0" disabled {{ ($car->first_hand =="0")? "checked" : "" }} >
 											  <span class="checkmark ml-1"></span>
 											</label>
 										</div>

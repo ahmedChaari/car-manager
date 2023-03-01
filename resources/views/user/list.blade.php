@@ -36,8 +36,12 @@
 							<div class="group__input group__dropdown relative">
 									<p class="font-semibold mb-1 text-sm"> Type Vendeur</p>
 									<select  name="brand" aria-label="Default select example"
+
+									
+									
 										style="padding-left: 12px; background-color: white;"
-										class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
+										class="h-10 inline-flex items-center
+										 justify-start relative w-full select-type-sellers">
 										<option value="" selected disabled>Type Vendeur</option>
 										<option value="">Partuculier</option>
 										<option value="">Proffesionel</option>
@@ -151,5 +155,10 @@
 			</div>
 
 
+
+@endsection
+
+
+@section('scripts')
 
 @endsection

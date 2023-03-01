@@ -19,170 +19,38 @@
 							</ul>
 						</div>
 						<div class="registration__bars flex items-end justify-between bar1">
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:65%"></div>
-								</div>
-								<p>1 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:35%"></div>
-								</div>
-								<p>2 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:15%"></div>
-								</div>
-								<p>3 PM</p>
-							</div>
-
+						@foreach ($dates as $date => $count) 
 							<div class="elem__bar flex flex-col justify-center items-center w-full">
 								<div class="bar__container biggest flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:95%"></div>
+									<div class="active__bar" style="height:<?= $count ?>%" title="<?= $count ?>"></div>
 								</div>
-								<p>4 PM</p>
+								<p> {{ $count }} PM</p>
 							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:60%"></div>
-								</div>
-								<p>5 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:45%"></div>
-								</div>
-								<p>6 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:25%"></div>
-								</div>
-								<p>7 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:43%"></div>
-								</div>
-								<p>8 PM</p>
-							</div>
+							@endforeach
 						</div>
-
 						<div class="registration__bars flex items-end justify-between bar2" style="display:none;">
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:65%"></div>
-								</div>
-								<p>1 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:35%"></div>
-								</div>
-								<p>2 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:15%"></div>
-								</div>
-								<p>3 PM</p>
-							</div>
-
+						@foreach ($weeks as $date => $count) 						
 							<div class="elem__bar flex flex-col justify-center items-center w-full">
 								<div class="bar__container biggest flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:95%"></div>
+									<div class="active__bar" style="height:<?= $count ?>%" title="<?= $count ?>"></div>
 								</div>
-								<p>4 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:60%"></div>
-								</div>
-								<p>5 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:45%"></div>
-								</div>
-								<p>6 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:25%"></div>
-								</div>
-								<p>7 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:43%"></div>
-								</div>
-								<p>8 PM</p>
-							</div>
+								<p> {{ $count }} PM</p>
+							</div>							
+							@endforeach						
 						</div>
-
-
 						<div class="registration__bars flex items-end justify-between bar3" style="display:none;">
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:65%"></div>
-								</div>
-								<p>1 PM</p>
-							</div>
+						@foreach ($years as $date => $count) 	
 
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:35%"></div>
-								</div>
-								<p>2 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:15%"></div>
-								</div>
-								<p>3 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
+							<div class="elem__bar biggest flex flex-col justify-center items-center w-full">
 								<div class="bar__container biggest flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:95%"></div>
+									<div class="active__bar" style="height:<?= $count ?>%" title="<?= $count ?>"></div>
 								</div>
-								<p>4 PM</p>
+								<p>{{ $count }} PM</p>
 							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:60%"></div>
-								</div>
-								<p>5 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:45%"></div>
-								</div>
-								<p>6 PM</p>
-							</div>
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:25%"></div>
-								</div>
-								<p>7 PM</p>
-							</div>
-
-							<div class="elem__bar flex flex-col justify-center items-center w-full">
-								<div class="bar__container flex items-end  mb-2 justify-center">
-									<div class="active__bar" style="height:43%"></div>
-								</div>
-								<p>8 PM</p>
-							</div>
+							@endforeach
 						</div>
+
+
 					</div>
 					<div class="auction__wrapper px-4 py-4 pb-0 bg-white">
 						<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Voitures</p>
@@ -194,25 +62,33 @@
 							</ul>
 						</div>
 						<div class="auction__container container1">
+							@foreach($carList as $car)
 							<div class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
 								<div class="auction__left">
-									<p class="m-0 mb-2 font-semibold text-sm md:text-base">Dacia Sandero Stepaway</p>
+									<p class="m-0 mb-2 font-semibold text-sm md:text-base">{{ $car->brand }} {{ $car->model }}</p>
 									<ul class="mb-2">
-										<li class="flex items-center justify-start mb-2 text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l1.svg" alt="l1"></span> MAD 150,000</li>
-										<li class="flex items-center justify-start text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l2.svg" alt="l1"></span> Last bid on January 7, 2020</li>
+										<li class="flex items-center justify-start mb-2 text-sm md:text-base">
+											<span class="inline-flex items-center mr-2">
+												<img src="{{  asset('img/l1.svg') }}" alt="l1"></span> MAD {{ $car->price }} </li>
+										<li class="flex items-center justify-start text-sm md:text-base">
+											<span class="inline-flex items-center mr-2">
+												<img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Dernière enchère le :
+												
+												{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+										</li>
 									</ul>
 									<div class="user__list flex items-center justify-start">
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us1.png" alt="us">
+											<img src="{{  asset('assets/img/us1.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us2.png" alt="us">
+											<img src="{{  asset('assets/img/us2.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us3.png" alt="us">
+											<img src="{{  asset('img/us3.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<span>+4</span>
+										<span>+{{ $car->number_view }}</span>
 										</div>
 									</div>
 								</div>
@@ -220,144 +96,84 @@
 									<img src="img/smalllogo.svg" alt="smalllogo">
 								</div>
 							</div>
-							<div class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
-								<div class="auction__left">
-									<p class="m-0 mb-2 font-semibold text-sm md:text-base">Dacia Sandero Stepaway</p>
-									<ul class="mb-2">
-										<li class="flex items-center justify-start mb-2 text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l1.svg" alt="l1"></span> MAD 150,000</li>
-										<li class="flex items-center justify-start text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l2.svg" alt="l1"></span> Last bid on January 7, 2020</li>
-									</ul>
-									<div class="user__list flex items-center justify-start">
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us1.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us2.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us3.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<span>+4</span>
-										</div>
-									</div>
-								</div>
-								<div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-									<img src="img/smalllogo.svg" alt="smalllogo">
-								</div>
-							</div>
+							@endforeach
 						</div>
+
 
 						<div class="auction__container container2" style="display:none;">
+						@foreach($carList as $car)
 							<div class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
 								<div class="auction__left">
-									<p class="m-0 mb-2 font-semibold text-sm md:text-base">Dacia Sandero Stepaway</p>
+									<p class="m-0 mb-2 font-semibold text-sm md:text-base">{{ $car->brand }} {{ $car->model }}</p>
 									<ul class="mb-2">
-										<li class="flex items-center justify-start mb-2 text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l1.svg" alt="l1"></span> MAD 150,000</li>
-										<li class="flex items-center justify-start text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l2.svg" alt="l1"></span> Last bid on January 7, 2020</li>
+										<li class="flex items-center justify-start mb-2 text-sm md:text-base">
+											<span class="inline-flex items-center mr-2">
+											<img src="{{  asset('img/l1.svg') }}" alt="l1"></span> MAD {{ $car->price }} </li>
+										<li class="flex items-center justify-start text-sm md:text-base">
+											<span class="inline-flex items-center mr-2">
+												<img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Dernière enchère le :
+												
+												{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+										</li>
 									</ul>
 									<div class="user__list flex items-center justify-start">
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us1.png" alt="us">
+											<img src="{{  asset('assets/img/us1.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us2.png" alt="us">
+											<img src="{{  asset('assets/img/us2.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us3.png" alt="us">
+											<img src="{{  asset('img/us3.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<span>+4</span>
+											<span>+{{ $car->number_view }}</span>
 										</div>
 									</div>
 								</div>
 								<div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-									<img src="img/smalllogo.svg" alt="smalllogo">
+									<img src="{{  asset('img/smalllogo.svg') }}" alt="smalllogo">
 								</div>
 							</div>
-							<div class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
-								<div class="auction__left">
-									<p class="m-0 mb-2 font-semibold text-sm md:text-base">Dacia Sandero Stepaway</p>
-									<ul class="mb-2">
-										<li class="flex items-center justify-start mb-2 text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l1.svg" alt="l1"></span> MAD 150,000</li>
-										<li class="flex items-center justify-start text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l2.svg" alt="l1"></span> Last bid on January 7, 2020</li>
-									</ul>
-									<div class="user__list flex items-center justify-start">
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us1.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us2.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us3.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<span>+4</span>
-										</div>
-									</div>
-								</div>
-								<div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-									<img src="img/smalllogo.svg" alt="smalllogo">
-								</div>
-							</div>
+							@endforeach
 						</div>
-
-
 						<div class="auction__container container3" style="display:none;">
+						@foreach($carList as $car)
 							<div class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
 								<div class="auction__left">
-									<p class="m-0 mb-2 font-semibold text-sm md:text-base">Dacia Sandero Stepaway</p>
+									<p class="m-0 mb-2 font-semibold text-sm md:text-base">{{ $car->brand }} {{ $car->model }}</p>
 									<ul class="mb-2">
-										<li class="flex items-center justify-start mb-2 text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l1.svg" alt="l1"></span> MAD 150,000</li>
-										<li class="flex items-center justify-start text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l2.svg" alt="l1"></span> Last bid on January 7, 2020</li>
+										<li class="flex items-center justify-start mb-2 text-sm md:text-base">
+											<span class="inline-flex items-center mr-2">
+											<img src="{{  asset('img/l1.svg') }}" alt="l1"></span> MAD {{ $car->price }} </li>
+										<li class="flex items-center justify-start text-sm md:text-base">
+											<span class="inline-flex items-center mr-2">
+												<img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Dernière enchère le :
+												
+												{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+										</li>
 									</ul>
 									<div class="user__list flex items-center justify-start">
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us1.png" alt="us">
+											<img src="{{  asset('assets/img/us1.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us2.png" alt="us">
+											<img src="{{  asset('assets/img/us2.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us3.png" alt="us">
+											<img src="{{  asset('img/us3.png') }}" alt="us">
 										</div>
 										<div class="el__user inline-flex items-center justify-center">
-											<span>+4</span>
+											<span>+{{ $car->number_view }}</span>
 										</div>
 									</div>
 								</div>
 								<div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-									<img src="img/smalllogo.svg" alt="smalllogo">
+									<img src="{{  asset('img/smalllogo.svg') }}" alt="smalllogo">
 								</div>
 							</div>
-							<div class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
-								<div class="auction__left">
-									<p class="m-0 mb-2 font-semibold text-sm md:text-base">Dacia Sandero Stepaway</p>
-									<ul class="mb-2">
-										<li class="flex items-center justify-start mb-2 text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l1.svg" alt="l1"></span> MAD 150,000</li>
-										<li class="flex items-center justify-start text-sm md:text-base"><span class="inline-flex items-center mr-2"><img src="img/l2.svg" alt="l1"></span> Last bid on January 7, 2020</li>
-									</ul>
-									<div class="user__list flex items-center justify-start">
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us1.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us2.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<img src="img/us3.png" alt="us">
-										</div>
-										<div class="el__user inline-flex items-center justify-center">
-											<span>+4</span>
-										</div>
-									</div>
-								</div>
-								<div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-									<img src="img/smalllogo.svg" alt="smalllogo">
-								</div>
-							</div>
-						</div>
+							@endforeach
+						</div>			
 					</div>
 				</div>
 				<div class="users__signup py-5 px-4 bg-white mt-7">
@@ -371,79 +187,149 @@
 					</div>
 					<div class="graph__wrapper">
 						<div class="elem__graph px-2 py-2 md:px-4  md:py-4 filter1">
-							<canvas id="chart1"></canvas>
+							<canvas id="pie-chart"></canvas>
 						</div>
-						<div class="elem__graph px-2 py-2 md:px-4  md:py-4 filter2" style="display:none;">
+
+<!-- 
+						<div class="chart-container">
+    <div class="pie-chart-container">
+      <canvas id="pie-chart"></canvas>
+    </div>
+  </div> -->
+						<!-- <div class="elem__graph px-2 py-2 md:px-4  md:py-4 filter2" style="display:none;">
 							<canvas id="chart2"></canvas>
 						</div>
 						<div class="elem__graph px-2 py-2 md:px-4  md:py-4 filter3" style="display:none;">
 							<canvas id="chart3"></canvas>
-						</div>
+						</div> -->
 					</div>
 				</div>
-				<div class="container__table py-5 px-4 bg-white mt-7">
-					<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Nouvelles Voitures</p>
-					<div class="table__wrapper w-full ">
-					<table class="regular-table w-full">
-						<tr>
-						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Propriétaire</th>
-							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">auto</th>
-							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Model</th>
-							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">prix</th>
-							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date Added</th>
-							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de clôture  <br>
-							des enchères</th>
-							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Status</th>
-						</tr>
-						@if($cars->count() > 0 )
-						@foreach($cars as $car)
-						<tr class="bg-white">
-							<td class="px-6 py-3">
-								<p class="dmsans text-sm font-medium dark__grey">{{ $car->user->first_name }} {{ $car->user->last_name }}</p>
-							</td>
-							<td class="px-6 py-3">
-								<p class="dmsans text-sm font-medium dark__grey">{{ $car->brand }}</p>
-							</td>
-							<td  class="px-6 py-3">
-								<p class="text-sm light__grey">{{ $car->model }}</p>
-							</td>
-							<td  class="px-6 py-3">
-								<p class="text-sm light__grey">{{ $car->price }} Dh</p>
-							</td>
-							<td   class="px-6 py-3">
-								<p class="text-sm light__grey">{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}</p>
-							</td>
-							<td  class="px-6 py-3 ">
-								<p class="text-sm light__grey">Jan. 31, 2008</p>
-							</td>
-							<!-- <td>
-								<p class="text-sm light__grey">{{ $car->user->role->name }}</p>
-							</td> -->
+				<!-- list car with user -->
+				
+				 <div class="container__table py-5 px-4 bg-white mt-7">
+						<p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Nouvelles Voitures</p>
+						<div class="table__wrapper w-full ">
+						<table class="regular-table w-full">
+							<tr>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Propriétaire</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">auto</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Model</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">prix</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date Added</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de clôture  <br>
+								des enchères</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Status</th>
+							</tr>
+							@if($cars->count() > 0 )
+							@foreach($cars as $car)
+							<tr class="bg-white">
+								<td class="px-6 py-3">
+									<p class="dmsans text-sm font-medium dark__grey">{{ $car->user->first_name }} {{ $car->user->last_name }}</p>
+								</td>
+								<td class="px-6 py-3">
+									<p class="dmsans text-sm font-medium dark__grey">{{ $car->brand }}</p>
+								</td>
+								<td  class="px-6 py-3">
+									<p class="text-sm light__grey">{{ $car->model }}</p>
+								</td>
+								<td  class="px-6 py-3">
+									<p class="text-sm light__grey">{{ $car->price }} Dh</p>
+								</td>
+								<td   class="px-6 py-3">
+									<p class="text-sm light__grey">{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}</p>
+								</td>
+								<td  class="px-6 py-3 ">
+									<p class="text-sm light__grey">Jan. 31, 2008</p>
+								</td>
+								<!-- <td>
+									<p class="text-sm light__grey">{{ $car->user->role->name }}</p>
+								</td> -->
 
-							<td  class="px-6 py-3 text-center">
-							<div class="payment__status flex items-center justify-center">
-								@if ($car->user->role_id === 1)
-								<p class="confirmed text-xs font-medium">Administrateur</p>
-								@elseif($car->user->role_id === 2)
-								<p class="canceled text-xs font-medium">Acheteur</p>
-								@else($car->user->role_id === 3)
-								<p class="waiting text-xs font-medium">Vendeur</p>
-								@endif
-							</div>
-						</td>
-							
-						</tr>
-						@endforeach
-						@else
-						<h3 class="text-center mt-5 mb-5">Pas encore du voitures</h3>
-						@endif
-					</table>
-				</div>
-			{{ $cars->links() }}
+								<td  class="px-6 py-3 text-center">
+								<div class="payment__status flex items-center justify-center">
+									@if ($car->user->role_id === 1)
+									<p class="confirmed text-xs font-medium">Administrateur</p>
+									@elseif($car->user->role_id === 2)
+									<p class="canceled text-xs font-medium">Acheteur</p>
+									@else($car->user->role_id === 3)
+									<p class="waiting text-xs font-medium">Vendeur</p>
+									@endif
+								</div>
+							</td>
+								
+							</tr>
+							@endforeach
+							@else
+							<h3 class="text-center mt-5 mb-5">Pas encore du voitures</h3>
+							@endif
+						</table>
+					</div>
+					<div class="mt-4">
+
+						{{ $cars->links() }} 
+					</div>
+					
+					
+				<!-- end list users -->
 	</div>
 					</div>
 				</div>
 				
 			</div>
+
+@endsection
+
+@section('scripts')
+
+<script>
+  $(function(){
+      //get the pie chart canvas
+      var cData = JSON.parse(`<?php echo $chart_data; ?>`);
+      var ctx = $("#pie-chart");
+	 
+      //pie chart data
+      var data = {
+        labels: cData.label,
+		
+        datasets: [
+          {
+            label: "utilisateurs Count",
+            data: cData.data,
+            borderColor: 'rgb(75, 192, 192)',
+           
+			tension: 0.1
+          }
+        ]
+      };
+
+      //options
+      var options = {	
+        responsive: true,
+        title: {
+          display: true,
+          position: "top",
+          text: "Last Week Registered Users -  Day Wise Count",
+          fontSize: 18,
+          fontColor: "#ffc107"
+        },
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: {
+            fontColor: "#ffc107",
+            fontSize: 16
+          }
+        }
+      };
+
+      //create Pie Chart class object
+      var chart1 = new Chart(ctx, {
+		type: 'line',
+        data: data,
+        options: options
+      });
+
+  });
+</script>
 
 @endsection

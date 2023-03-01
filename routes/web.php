@@ -3,6 +3,7 @@
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CompletCarInformationsController;
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
@@ -25,14 +26,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
 
-    $cars = Car::orderBy('created_at', 'DESC')
-        
-                        ->paginate(10);
-        
-    return view(('dashboard'), compact('cars'));
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',        [dashboardController::class, 'dashboard'])   ->name('dashboard') ->middleware('auth');
 
 require __DIR__.'/auth.php';
 

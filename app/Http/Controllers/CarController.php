@@ -6,8 +6,11 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\city;
 use App\Models\User;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 
 class CarController extends Controller
@@ -42,8 +45,6 @@ class CarController extends Controller
                 ->where('published', 0)
                 ->paginate(9);
 
-
-
         return view('car.listNonValide' , compact('cars'));
     }
 
@@ -74,9 +75,6 @@ class CarController extends Controller
 
     public function validateCar(Car $car)
     {
-        // return view('car.valid')->with('car',$car);
-
-        
         return view('car.valid', [
             'car' => $car,
             'carInfo' => $car->carInfo,
@@ -90,6 +88,28 @@ class CarController extends Controller
             $car->update(['published' => 1]);
         }
         return redirect()->back();
+    }
+
+
+    public function countUsers(){
+
+        for ($i=0; $i<=6; $i++) {
+            $dates[] = Carbon::now()->subDays($i)->format('Y-m-d');
+         }
+         
+         $data = User::whereIn('created_at', $dates)
+                 ->groupBy('date')
+                 ->orderBy('date', 'ASC')
+                 ->get(array(
+                      DB::raw('Date(created_at) as date'),
+                      DB::raw('COUNT(*) as "count"')
+                   ))
+         ->keyBy('date');
+         
+         return view ('dashboard', array('dates' => $dates, 'data' => $data));
+
+        
+
     }
 
 
