@@ -41,6 +41,7 @@ class CarFactory extends Factory
             'user_id'         => User::all()->random()->id,
             // 'car_info_id'         => CarInfo::all()->random()->id,
             'visibility'      => $this->faker->boolean(),
+            'published'   => $this->faker->boolean(),
         ];
     }
 }

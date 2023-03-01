@@ -317,7 +317,7 @@
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date Added</th>
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de clôture  <br>
 						des enchères</th>
-						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">visite  
+						<th class="text-xs uppercase  tracking-wider text-center font-medium">Afficher  
 						</th>
 					</tr>
 					@if($cars->count() > 0 )
@@ -340,10 +340,11 @@
 						</td>
 						
 						
-						<td class="px-6 py-3">
-						<a href="{{ route('car.validCar', $car->id) }}">
-										
-							<p class="text-center validated text-sm">Publier</p>
+						<td class="">
+						<a 	href="{{ route('car.info' , $car->id) }}">
+						<!-- icons8-eye.png -->
+							<!-- <p class="text-center validated text-sm">Publier</p> -->
+							<img src="{{asset('assets/img/tab7.svg')}}" alt="edit">
 						</a>
 							
 						</td>

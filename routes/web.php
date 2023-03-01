@@ -7,8 +7,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
-use App\Models\Car;
-use App\Models\city;
+use App\Models\Brand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +22,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $brands = Brand::orderBy('brand', 'ASC')->get();
+
+    return view('welcome' ) ->with('brands', $brands);
 });
+
+Route::get('/car/info/{id}', [CarController::class, 'showCar'])->name('car.info')->middleware('auth');
 
 
 Route::get('/dashboard',        [dashboardController::class, 'dashboard'])   ->name('dashboard') ->middleware('auth');
@@ -36,6 +39,8 @@ require __DIR__.'/auth.php';
 Route::get('/car',        [CarController::class, 'listCar'])   ->name('car.list') ->middleware('auth');
 Route::post('/car/search',[CarController::class, 'careSearch'])->name('car.search')->middleware('auth');
 Route::get('/car/valid', [CarController::class, 'listCarNonValidate'])->name('car.valid')->middleware('auth');
+
+
 
 Route::put('/publier/car/{car}',    [CarController::class, 'publierCar'])->name('car.publier')->middleware('auth');
 

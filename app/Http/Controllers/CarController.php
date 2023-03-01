@@ -28,8 +28,8 @@ class CarController extends Controller
         $brands = Brand::orderBy('brand', 'ASC')->get();
  
         $cars = Car::orderBy('created_at', 'DESC')
-                    ->where('published' , 1)
-                        ->paginate(9);
+                     ->where('published' , 1)
+                        ->paginate(20);
         return view('car.list' , compact('cars'))
         ->with('cities', $cities)
         ->with('brands', $brands);
@@ -43,7 +43,7 @@ class CarController extends Controller
  
         $cars = Car::orderBy('created_at', 'ASC')
                 ->where('published', 0)
-                ->paginate(9);
+                ->paginate(20);
 
         return view('car.listNonValide' , compact('cars'));
     }
@@ -105,11 +105,17 @@ class CarController extends Controller
                       DB::raw('COUNT(*) as "count"')
                    ))
          ->keyBy('date');
-         
          return view ('dashboard', array('dates' => $dates, 'data' => $data));
 
-        
+    }
 
+    public function showCar($id)
+    {
+        $car = Car::find($id);
+        if (!isset($car)) {
+            return redirect()->back();
+        }
+        return view('car.car-info', compact('car'));
     }
 
 

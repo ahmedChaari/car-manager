@@ -508,24 +508,24 @@
 					
 					<div class="more__button flex items-center justify-end mt-7">
 					<form 
-						action="{{ route('car.publier' , $car->id)  }}"
+						action="{{ route('car.publier' , $car->id) }}"
 						method="post">
 						@csrf
 							
 								@method('PUT')
 												
 								@if ($car->published === 1)
-							<button type="submit"  
+							<button type="submit"  style="background-color: red;"
 							class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center
 							 px-4 rounded-md text-sm text-white font-medium btn-danger"><span class="inline-flex items-center justify-center mr-2">
 							<img src="{{ asset('assets/img/public.svg') }}" alt="public"></span>
-							Publier</button>
+							Depublier</button>
 							@else
-							<button type="submit" style="background-color: red;"
+							<button type="submit" 
 							class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center
 							 px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2">
 							<img src="{{ asset('assets/img/public.svg') }}" alt="public"></span>
-							Depublier</button>
+							Publier</button>
 							@endif
 						</form>
 					</div>
