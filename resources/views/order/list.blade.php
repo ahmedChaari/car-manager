@@ -22,10 +22,11 @@
 				<table class="regular-table w-full">
 					<tr>
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Revendeur</th>
-						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">ville</th>
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">date d'adhésion</th>
-						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">montant du paiement</th>
-						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">statut de paiement</th>
+						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">montant <br>
+							du paiement</th>
+						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">statut de <br>
+							 paiement</th>
 						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">Éditer</th>
 						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">effacer</th>
 					</tr>
@@ -36,9 +37,7 @@
 						<td class="px-6 py-3">
 							<p class="font-medium text-sm dark__grey">{{ $payment->user->first_name }} {{ $payment->user->last_name }}</p>
 						</td>
-						<td  class="px-6 py-3">
-							<p class="text-sm light__grey">Fes</p>
-						</td>
+						
 						<td  class="px-6 py-3">
 							<p class="text-sm light__grey">{{ $payment->created_at->format('Y-m-d') }}</p>
 						</td>
@@ -65,7 +64,7 @@
 							</div>
 						</td>
 						<td  class="px-6 py-3 text-center">
-							<div class="remove__button flex items-center justify-center delete-confirm" >
+							<div class="remove__button flex items-center justify-center" >
 								<a href="{{ route('payment.delete', $payment->id) }}"
 									class="delete-confirm"  title="supprimer">
 									<img src="img/remove.svg"  alt="remove"></a>
