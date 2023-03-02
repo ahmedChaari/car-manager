@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $brands = Brand::orderBy('brand', 'ASC')->get();
 
-    return view('welcome' ) ->with('brands', $brands);
+    return view('auth.login' ) ->with('brands', $brands);
 });
 
 Route::get('/car/info/{id}', [CarController::class, 'showCar'])->name('car.info')->middleware('auth');
