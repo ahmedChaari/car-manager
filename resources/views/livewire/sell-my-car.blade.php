@@ -70,7 +70,7 @@
             @if ($step <= 1)
                 <form wire:submit.prevent="step1" class="w-full mx-auto">
                     <div class="head__sign mb-8 text-center">
-                        <h6 class="mb-3 text-2xl lg:text-3xl font-semibold">informations personnelles</h6>
+                        <h6 class="mb-3 text-2xl lg:text-3xl font-semibold">S’enregistrer</h6>
                         <p class="m-0 text-base">merci de remplir les informations demandées</p>
                     </div>
                     <div class="form__box mx-auto">
@@ -87,44 +87,49 @@
                             @enderror
                         </div>
                         <div class="group__input mb-5">
-                            <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11 select-type-sellers">
+                            <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11" style="border: 1px solid #D0D5DD;
+                                box-shadow: 0px 1px 2px rgb(16 24 40 / 5%); border-radius: 8px;">
                                 <option value=""  selected>Type de vendeur :</option>
-                                <option value="particular">Particular</option>
-                                <option value="professional">Professional</option>
+                                <option value="particular">Particulier</option>
+                                <option value="professional">Professionnel</option>
                             </select>
                             @error('type_vendeur')
                                 <span class="error-validate">- {{ $message }}</span>
                             @enderror
                         </div>
                         <div class="group__input mb-5">
-                            <input wire:model="email" type="text" placeholder="Courriel" class="text-base px-4 w-full bg-white h-11">
+                            <input wire:model="email" type="text" placeholder="Email" class="text-base px-4 w-full bg-white h-11">
                             @error('email')
                                 <span class="error-validate">- {{ $message }}</span>
                             @enderror
                         </div>
                         <div class="mb-6">
                             <div class="group__input relative flex items-center">
-                                <input wire:model="tel" type="text" placeholder="Telephone" class="text-base pl-4 pr-10 w-full bg-white h-11">
-                                <div class="tooltip__wrapper">
-                                    <span><img src="{{ @asset('img/iconinfo.svg') }}" alt="iconinfo"></span>
-                                    <div class="tooltip__box">
-                                        <p>Lorem, ipsum.</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, error, dolorem..</span>
-                                    </div>
-                                </div>
+                                <input wire:model="tel" type="text" placeholder="Téléphone" class="text-base pl-4 pr-10 w-full bg-white h-11">
+                                
                             </div>
                             @error('tel')
                                 <span class="error-validate">- {{ $message }}</span>
                             @enderror
                         </div>
                         <div class="group__input mb-5">
-                            <input wire:model="password" type="password" placeholder="Mot de pass" class="text-base px-4 w-full bg-white h-11">
+                            <div class="group__input mb-5">
+                                <input wire:model="password" type="Mot de passe" placeholder="Mot de pass" class="text-base px-4 w-full bg-white h-11">
+                                <div class="tooltip__wrapper" style="position: absolute;right: initial;margin: 12px -25px;">
+                                      <span><img src="{{ @asset('img/iconinfo.svg') }}" alt="iconinfo"></span>
+                                        <div class="tooltip__box">
+                                            <p>*</p>
+                                            <span>Veuillez choisir un mot de passe qui contient 8 caractères minimum.</span>
+                                        </div>
+                                </div>
+                            </div>
                             @error('password')
-                                <span class="error-validate">- {{ $message }}</span>
-                            @enderror
+                                    <span class="error-validate">- {{ $message }}</span>
+                                @enderror
                         </div>
                         <div class="group__submit">
-                            <button type="submit" class="regular-btn w-full text-white font-semibold h-11">Continuer</button>
+                            <button type="submit" class="regular-btn w-full text-white font-semibold h-11" >Continuer</button>
+                            
                         </div>
                     </div>
                 </form>

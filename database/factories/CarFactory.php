@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Brand;
+use App\Models\CarInfo;
 use App\Models\city;
 use App\Models\Country;
 use App\Models\User;
@@ -38,7 +39,9 @@ class CarFactory extends Factory
             'number_click'    => $this->faker->numberBetween(5,40),
             'price'           => $this->faker->numberBetween(199,399),
             'user_id'         => User::all()->random()->id,
+            // 'car_info_id'         => CarInfo::all()->random()->id,
             'visibility'      => $this->faker->boolean(),
+            'published'   => $this->faker->boolean(),
         ];
     }
 }

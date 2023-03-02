@@ -15,8 +15,8 @@ class CarInfoFactory extends Factory
     public function definition()
     {
         return [
-            'id'                => $this->faker->uuid,
-            'car_id'           => Car::all()->random()->id,
+            'id'        => $this->faker->uuid,
+            'car_id'    => Car::all()->random()->id,
             'dvice'     => $this->faker->boolean(),
             'gps'       => $this->faker->boolean(),
             'volant_sport'  => $this->faker->boolean(),

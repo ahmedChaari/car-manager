@@ -35,7 +35,7 @@ class CreateCarsTable extends Migration
             $table->integer('price')->default(0);
             $table->foreignUuid('user_id');
             $table->boolean('visibility')->nullable();
-            $table->boolean('published')->nullable();
+            $table->boolean('published')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

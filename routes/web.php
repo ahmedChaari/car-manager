@@ -3,10 +3,11 @@
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CompletCarInformationsController;
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
-use App\Models\city;
+use App\Models\Brand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,12 +22,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $brands = Brand::orderBy('brand', 'ASC')->get();
+
+    return view('auth.login' ) ->with('brands', $brands);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/car/info/{id}', [CarController::class, 'showCar'])->name('car.info')->middleware('auth');
+
+
+Route::get('/dashboard',        [dashboardController::class, 'dashboard'])   ->name('dashboard') ->middleware('auth');
 
 require __DIR__.'/auth.php';
 
@@ -36,15 +40,28 @@ Route::get('/car',        [CarController::class, 'listCar'])   ->name('car.list'
 Route::post('/car/search',[CarController::class, 'careSearch'])->name('car.search')->middleware('auth');
 Route::get('/car/valid', [CarController::class, 'listCarNonValidate'])->name('car.valid')->middleware('auth');
 
+
+
+Route::put('/publier/car/{car}',    [CarController::class, 'publierCar'])->name('car.publier')->middleware('auth');
+
+Route::get('/car/valid/{car}', [CarController::class, 'validateCar'])->name('car.validCar')->middleware('auth');
+
 //user
 Route::get('/vendeurs',    [UserController::class, 'listUser'])->name('user.list')->middleware('auth');
 Route::get('/acheteurs',   [UserController::class, 'listAcheteurs'])->name('user.acheteur')->middleware('auth');
+Route::get('/deleteUser/{id}',   [UserController::class, 'deleteUser'])->name('user.delete')->middleware('auth');
+
+// Route::get('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
 
 
 //payment for order route
 Route::get('/payment',            [OrderController::class, 'listPayment'])->name('order.list')      ->middleware('auth');
-Route::post('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
-Route::put('/updateOrder/{order}',[OrderController::class, 'updateOrder'])->name('order.update')->middleware('auth');
+Route::get('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
+Route::put('/updateOrder/{id}',[OrderController::class, 'updateOrder'])->name('order.update')->middleware('auth');
+
+Route::get('/supply',             [OrderController::class, 'listSupply'])->name('supply.list')      ->middleware('auth');
+
+
 
 // create new sallers
 Route::get('/create',             [SellerController::class, 'create'])->name('sellers.create');
