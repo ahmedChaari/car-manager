@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\CarInfo;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CompletCarInformationsController extends Controller
 {
@@ -118,6 +120,27 @@ class CompletCarInformationsController extends Controller
         return view('complet-car-information.step3', [
             'car' => $car,
         ]);
+    }
+
+    public function storeImage(Request $request, $id)
+    {
+        // $Image And Car From Request
+        $car = Car::findOrfail($id);
+        $file = $request->file('file');
+        // Name
+        // $name = time() . '-' . $car->brand . '-' . $car->model . '.' . $file->guessExtension();
+        $name = $file->getClientOriginalName();
+        // Path
+        $path = 'cars';
+        // Move Image To Storage File
+        Storage::putFileAs($path, $file, $name);
+
+        Image::create([
+            'name'  =>  $name,
+            'path'  =>  $path,
+            'car_id'  =>  $id,
+        ]);
+        return response()->json([ 'success' => $name]);
     }
 
     public function storeStep3(Request $request, $id)

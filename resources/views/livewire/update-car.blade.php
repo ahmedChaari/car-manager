@@ -2,10 +2,6 @@
     <h6 class=" mb-3 text-2xl font-semibold">{{ $brand }} {{ $model }}</h6>
     <div class="price flex items-center justify-start mb-3">
         <p class="  text-lg font-medium mb-0">Prix : <span class="font-semibold ">{{$price}} DH</span> </p><button wire:click="updateField" wire:loading.attr="disabled" class="ml-2 inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></button>
-        <form wire:submit.prevent="step3">
-            <input wire:model="price" type="number">
-            <button type="submit" class="ml-2 inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></button>
-        </form>
     </div>
     <div class="grid__step grid  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-x-6 gap-y-2">
         <div class="elem__grid--step flex items-center justify-between">
