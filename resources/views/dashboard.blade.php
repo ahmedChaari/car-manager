@@ -258,14 +258,14 @@
                         <p class="text-sm light__grey">{{ $car->model }}</p>
                     </td>
                     <td class="px-6 py-3">
-                        <p class="text-sm light__grey">{{ $car->price }} Dh</p>
+                        <p class="text-sm light__grey">{{ number_format($car->price , 2) }} Dh</p>
                     </td>
                     <td class="px-6 py-3">
-                        <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+                        <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($car->created_at)->format('M. j, Y') }}
                         </p>
                     </td>
                     <td class="px-6 py-3 ">
-                        <p class="text-sm light__grey">Jan. 31, 2008</p>
+                        <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($car->date_cleared )->format('M. j, Y') }}</p>
                     </td>
                     <!-- <td>
 									<p class="text-sm light__grey">{{ $car->user->role->name }}</p>
