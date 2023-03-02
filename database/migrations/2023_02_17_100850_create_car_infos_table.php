@@ -15,7 +15,9 @@ class CreateCarInfosTable extends Migration
     {
         Schema::create('car_infos', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('car_id');
+            $table->foreignUuid('car_id')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
             $table->boolean('dvice');
             $table->boolean('gps');
             $table->boolean('volant_sport');

@@ -51,6 +51,8 @@ Route::get('/vendeurs',    [UserController::class, 'listUser'])->name('user.list
 Route::get('/acheteurs',   [UserController::class, 'listAcheteurs'])->name('user.acheteur')->middleware('auth');
 Route::get('/deleteUser/{id}',   [UserController::class, 'deleteUser'])->name('user.delete')->middleware('auth');
 
+// Route::get('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
+
 
 //payment for order route
 Route::get('/payment',            [OrderController::class, 'listPayment'])->name('order.list')      ->middleware('auth');

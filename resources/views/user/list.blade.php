@@ -59,7 +59,6 @@
                 <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">utilisateurs</th>
                 <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">date d'arrivée</th>
                 <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">dernière connexion</th>
-                <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">offres exclusives</th>
                 <!-- <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3">enchères partagées</th> -->
                 <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Supprimer</th>
                 <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Afficher</th>
@@ -72,23 +71,25 @@
                     <div class="person__wrapper flex items-center justify-start">
                         <span class="inline-flex items-center justify-center mr-4"><img
                                 src="{{ asset('assets/img/user1.png') }}" alt="user"></span>
-                        <p class="font-medium text-sm dark__grey">{{ $user->user->first_name }}
-                            {{ $user->user->last_name }}</p>
+                        <p class="font-medium text-sm dark__grey">{{ $user->first_name }}
+                            {{ $user->last_name }}</p>
                     </div>
                 </td>
                 <td class="px-2 py-3">
                     <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->created_at)->format('M j Y') }}</p>
                 </td>
                 <td class="px-2 py-3">
-                    <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->date_car)->format('M j Y') }}</p>
+                    <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->update_at)->format('M j Y') }}</p>
                 </td>
-                <td class="px-2 py-3">
+                <!-- <td class="px-2 py-3">
                     <p class="text-sm light__grey">{{ number_format($user->price , 2) }} DH</p>
-                </td>
+                </td> -->
                 <!-- <td  class="px-2 py-3 text-center">
 										<p class="text-sm light__grey">{{ $user->number_click }}</p>
 									</td> -->
-                <td>
+
+
+                <td class="px-6 py-3 text-center">
                     <div class="remove__button flex items-center justify-center">
                         <a href="{{ route('user.delete', $user->id) }}" class="delete-confirm" title="supprimer">
                             <img src="img/remove.svg" alt="remove"></a>
@@ -115,24 +116,24 @@
                             <h5 class="modal-title" id="exampleModalLabel">Vendeur :
                             </h5>
                             <span class="style-popup-user">
-                                {{ $user->user->first_name }} {{ $user->user->last_name }}
+                                {{ $user->first_name }} {{ $user->last_name }}
                             </span>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">voiture :
+                                    <label for="message-text" class="col-form-label">E-mail :
                                     </label>
-                                    <span class="style-popup-user"> {{ $user->brand }} {{ $user->model }}</span>
+                                    <span class="style-popup-user" style="float: right;"> {{ $user->email }}</span>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label"> Prix de vente :</label>
-                                    <span class="style-popup-user"> {{ number_format($user->price , 2) }} DH</span>
+                                    <label for="recipient-name" class="col-form-label"> Telephone :</label>
+                                    <span class="style-popup-user" style="float: right;"> {{ $user->tel }} </span>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label"> Date de creation :</label>
-                                    <span class="style-popup-user">
-                                        {{ \Carbon\Carbon::parse($user->date_car)->format('M j Y') }}</span>
+                                    <label for="recipient-name" class="col-form-label"> Date d'inscription  :</label>
+                                    <span class="style-popup-user" style="float: right;">
+                                        {{ \Carbon\Carbon::parse($user->date_car)->format('M, j Y') }}</span>
                                 </div>
 
                             </form>

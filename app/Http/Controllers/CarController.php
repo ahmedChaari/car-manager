@@ -29,6 +29,9 @@ class CarController extends Controller
  
         $cars = Car::orderBy('created_at', 'DESC')
                      ->where('published' , 1)
+                     ->orWhereHas('user', function ($query)  {
+                            $query->where('deleted_at', null);
+                        })
                         ->paginate(20);
         return view('car.list' , compact('cars'))
         ->with('cities', $cities)

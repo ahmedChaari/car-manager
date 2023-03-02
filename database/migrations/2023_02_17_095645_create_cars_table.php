@@ -33,7 +33,9 @@ class CreateCarsTable extends Migration
             $table->integer('number_view')->nullable();
             $table->integer('number_click')->nullable();
             $table->integer('price')->nullable();
-            $table->foreignUuid('user_id');
+            $table->foreignUuid('user_id')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
             // $table->foreignUuid('car_info_id');
             $table->boolean('visibility')->nullable();
             $table->boolean('published')->default(0);

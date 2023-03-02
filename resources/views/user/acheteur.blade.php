@@ -34,90 +34,98 @@
 					</div>
 				</div>
 				<div class="table__wrapper w-full mt-7">
-						<table class="regular-table w-full">
-							<tr>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3" >utilisateurs</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">date d'arrivée</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">dernière connexion</th>
-								<!-- <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">offres exclusives</th> -->
-								<!-- <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3">enchères partagées</th> -->
-								<th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3" > Supprimer </th>
-								<th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Afficher</th>
+        <table class="regular-table w-full">
+            <tr>
+                <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">utilisateurs</th>
+                <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">date d'arrivée</th>
+                <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">dernière connexion</th>
+                <!-- <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3">enchères partagées</th> -->
+                <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Supprimer</th>
+                <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Afficher</th>
 
-							</tr>
-							@if($users->count() > 0 )
-							@foreach($users as $user)
-								<tr class="bg-white">
-									<td class="px-6 py-3">
-										<div class="person__wrapper flex items-center justify-start">
-											<span class="inline-flex items-center justify-center mr-4"><img src="{{ asset('assets/img/user1.png') }}" alt="user"></span>
-											<p class="font-medium text-sm dark__grey">{{ $user->user->first_name }} {{ $user->user->last_name }}</p>
-										</div>
-									</td>
-									<td  class="px-6 py-3">
-										<p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->created_at)->format('M j Y') }}</p>
-									</td>
-									<td  class="px-6 py-3">
-										<p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->date_car)->format('M j Y') }}</p>
-									</td>
-									<!-- <td   class="px-6 py-3">
-										<p class="text-sm light__grey">{{ $user->price }} DH</p>
+            </tr>
+            @if($users->count() > 0 )
+            @foreach($users as $user)
+            <tr class="bg-white">
+                <td class="px-2 py-3">
+                    <div class="person__wrapper flex items-center justify-start">
+                        <span class="inline-flex items-center justify-center mr-4"><img
+                                src="{{ asset('assets/img/user1.png') }}" alt="user"></span>
+                        <p class="font-medium text-sm dark__grey">{{ $user->first_name }}
+                            {{ $user->last_name }}</p>
+                    </div>
+                </td>
+                <td class="px-2 py-3">
+                    <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->created_at)->format('M j Y') }}</p>
+                </td>
+                <td class="px-2 py-3">
+                    <p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->update_at)->format('M j Y') }}</p>
+                </td>
+                <!-- <td class="px-2 py-3">
+                    <p class="text-sm light__grey">{{ number_format($user->price , 2) }} DH</p>
+                </td> -->
+                <!-- <td  class="px-2 py-3 text-center">
+										<p class="text-sm light__grey">{{ $user->number_click }}</p>
 									</td> -->
-									<!-- <td  class="px-6 py-3 text-center">
-										<p class="text-sm light__grey"> {{ $user->number_click }}</p>
-									</td> -->
-									<td>
-										<div class="remove__button flex items-center justify-center delete-confirm" >
-											<a href="{{ route('user.delete', $user->id) }}"
-												class="delete-confirm"  title="supprimer">
-												<img src="img/remove.svg"  alt="remove"></a>	
-										</div>
-									</td>
-									<td>	
-										<div class="remove__button flex items-center justify-center" >
-											<a  data-bs-toggle="modal" 
-											data-bs-target="#overlapping-modal-preview_{{ $user->id }}" data-bs-whatever="@mdo"
-											title="Mise à jour" ><img src="{{asset('assets/img/editor.svg')}}" alt="edit"></a>
-										</div>
-									</td>
-								</tr>
+
+
+                <td class="px-6 py-3 text-center">
+                    <div class="remove__button flex items-center justify-center">
+                        <a href="{{ route('user.delete', $user->id) }}" class="delete-confirm" title="supprimer">
+                            <img src="img/remove.svg" alt="remove"></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="remove__button flex items-center justify-center">
+                        <a data-bs-toggle="modal" data-bs-target="#overlapping-modal-preview_{{ $user->id }}"
+                            data-bs-whatever="@mdo" title="Mise à jour"><img src="{{asset('assets/img/editor.svg')}}"
+                                alt="edit"></a>
+                    </div>
+                </td>
+            </tr>
 
 
 
 
 					<!-- model for show -->
-					<div class="modal fade" id="overlapping-modal-preview_{{ $user->id }}"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Acheteur :
-									</h5>
-									<span class="style-popup-user">
-									{{ $user->user->first_name }} {{ $user->user->last_name }}
-									</span>	
-							</div>
-							<div class="modal-body">
-								<form>
-									<div class="mb-3">
-										<label for="message-text" class="col-form-label">voiture :
-											</label>
-											<span class="style-popup-user">	 {{ $user->brand }} {{ $user->model }}</span>
-									</div>
-									
-									<div class="mb-3">
-										<label for="recipient-name" class="col-form-label"> Date de creation :</label>
-										<span class="style-popup-user">	{{ \Carbon\Carbon::parse($user->date_car)->format('M j Y') }}</span>	
-									</div>
-									
-								</form>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Annuler</button>
-							</div>
-							</div>
-						</div>
-					</div>
-					<!--End model for update-->
+					<div class="modal fade" id="overlapping-modal-preview_{{ $user->id }}" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Acheteur :
+                            </h5>
+                            <span class="style-popup-user">
+                                {{ $user->first_name }} {{ $user->last_name }}
+                            </span>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">E-mail :
+                                    </label>
+                                    <span class="style-popup-user" style="float: right;"> {{ $user->email }}</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label"> Telephone :</label>
+                                    <span class="style-popup-user" style="float: right;"> {{ $user->tel }} </span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label"> Date d'inscription  :</label>
+                                    <span class="style-popup-user" style="float: right;">
+                                        {{ \Carbon\Carbon::parse($user->date_car)->format('M, j Y') }}</span>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-danger"
+                                data-bs-dismiss="modal">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End model for update-->
 							@endforeach
                     @else
                     <h3 class="text-center mt-5 mb-5">Pas encore du utilisateurs</h3>
