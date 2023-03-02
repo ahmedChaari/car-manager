@@ -113,17 +113,19 @@
                             @enderror
                         </div>
                         <div class="group__input mb-5">
-                            <input wire:model="password" type="Mot de passe" placeholder="Mot de pass" class="text-base px-4 w-full bg-white h-11">
-                            <div class="tooltip__wrapper" style="position: absolute;right: initial;margin: 12px -25px;">
-                                  <span><img src="{{ @asset('img/iconinfo.svg') }}" alt="iconinfo"></span>
-                                    <div class="tooltip__box">
-                                        <p>*</p>
-                                        <span>Veuillez choisir un mot de passe qui contient 8 caractères minimum.</span>
-                                    </div>
+                            <div class="group__input mb-5">
+                                <input wire:model="password" type="Mot de passe" placeholder="Mot de pass" class="text-base px-4 w-full bg-white h-11">
+                                <div class="tooltip__wrapper" style="position: absolute;right: initial;margin: 12px -25px;">
+                                      <span><img src="{{ @asset('img/iconinfo.svg') }}" alt="iconinfo"></span>
+                                        <div class="tooltip__box">
+                                            <p>*</p>
+                                            <span>Veuillez choisir un mot de passe qui contient 8 caractères minimum.</span>
+                                        </div>
                                 </div>
+                            </div>
                             @error('password')
-                                <span class="error-validate">- {{ $message }}</span>
-                            @enderror
+                                    <span class="error-validate">- {{ $message }}</span>
+                                @enderror
                         </div>
                         <div class="group__submit">
                             <button type="submit" class="regular-btn w-full text-white font-semibold h-11" >Continuer</button>

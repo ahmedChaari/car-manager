@@ -44,12 +44,12 @@ Route::get('/car/valid', [CarController::class, 'listCarNonValidate'])->name('ca
 
 Route::put('/publier/car/{car}',    [CarController::class, 'publierCar'])->name('car.publier')->middleware('auth');
 
-Route::get('/car/valid/user/{car}', [CarController::class, 'validateCar'])->name('car.validCar')->middleware('auth');
+Route::get('/car/valid/{car}', [CarController::class, 'validateCar'])->name('car.validCar')->middleware('auth');
 
 //user
 Route::get('/vendeurs',    [UserController::class, 'listUser'])->name('user.list')->middleware('auth');
 Route::get('/acheteurs',   [UserController::class, 'listAcheteurs'])->name('user.acheteur')->middleware('auth');
-Route::get('/delete-user/{id}',   [UserController::class, 'deleteUser'])->name('user.delete')->middleware('auth');
+Route::get('/deleteUser/{id}',   [UserController::class, 'deleteUser'])->name('user.delete')->middleware('auth');
 
 
 //payment for order route

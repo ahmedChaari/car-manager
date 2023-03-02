@@ -29,7 +29,7 @@
 					<div class="step__info py-3 lg:py-5  px-4 lg:px-11 mb-7">
 						<h6 class=" mb-3 text-2xl font-semibold">{{ $car->brand }} {{ $car->model }}</h6>
 						<div class="price flex items-center justify-start mb-3">
-							<p class="  text-lg font-medium mb-0">Prix : <span class="font-semibold ">{{ $car->price }} DH</span> </p>
+							<p class="  text-lg font-medium mb-0">Prix : <span class="font-semibold ">{{ number_format($car->price , 2) }}  DH</span> </p>
 						</div>
 						<div class="grid__step grid  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-x-6 gap-y-2">
 							<div class="elem__grid--step flex items-center justify-between">
@@ -54,7 +54,7 @@
 							</div>
 							<div class="elem__grid--step flex items-center justify-between">
 								<span class="text-sm font-medium text-left">Kilométrage</span>
-								<p class="text-right text-sm flex items-center justify-end ml-2">{{ $car->mileage }} Km</p>
+								<p class="text-right text-sm flex items-center justify-end ml-2">{{ number_format($car->mileage , 2) }}  Km</p>
 							</div>
 							<div class="elem__grid--step flex items-center justify-between">
 								<span class="text-sm font-medium text-left">Numéro De Téléphone</span>

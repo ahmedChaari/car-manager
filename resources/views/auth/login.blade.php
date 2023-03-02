@@ -11,7 +11,7 @@
 
 	<h2 class="mb-4 font-bold dark__grey text-2xl md:text-3xl">Identification</h2>
 	<p class="m-0 text-base md:text-lg light__grey mb-4">Vous n’avez pas encore un compte  ? 
-		<a href="{{ route('sellers.create') }}" class="hyperlink font-medium">S'inscrire</a></p>
+		<a href="{{ route('register') }}" class="hyperlink font-medium">S'inscrire</a></p>
 </center>
 			
 			

@@ -73,9 +73,19 @@ class UserController extends Controller
     }
 
     public function deleteUser($id){
-        User::find($id)->delete();
 
+     $user =   User::find($id)->delete();
+    //  if (!$user) {
+    //     return redirect()->back();
+    //  }
+    //    User::deleted();
         return redirect()->back();
+
+
+     
+
+           
+        
     }
 
 

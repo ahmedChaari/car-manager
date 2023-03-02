@@ -36,12 +36,12 @@
 				<div class="table__wrapper w-full mt-7">
 						<table class="regular-table w-full">
 							<tr>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">utilisateurs</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3" >utilisateurs</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">date d'arrivée</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">dernière connexion</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">offres exclusives</th>
-								<th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3">enchères partagées</th>
-								<th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Supprimer </th>
+								<!-- <th class="text-xs uppercase  tracking-wider text-left font-medium px-2 py-3">offres exclusives</th> -->
+								<!-- <th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3">enchères partagées</th> -->
+								<th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3" > Supprimer </th>
 								<th class="text-xs uppercase  tracking-wider text-center font-medium px-2 py-3"> Afficher</th>
 
 							</tr>
@@ -60,12 +60,12 @@
 									<td  class="px-6 py-3">
 										<p class="text-sm light__grey">{{ \Carbon\Carbon::parse($user->date_car)->format('M j Y') }}</p>
 									</td>
-									<td   class="px-6 py-3">
+									<!-- <td   class="px-6 py-3">
 										<p class="text-sm light__grey">{{ $user->price }} DH</p>
-									</td>
-									<td  class="px-6 py-3 text-center">
+									</td> -->
+									<!-- <td  class="px-6 py-3 text-center">
 										<p class="text-sm light__grey"> {{ $user->number_click }}</p>
-									</td>
+									</td> -->
 									<td>
 										<div class="remove__button flex items-center justify-center delete-confirm" >
 											<a href="{{ route('user.delete', $user->id) }}"
