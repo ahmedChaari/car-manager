@@ -48,7 +48,7 @@ class dashboardController extends Controller
         $usersWeeks = User::where( 'created_at', '>=', $dates->keys()->first() )
                      ->groupBy( 'date' )
                      ->whereIn('role_id',['2','3'])
-                     ->orderBy( 'date' ,'ASC')
+                    //  ->orderBy( 'date' ,'ASC')
                      ->get( [
                          DB::raw( 'DATE( created_at ) as date' ),
                          DB::raw( 'COUNT( * ) as "count"' )
@@ -65,7 +65,7 @@ class dashboardController extends Controller
                      $usersMonths = User::where( 'created_at', '>=', $dates->keys()->first() )
                      ->groupBy( 'date' )
                      ->whereIn('role_id',['2','3'])
-                     ->orderBy( 'date' ,'ASC')
+                    //  ->orderBy( 'date' ,'ASC')
                      ->get( [
                          DB::raw( 'DATE( created_at ) as date' ),
                          DB::raw( 'COUNT( * ) as "count"' )
@@ -89,7 +89,7 @@ class dashboardController extends Controller
                 DB::raw("DAY(created_at) as day"))
             ->where('created_at', '>', Carbon::today()->subDay(30))
             ->groupBy('day_name','day')
-            ->orderBy('created_at', 'ASC')
+            // ->orderBy('created_at', 'ASC')
             ->get();
  
      $data = [];
