@@ -23,9 +23,10 @@ class OrderController extends Controller
         return redirect()->back();
     }
 
-    public function updateOrder(Request $request,Order $order){
+    public function updateOrder(Request $request,$id){
 
         // $userCreate  = Auth::user()->role_id === 1;
+        $order = Order::find($id)->get();
 
         $order->update([
             'somme'        => $request->somme,

@@ -83,8 +83,10 @@
 									{{ $payment->user->first_name }} {{ $payment->user->last_name }}
 									</span>	
 							</div>
+							
+							
 							<div class="modal-body">
-								<form>
+								
 									<div class="mb-3">
 										<label for="message-text" class="col-form-label">Date du paiement :
 											<span class="style-popup-user">	 {{ $payment->created_at->format('Y-m-d') }}
@@ -101,12 +103,13 @@
 										id="" >
 										<label class="form-check-label" for="flexSwitchCheckChecked">Valider le paiement</label>
 									</div>
-								</form>
+								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Annuler</button>
-								<button type="button" class="btn btn-outline-primary">Mise à jour</button>
+								<button type="submit" class="btn btn-outline-primary">Mise à jour</button>
 							</div>
+							</form>
 							</div>
 						</div>
 					</div>

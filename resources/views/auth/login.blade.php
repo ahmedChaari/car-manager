@@ -7,27 +7,22 @@
 		
 		<form class="w-full" method="POST" action="{{ route('login') }}">
 			@csrf
+<center>
 
-			<h2 class="mb-4 font-bold dark__grey text-2xl md:text-3xl">Welcome back!</h2>
-			<p class="m-0 text-base md:text-lg light__grey">Vous n'avez pas de compte ? <a href="{{ route('register') }}" class="hyperlink font-medium">S'inscrire</a></p>
-			{{-- Connect Avec Google / Facebook --}}
-			<div class="buttons__wrapper  mt-6 md:mt-10  grid grid-cols-2 gap-y-2 gap-x-5">
-				<a href="#" class="dmsans google  inline-flex items-center justify-center font-medium"><span  class="inline-flex  items-center justify-center mr-2"><img src="img/button1.svg" alt="button"></span>Connectez-vous avec Google</a>
-				<a href="#" class="dmsans facebook  inline-flex items-center justify-center font-medium"><span  class="inline-flex  items-center justify-center mr-2"><img src="img/button2.svg" alt="button"></span>Connectez-vous avec Facebook</a>
-			</div>
+	<h2 class="mb-4 font-bold dark__grey text-2xl md:text-3xl">Identification</h2>
+	<p class="m-0 text-base md:text-lg light__grey mb-4">Vous n’avez pas encore un compte  ? 
+		<a href="{{ route('register') }}" class="hyperlink font-medium">S'inscrire</a></p>
+</center>
+			
+			
 
-			{{-- Or Text --}}
-			<div class="or__block flex items-center justify-center my-4 md:my-6">
-				<span></span>
-				<p class="mx-3 text-lg light__grey">or</p>
-				<span></span>
-			</div>
+			
 
 			{{-- From Inputs --}}
 			<div class="box__fields bg-white px-3 md:px-5 py-3 md:py-5">
 				<div class="group__input  mb-3 w-full">
 					<p class="mb-3 font-medium dmsans">E-mail</p>
-					<input id="email" class="px-5 w-full" type="email" name="email" placeholder="uistore@gmail.com" value="{{ old('email') }}" required>
+					<input id="email" class="px-5 w-full" type="email" name="email" placeholder="votremail@gmail.com" value="{{ old('email') }}" required>
 					@error('email')
 						<span class="error-validate">- {{ $message }}</span>
 					@enderror
@@ -44,7 +39,7 @@
 					</div>
 				</div>
 				@error('password')
-					<span class="error-validate">- {{ $message }}</span>
+					<span class="error-validate"> {{ $message }}</span>
 				@enderror
 			</div>
 
@@ -52,7 +47,7 @@
 				<label class="container__input cursor-pointer  flex items-center justify-start text-sm dmsans font-medium ">
 				  <input type="checkbox" name="remember">
 				  <span class="checkmark ml-1"></span>
-				  Souviens-toi de moi
+				  Se souvenir de moi
 				</label>
 				@if (Route::has('password.request'))
 					<a href="{{ route('password.request') }}" class="hyperlink font-medium ml-2 md:text-base">Mot de passe oublié?</a>
@@ -60,7 +55,7 @@
 			</div>
 
 			<x-button>
-				Sign in
+			Se connecter
 			</x-button>
 		</form>
 	</div>
