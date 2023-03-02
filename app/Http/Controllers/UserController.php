@@ -86,9 +86,9 @@ class UserController extends Controller
         foreach ($userArray as $userSingle){
             $userArray = Car::where('user_id', $id)->delete();
              }
-        $user->delete();
+             User::find($id)->delete();
     }else {
-        $user->delete();
+        User::find($id)->delete();
     }
     
         return redirect()->back();
