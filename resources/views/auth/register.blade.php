@@ -8,20 +8,9 @@
 			@csrf
 
 			<h2 class="mb-4 font-bold dark__grey text-2xl md:text-3xl">C'est parti.</h2>
-			<p class="m-0 text-base md:text-lg light__grey">Vous avez déjà un compte? <a href="{{ route('login') }}" class="hyperlink font-medium">S'identifier</a></p>
+			<p class="m-0 text-base md:text-lg light__grey mb-4">Vous avez déjà un compte? <a href="{{ route('login') }}" class="hyperlink font-medium">S'identifier</a></p>
 			
-			{{-- Connect Avec Google / Facebook --}}
-			<div class="buttons__wrapper  mt-6 md:mt-10  grid grid-cols-2 gap-y-2 gap-x-5">
-				<a href="#" class="dmsans google  inline-flex items-center justify-center font-medium"><span  class="inline-flex  items-center justify-center mr-2"><img src="img/button1.svg" alt="button"></span>Connectez-vous avec Google</a>
-				<a href="#" class="dmsans facebook  inline-flex items-center justify-center font-medium"><span  class="inline-flex  items-center justify-center mr-2"><img src="img/button2.svg" alt="button"></span>Connectez-vous avec Facebook</a>
-			</div>
-
-			{{-- Or Text --}}
-			<div class="or__block flex items-center justify-center my-4 md:my-6">
-				<span></span>
-				<p class="mx-3 text-lg light__grey">or</p>
-				<span></span>
-			</div>
+			
 
 			{{-- From Inputs --}}
 			<div class="box__fields bg-white px-3 md:px-5 py-3 md:py-5">
@@ -34,7 +23,7 @@
 				</div>
 
 				<div class="group__input  mb-3 w-full">
-					<p class="mb-3 font-medium dmsans">Nom de famille</p>
+					<p class="mb-3 font-medium dmsans">Nom </p>
 					<input id="lastName" class="px-5 w-full" type="text" name="last_name" placeholder="Hossen" value="{{ old('last_name') }}" required autofocus>
 					@error('last_name')
 						<span class="error-validate">- {{ $message }}</span>
@@ -43,7 +32,7 @@
 
 				<div class="group__input  mb-3 w-full">
 					<p class="mb-3 font-medium dmsans">E-mail</p>
-					<input id="email" class="px-5 w-full" type="email" name="email" placeholder="uistore@gmail.com" value="{{ old('email') }}" required>
+					<input id="email" class="px-5 w-full" type="email" name="email" placeholder="votremail@gmail.com" value="{{ old('email') }}" required>
 					@error('email')
 						<span class="error-validate">- {{ $message }}</span>
 					@enderror
@@ -79,7 +68,7 @@
 				<label class="container__input cursor-pointer  flex items-center justify-start text-sm dmsans font-medium ">
 				  <input type="checkbox" name="remember">
 				  <span class="checkmark ml-1"></span>
-				  Souviens-toi de moi
+				  Se souvenir de moi
 				</label>
 				@if (Route::has('password.request'))
 					<a href="{{ route('password.request') }}" class="hyperlink font-medium ml-2 md:text-base">Mot de passe oublié?</a>

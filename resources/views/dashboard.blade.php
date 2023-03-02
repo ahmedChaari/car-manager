@@ -10,7 +10,7 @@
 
     <div class="double__table grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7">
         <div class="user__registration px-4 py-4 bg-white">
-            <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Les utilisateurs s'inscrivent</p>
+            <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Utilisateurs</p>
             <div class="switcher__wrapper bar__switcher  mb-3">
                 <ul class="flex items-center justify-start">
                     <li class="mr-8  active__switcher"><a href="#" data-filter="bar1"
@@ -59,7 +59,7 @@
 
         </div>
         <div class="auction__wrapper px-4 py-4 pb-0 bg-white">
-            <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Voitures</p>
+            <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Annonces</p>
             <div class="switcher__wrapper auction__switcher  mb-5">
                 <ul class="flex items-center justify-start">
                     <li class="mr-8  active__switcher"><a href="#" data-filter="container1"
@@ -82,7 +82,7 @@
                         <ul class="mb-2">
                             <li class="flex items-center justify-start mb-2 text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> MAD {{ $car->price }}
+                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ number_format($car->price , 2) }} Dh
                             </li>
                             <li class="flex items-center justify-start text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
@@ -123,7 +123,7 @@
                         <ul class="mb-2">
                             <li class="flex items-center justify-start mb-2 text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> MAD {{ $car->price }}
+                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ number_format($car->price , 2) }} Dh
                             </li>
                             <li class="flex items-center justify-start text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
@@ -162,7 +162,7 @@
                         <ul class="mb-2">
                             <li class="flex items-center justify-start mb-2 text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> MAD {{ $car->price }}
+                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ number_format($car->price , 2) }} Dh
                             </li>
                             <li class="flex items-center justify-start text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
