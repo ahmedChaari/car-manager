@@ -9,7 +9,7 @@
         @include('partials.dashboard-header')
         <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
             <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
-                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Completer le profile de voiture voiture</h6>
+                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Compléter les informations de votre voiture</h6>
                 {{-- <a href="#" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2"><img src="{{ @asset('img/public.svg') }}" alt="public"></span>Publier</a> --}}
             </div>
 
@@ -19,8 +19,8 @@
             <form method="POST" action="{{ route('complet-car-information.store-step2', ['id' => $car->id]) }}" class="select__wrapper py-4 lg:py-7 px-4 lg:px-8 bg-white">
                 @csrf
                 <div class="head__select mb-6">
-                    <h2 class="text-xl font-semibold">Choix</h2>
-                    <p class="text-sm light__grey">Sélectionnez les caractéristiques de votre véhicule</p>
+                    <h2 class="text-xl font-semibold">Équipements <span class="text-lg light__grey">(2/3)</span></h2>
+                    {{-- <p class="text-sm light__grey">Sélectionnez les caractéristiques de votre véhicule</p> --}}
                 </div>
                 <div class="grid__checkboxes grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-14 gap-y-2">
                     <div class="elem__checkbox">

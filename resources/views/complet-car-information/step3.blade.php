@@ -65,7 +65,7 @@
         @include('partials.dashboard-header')
         <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
             <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
-                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Completer le profile de voiture voiture</h6>
+                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Compléter les informations de votre voiture</h6>
                 {{-- <a href="#" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2"><img src="{{ @asset('img/public.svg') }}" alt="public"></span>Publier</a> --}}
             </div>
 
@@ -73,9 +73,9 @@
 
             {{-- Step 3 --}}
             <div class="images__loader py-4 lg:py-7 px-4 lg:px-8 bg-white">
-                <div class="head__images mb-3">
-                    <h2 class="text-xl font-semibold">Images de véhicules</h2>
-                    <p class="text-sm light__grey">Téléchargez des photos de votre véhicule</p>
+                <div class="head__images mb-3 flex justify-between">
+                    <h2 class="text-xl font-semibold">Photos du véhicule <span class="text-lg light__grey">(3/3)</span></h2>
+
                 </div>
 
                 @livewire('car-images', ['car' => $car])

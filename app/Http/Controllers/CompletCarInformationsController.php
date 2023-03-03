@@ -29,7 +29,7 @@ class CompletCarInformationsController extends Controller
             'description'=>'required',
         ]);
 
-         Car::findOrFail($id)->update([
+        Car::findOrFail($id)->update([
             'origin' => $request->origin,
             'first_hand' => $request->first_hand,
             'gearbox' => $request->gearbox,

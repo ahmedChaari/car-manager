@@ -10,7 +10,7 @@
 
         <div class="dashboard__container py-4 lg:py-7 px-4 lg:px-8">
             <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
-                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Completer le profile de voiture voiture</h6>
+                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Récapitulatif de votre annonce</h6>
                 <form method="POST" action="{{ route('complet-car-information.publish-or-draft', ['id' => $car->id]) }}">
                     @csrf
                     <input type="number" name="visibility" hidden value="1">
@@ -27,13 +27,10 @@
             <div class="product__wrapper bg-white flex-col-reverse md:flex-row  flex justify-between py-4 px-3 pr-3 ">
                 <div class="product__description w-full">
                     <div class="head__description mb-5">
-                        <h6 class="price font-bold active__color">Price : {{ $car->price }} DH</h6>
+                        <h6 class="price font-bold active__color">Prix : {{ $car->price }} DH</h6>
                         <p class="font-semibold dark__grey text-xl md:text-2xl">{{$car->brand}} {{$car->model}}</p>
-                        <span class="font-medium text-base md:text-lg">Price : <span class="font-semibold">{{ $car->price }} DH</span></span>
                     </div>
-                    <div class="content__description mb-4">
-                        <p class="text-xs light__grey">{{ $car->description }}</p>
-                    </div>
+
                     <div class="grid__description grid grid-cols-2 gap-x-10">
                         <div class="row__wrapper">
                             <div class="column__description flex items-center justify-between mb-2">
@@ -81,12 +78,29 @@
                             </div>
                         </div>
                     </div>
-                    <form action="" class="mt-7 w-full">
+
+                    {{-- <form action="" class="mt-7 w-full">
                         <div class="bid__buttons w-full grid grid-cols-1 gap-y-3 sm:grid-cols-2  gap-x-3 xlgap-x-7">
                             <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-sm text-white">Acheter le lead</a>
-                            {{-- <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-white text-sm">Vehicule trop cher</a> --}}
                         </div>
-                    </form>
+                    </form> --}}
+                    <div class="product__grid grid mt-5 border">
+                        <div class="elem__product pl-3 md:pl-6 pr-3 py-4 bg-white flex items-center justify-start">
+                            <span class="inline-flex items-center justify-center  mr-4"><img src="{{ @asset('img/icon3.svg') }}" alt="icon"></span>
+                            <div class="product__info">
+                                <p class="light__grey text-sm font-medium">nombre de vues</p>
+                                <div class="product__double flex-wrap flex items-start sm:items-center justify-start">
+                                    <div class="el__double">
+                                        <p class="font-semibold text-lg sm:text-xl md:text-2xl ">{{ $car->number_view }} <span class="text-sm font-semibold">views</span></p>
+                                    </div>
+                                    <span  class=" mx-0 sm:mx-2">/</span>
+                                    <div class="el__double">
+                                        <p class="font-semibold text-lg sm:text-xl md:text-2xl ">{{ $car->number_click }} <span class="text-sm font-semibold">Clicks</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="product__gallery mb-5 md:mb-0 w-full  mr-0 md:ml-6 lg:ml-12 xl:ml-20">
@@ -128,7 +142,8 @@
                 </div>
             </div>
 
-            <div class="product__grid grid  grid-cols-1 gap-y-3 xl:grid-cols-3 gap-x-6 mt-6">
+            {{-- Cards --}}
+            {{-- <div class="product__grid grid  grid-cols-1 gap-y-3 xl:grid-cols-3 gap-x-6 mt-6">
                 <div class="elem__product pl-3 md:pl-6 pr-3 py-4 bg-white flex items-center justify-start">
                     <span class="inline-flex items-center justify-center  mr-4"><img src="{{ @asset('img/icon1.svg') }}" alt="icon"></span>
                     <div class="product__info">
@@ -173,9 +188,23 @@
                         </div>
                     </div>
                 </div>
+            </div> --}}
+
+            {{-- Description --}}
+            <div class="products__checkbox--wrapper bg-white px-3 md:px-5 py-3 md:py-6 mt-6" style="min-height:200px">
+                <div class="head__description mb-5">
+                    <p class="font-semibold dark__grey text-xl md:text-2xl">Description</p>
+                </div>
+                <p class="m-0 text-sm font-medium dark__grey text-left mr-2">
+                    {{ $car->description }}
+                </p>
             </div>
 
+            {{-- Equipement --}}
             <div class="products__checkbox--wrapper bg-white px-3 md:px-5 py-3 md:py-6 mt-6">
+                <div class="head__description mb-5">
+                    <p class="font-semibold dark__grey text-xl md:text-2xl">Équipements</p>
+                </div>
                 <div class="grid__checkboxes grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-14 gap-y-2">
                     <div class="elem__checkbox">
                         <label class="container__input cursor-pointer  flex items-center justify-between text-sm">Dvd / cd / mp3

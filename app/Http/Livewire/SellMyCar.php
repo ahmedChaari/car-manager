@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Brand;
 use App\Models\Car;
 use Livewire\Component;
 use App\Models\User;
@@ -34,6 +35,7 @@ class SellMyCar extends Component
     // Steper Informations
     public $step = 1;
     public $is_finished = false;
+    public $brands;
 
     public function step1() {
         $validatedData = $this->validate([
@@ -41,16 +43,16 @@ class SellMyCar extends Component
             'last_name' => ['required', 'string', 'min:3'],
             'type_vendeur' => 'required',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'tel' => ['required'],
             'password' => ['required', Rules\Password::defaults()],
         ]);
-
         $this->step++;
     }
 
     public function step2() {
         $validatedData = $this->validate([
             'brand' => 'required|string|min:3',
-            'model' => 'required|string|min:3',
+            'model' => 'required|string|min:1',
             'date_car' => 'required|min:4',
             'mileage' => 'required',
         ]);
@@ -61,7 +63,6 @@ class SellMyCar extends Component
     public function step3() {
         $validatedData = $this->validate([
             'gray_card_holder' => 'required|string',
-            'gray_card_number' => 'required|string',
             'city' => 'required|string',
             'price' => 'required|numeric',
             'condition_car' => 'required',
@@ -113,6 +114,7 @@ class SellMyCar extends Component
 
     public function render()
     {
+        $this->brands = Brand::all();
         return view('livewire.sell-my-car');
     }
 

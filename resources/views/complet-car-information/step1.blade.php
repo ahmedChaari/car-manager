@@ -9,7 +9,7 @@
         @include('partials.dashboard-header')
         <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
             <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
-                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Completer le profile de voiture voiture</h6>
+                <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Compléter les informations de votre voiture</h6>
                 {{-- <a href="#" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2"><img src="{{ @asset('img/public.svg') }}" alt="public"></span>Publier</a> --}}
             </div>
 
@@ -19,13 +19,20 @@
                 <form method="POST" action="{{ route('complet-car-information.store-step1', ['id' => $car->id]) }}">
                     @csrf
                     <div class="head__information mb-6">
-                        <h2 class="text-xl font-semibold">Informations de base</h2>
-                        <p class="text-sm light__grey">Téléchargez des photos de votre véhicule</p>
+                        <h2 class="text-xl font-semibold">Informations complémentaire <span class="text-lg light__grey">(1/3)</span></h2>
+                        {{-- <p class="text-sm light__grey">Téléchargez des photos de votre véhicule</p> --}}
                     </div>
                     <div class="grid__information grid  grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 sm:gap-x-12 xl:gap-x-20 gap-y-5 sm:gap-y-8 xl:gap-y-12">
                         <div class="group__input group__dropdown relative">
                             <p  class="font-semibold mb-1 text-sm">Origin</p>
-                            <input name="origin" value="{{old('origin', $car->origin?? null)}}" type="text" placeholder="Origin" class="description__field__input text-base px-4 w-full bg-white h-8">
+                            <select name="origin" class="text-base px-4 w-full bg-white h-11" style="border: 1px solid #D0D5DD;
+                                box-shadow: 0px 1px 2px rgb(16 24 40 / 5%); border-radius: 8px;">
+                                <option value="">Origin</option>
+                                <option value="Dédouanée" {{ old('origin', $car->origin?? null) == 'Dédouanée' ? 'selected' : '' }}>Dédouanée</option>
+                                <option value="Pas encore dédouanée" {{ old('origin', $car->origin?? null) == 'Pas encore dédouanée' ? 'selected' : '' }}>Pas encore dédouanée</option>
+                                <option value="WW au Maroc" {{ old('origin', $car->origin?? null) == 'WW au Maroc' ? 'selected' : '' }}>WW au Maroc</option>
+                                <option value="Importée neuve" {{ old('origin', $car->origin?? null) == 'Importée neuve' ? 'selected' : '' }}>Importée neuve</option>
+                            </select>
                             @error('origin')
                                 <span class="error-validate">- {{ $message }}</span>
                             @enderror
@@ -78,7 +85,7 @@
                         </div>
                         <div class="group__input relative">
                             <p  class="font-semibold mb-1 text-sm">Carburant</p>
-                            <div class="radio__wrapper flex items-center justify-start  flex-wrap">
+                            <div class="radio__wrapper flex items-center justify-start">
                                 <div class="elem__radio my-1 mr-3">
                                     <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Tout
                                     <input type="radio" name="fuel" value="all" {{ old('fuel', $car->fuel?? null) == 'all' ? 'checked' : '' }}>
@@ -125,7 +132,7 @@
                     </div>
                     <div class="description__field w-full mt-5 md:mt-8">
                         <p class="font-semibold text-lg md:text-xl mb-4">Description</p>
-                        <textarea name="description" cols="30" rows="10" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It" class="text-sm md:text-base bg-white p-4 w-full">{{old('description', $car->description?? null)}}</textarea>
+                        <textarea name="description" cols="30" rows="10" placeholder="Veuillez donner plus d'informations sur votre véhicule" class="text-sm md:text-base bg-white p-4 w-full">{{old('description', $car->description?? null)}}</textarea>
                         @error('description')
                                 <span class="error-validate">- {{ $message }}</span>
                         @enderror

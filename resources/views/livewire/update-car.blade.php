@@ -38,7 +38,29 @@
         </div>
         <div class="elem__grid--step flex items-center justify-between">
             <span class="text-sm font-medium text-left">État De La Voiture</span>
-            <p class="text-right text-sm flex items-center justify-end ml-2">{{ $condition_car }}<a href="#" class="ml-3 items-center inline-flex"><img src="{{ @asset('img/external.svg') }}" alt="external"></a></p>
+            <p class="text-right text-sm flex items-center justify-end ml-2">
+                {{-- {{ $condition_car }} --}}
+                @switch($condition_car)
+                    @case('excellent')
+                        Excellent
+                        @break
+                    @case('very_Good')
+                        Très bon
+                        @break
+                    @case('damaged')
+                        Endommagé
+                        @break
+                    @case('pieces')
+                        Pour Pièces
+                        @break
+                    @case('correct')
+                        Correct
+                        @break
+                @endswitch
+                <a href="#" class="ml-3 items-center inline-flex">
+                    <img src="{{ @asset('img/external.svg') }}" alt="external">
+                </a>
+            </p>
         </div>
     </div>
 </div>
