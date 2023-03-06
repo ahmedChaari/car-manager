@@ -4,30 +4,29 @@
     <div class="bidding__wrapper">
         <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
             <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Liste des acheteurs</h6>
-            
+
         </div>
         <div class="filter__container px-3 md:px-6 pt-5 md:pt-6 pb-5 md:pb-10 bg-white rounded-md">
-			<form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4  gap-y-3 sm:gap-y-4 md:gap-y-8"
-					action="{{ route('user.search.acheteur') }}" method="POST" role="search">
-					@csrf
+            <form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4  gap-y-3 sm:gap-y-4 md:gap-y-8"
+                action="{{ route('user.search.acheteur') }}" method="POST" role="search">
+                @csrf
 
                 <div class="group__input group__dropdown relative">
                     <p class="font-semibold mb-1 text-sm"> Nom</p>
-                    <input type="text" style="padding-left: 12px; background-color: white;" 
-					name="first_name" value="{{ old('first_name') }}" id="first_name"
+                    <input type="text" style="padding-left: 12px; background-color: white;" name="first_name"
+                        value="{{ old('first_name') }}" id="first_name"
                         class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
                 </div>
                 <div class="group__input group__dropdown relative">
                     <p class="font-semibold mb-1 text-sm"> Prénom</p>
-                    <input type="text" style="padding-left: 12px; background-color: white;"
-					name="last_name" value="{{ old('last_name') }}" id="last_name"
+                    <input type="text" style="padding-left: 12px; background-color: white;" name="last_name"
+                        value="{{ old('last_name') }}" id="last_name"
                         class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
                 </div>
                 <div class="group__input group__dropdown relative">
                     <p class="font-semibold mb-1 text-sm"> Téléphone</p>
-                    <input type="text" style="padding-left: 12px; background-color: white;"
-					name="tel" value="{{ old('tel') }}" id="tel"
-                        class="h-10 inline-flex items-center  
+                    <input type="text" style="padding-left: 12px; background-color: white;" name="tel"
+                        value="{{ old('tel') }}" id="tel" class="h-10 inline-flex items-center  
 						justify-start relative w-full select-type-sellers">
                 </div>
                 <div class="group__input relative ">
@@ -114,7 +113,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Vendeur :
+                            <h5 class="modal-title" id="exampleModalLabel">Acheteur :
                             </h5>
                             <span class="style-popup-user">
                                 {{ $user->first_name }} {{ $user->last_name }}
@@ -125,29 +124,26 @@
                                 <div class="mb-3">
                                     <label for="message-text" class="col-form-label">E-mail :
                                     </label>
-									<input type="text" value="{{ $user->email }}" class="form-control" id="email" name="email">
-                                    <span class="style-popup-user" style="float: right;"> {{ $user->email }}</span>
+                                    <input type="text" value="{{ $user->email }}" class="form-control" id="email"
+                                        name="email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label"> TÉLÉPHONE :</label>
-									<input type="text" name="tel" value="{{ $user->tel }}" class="form-control"  id="tel">
-                                    <!-- <span class="style-popup-user" style="float: right;"> {{ $user->tel }} </span> -->
+                                    <input type="text" name="tel" value="{{ $user->tel }}" class="form-control"
+                                        id="tel">
 
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label"> Date d'inscription :</label>
-                                    <span class="style-popup-user" style="float: right;">
+                                    <span class="style-popup-user">
                                         {{ \Carbon\Carbon::parse($user->date_car)->format('M, j Y') }}</span>
                                 </div>
-                               
-
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-danger"
                                 data-bs-dismiss="modal">Annuler</button>
-								<button type="button" class="btn btn-outline-primary"
-                               >Mise à jour</button>
+                            <button type="button" class="btn btn-outline-primary">Mise à jour</button>
                         </div>
                     </div>
                 </div>

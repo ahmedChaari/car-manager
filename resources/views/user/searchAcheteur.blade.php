@@ -3,7 +3,7 @@
 <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
     <div class="bidding__wrapper">
         <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
-            <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Liste des vendeurs</h6>
+            <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Liste des acheteurs</h6>
             <div class="controls__tab flex items-center justify-end mt-3 md:mt-0 ml-0 md:ml-4">
 
                 <!-- <div class="group__input relative mt-3">
@@ -120,13 +120,13 @@
 
 
 
-            <!-- model for show -->
-            <div class="modal fade" id="overlapping-modal-preview_{{ $user->id }}" tabindex="-1"
+           <!-- model for show -->
+           <div class="modal fade" id="overlapping-modal-preview_{{ $user->id }}" tabindex="-1"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Vendeur :
+                            <h5 class="modal-title" id="exampleModalLabel">Acheteur :
                             </h5>
                             <span class="style-popup-user">
                                 {{ $user->first_name }} {{ $user->last_name }}
@@ -137,35 +137,30 @@
                                 <div class="mb-3">
                                     <label for="message-text" class="col-form-label">E-mail :
                                     </label>
-                                    <span class="style-popup-user" style="float: right;"> {{ $user->email }}</span>
+									<input type="text" value="{{ $user->email }}" class="form-control" id="email" name="email">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label"> Telephone :</label>
-                                    <span class="style-popup-user" style="float: right;"> {{ $user->tel }} </span>
+                                    <label for="recipient-name" class="col-form-label"> TÉLÉPHONE :</label>
+									<input type="text" name="tel" value="{{ $user->tel }}" class="form-control"  id="tel">
 
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label"> Date d'inscription :</label>
-                                    <span class="style-popup-user" style="float: right;">
+                                    <span class="style-popup-user">
                                         {{ \Carbon\Carbon::parse($user->date_car)->format('M, j Y') }}</span>
                                 </div>
-                                <div class="mb-3">
-
-                                    @foreach($user->cars as $car)
-                                    <span class="style-popup-user"> {{ $car->brand }} - {{ $car->model }} -
-                                        {{ $car->price }} DH</span> <br>
-                                    @endforeach
-                                </div>
-
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-danger"
                                 data-bs-dismiss="modal">Annuler</button>
+								<button type="button" class="btn btn-outline-primary"
+                               >Mise à jour</button>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <!--End model for update-->
             @endforeach
             @else
@@ -180,10 +175,5 @@
 </div>
 
 
-
-@endsection
-
-
-@section('scripts')
 
 @endsection
