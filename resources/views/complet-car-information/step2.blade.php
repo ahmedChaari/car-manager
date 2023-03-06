@@ -13,6 +13,8 @@
                 {{-- <a href="#" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2"><img src="{{ @asset('img/public.svg') }}" alt="public"></span>Publier</a> --}}
             </div>
 
+            @include('components.alert')
+
             @livewire('update-car', ['car' => $car])
 
             {{-- Step 2 --}}
@@ -290,15 +292,15 @@
                     </div>
                 </div>
                 <div class="controls__wrapper flex items-center justify-end mt-4 md:mt-6">
-                    <span wire:click="stepBack" wire:loading.attr="disabled" class="outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm font-medium">Back</span>
-                    <button type="submit" class="regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm font-medium text-white">Next</button>
+                    <a href="{{ route('complet-car-information.show-step1', ['id' => $car->id]) }}" class="outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm font-medium">Retou</a>
+                    <button type="submit" class="regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm font-medium text-white">Suivant</button>
                 </div>
             </form>
 
             <div class="more__button flex items-center justify-end mt-7">
-                <form method="POST" action="{{ route('complet-car-information.publish-or-draft', ['id' => $car->id]) }}">
+                <form method="POST" action="{{ route('complet-car-information.save-draft', ['id' => $car->id]) }}">
                     @csrf
-                    <input type="number" name="visibility" hidden value="0">
+                    <input type="number" name="published" hidden value="0">
                     <button type="submit" class="outline-btn inline-flex items-center justify-center px-4 rounded-md  text-sm font-medium mr-1">Enregistrer dans le brouillon</button>
                 </form>
                 {{-- <a href="#" class="regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium">Publier</a> --}}

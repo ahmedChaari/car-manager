@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     </head>
     <body class="colored__back">
-        
+
         <div>
         @yield('content')
 
@@ -25,6 +25,7 @@
         {{-- Assets Js Part --}}
         <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
         <script src="{{ @asset('js/ion.rangeSlider.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
         <script src="{{ @asset('js/script.js') }}"></script>
     </body>
 </html>

@@ -4,20 +4,13 @@
 
 <div class="sign__box">
 	<div class="inner__sign w-full mx-auto flex flex-col items-center justify-center px-4 py-7">
-		
+
 		<form class="w-full" method="POST" action="{{ route('login') }}">
 			@csrf
-<center>
 
-	<h2 class="mb-4 font-bold dark__grey text-2xl md:text-3xl">Identification</h2>
-	<p class="m-0 text-base md:text-lg light__grey mb-4">Vous n’avez pas encore un compte  ? 
-		<a href="{{ route('register') }}" class="hyperlink font-medium">S'inscrire</a></p>
-</center>
-			
-			
-
-			
-
+            <center>
+                <h2 class="mb-4 font-bold dark__grey text-2xl md:text-3xl">Identification</h2>
+            </center>
 			{{-- From Inputs --}}
 			<div class="box__fields bg-white px-3 md:px-5 py-3 md:py-5">
 				<div class="group__input  mb-3 w-full">
@@ -57,6 +50,19 @@
 			<x-button>
 			Se connecter
 			</x-button>
+
+            <p class="m-0 text-base md:text-lg light__grey mt-6">Vous n'avez pas encore un compte ?</p>
+
+            <center>
+                <div class="flex justify-between gap-2">
+                    <x-button>
+                        <a class="w-full h-full flex justify-center items-center" href="{{ route('sellers.create') }}">Devenir acheteur</a>
+                    </x-button>
+                    <x-button>
+                        <a class="w-full h-full flex justify-center items-center" href="{{ route('register') }}">Devenir vendeur</a>
+                    </x-button>
+                </div>
+            </center>
 		</form>
 	</div>
 </div>

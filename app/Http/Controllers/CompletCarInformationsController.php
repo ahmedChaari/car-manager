@@ -131,22 +131,24 @@ class CompletCarInformationsController extends Controller
         // $name = time() . '-' . $car->brand . '-' . $car->model . '.' . $file->guessExtension();
         $name = $file->getClientOriginalName();
         // Path
-        $path = 'cars';
+        $path = 'images/cars';
         // Move Image To Storage File
-        Storage::putFileAs($path, $file, $name);
+        // Storage::putFileAs($path, $file, $name);
+        $file->move(public_path('images/cars'),$name);
 
         Image::create([
             'name'  =>  $name,
             'path'  =>  $path,
             'car_id'  =>  $id,
         ]);
+
         return response()->json([ 'success' => $name]);
     }
 
     public function storeStep3(Request $request, $id)
     {
         // Save images
-        $request->session()->flash('status', 'Les images des la voiture sont bien enregistrees');
+        // $request->session()->flash('status', 'Les images des la voiture sont bien enregistrees');
 
         return redirect()->route('complet-car-information.show-publish', ['id' => $id]);
     }
@@ -161,19 +163,31 @@ class CompletCarInformationsController extends Controller
         ]);
     }
 
-    public function publishOrDraftAction(Request $request, $id)
+    public function publishCar(Request $request, $id)
     {
         Car::findOrFail($id)->update([
-            'visibility' => $request->visibility,
+            'published' => $request->published,
         ]);
-        if ($request->visibility) {
-            $request->session()->flash('status', 'Votre Voiture a ete bien publie');
-        } else {
-            $request->session()->flash('status', 'Votre Voiture en draft');
-        }
-
+        $request->session()->flash('status', 'Votre Voiture a ete bien publie');
         return redirect()->route('complet-car-information.validation');
     }
+    public function unpublishCar(Request $request, $id)
+    {
+        Car::findOrFail($id)->update([
+            'published' => $request->published,
+        ]);
+        $request->session()->flash('status', 'ta voiture n\'est plus publiée');
+        return redirect()->back();
+    }
+    public function saveDraft(Request $request, $id)
+    {
+        Car::findOrFail($id)->update([
+            'published' => $request->published,
+        ]);
+        $request->session()->flash('status', 'Votre Voiture est dans le bruillons');
+        return redirect()->back();
+    }
+
     public function showValidation() {
         return view('complet-car-information.validation');
     }

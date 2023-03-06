@@ -13,6 +13,8 @@
                 {{-- <a href="#" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium"><span class="inline-flex items-center justify-center mr-2"><img src="{{ @asset('img/public.svg') }}" alt="public"></span>Publier</a> --}}
             </div>
 
+            @include('components.alert')
+
             @livewire('update-car', ['car' => $car])
 
             <div class="information__block py-4 lg:py-4 px-4 lg:px-8">
@@ -147,9 +149,9 @@
             </div>
 
             <div class="more__button flex items-center justify-end mt-7">
-                <form method="POST" action="{{ route('complet-car-information.publish-or-draft', ['id' => $car->id]) }}">
+                <form method="POST" action="{{ route('complet-car-information.save-draft', ['id' => $car->id]) }}">
                     @csrf
-                    <input type="number" name="visibility" hidden value="0">
+                    <input type="number" name="published" hidden value="0">
                     <button type="submit" class="outline-btn inline-flex items-center justify-center px-4 rounded-md  text-sm font-medium mr-1">Enregistrer dans le brouillon</button>
                 </form>
                 {{-- <a href="#" class="regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium">Publier</a> --}}
