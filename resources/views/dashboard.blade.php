@@ -60,7 +60,7 @@
         </div>
         <div class="auction__wrapper px-4 py-4 pb-0 bg-white">
             <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Annonces</p>
-            <div class="switcher__wrapper auction__switcher  mb-5">
+            <div class="switcher__wrapper auction__switcher mb-4 ">
                 <ul class="flex items-center justify-start">
                     <li class="mr-8  active__switcher"><a href="#" data-filter="container1"
                             class="px-1 font-medium text-sm pb-4 inline-flex items-center justify-center relative">Jour</a>
@@ -82,32 +82,31 @@
                         <ul class="mb-2">
                             <li class="flex items-center justify-start mb-2 text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ number_format($car->price , 2) }} Dh
+                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ $car->user->first_name }} {{ $car->user->last_name }}
                             </li>
                             <li class="flex items-center justify-start text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Dernière enchère le :
+                                    <img src="{{  asset('assets/img/tab7.svg') }}" alt="l1"></span> Prix :
 
-                                {{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+									{{ number_format($car->price , 2) }} Dh
                             </li>
+							<li class="flex items-center justify-start text-sm md:text-base mt-2">
+                                <span class="inline-flex items-center mr-2">
+                                    <img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Date de publication :
+
+									{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+                            </li>
+							
                         </ul>
                         <div class="user__list flex items-center justify-start">
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('assets/img/us1.png') }}" alt="us">
-                            </div>
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('assets/img/us2.png') }}" alt="us">
-                            </div>
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('img/us3.png') }}" alt="us">
-                            </div>
+                            
                             <div class="el__user inline-flex items-center justify-center">
                                 <span>+{{ $car->number_view }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-                        <img src="img/smalllogo.svg" alt="smalllogo">
+                        <img src="{{ asset('img/gallery1.webp') }}" alt="smalllogo">
                     </div>
                 </div>
                 @endforeach
@@ -115,7 +114,7 @@
 
 
             <div class="auction__container container2" style="display:none;">
-                @foreach($carList as $car)
+			@foreach($carList as $car)
                 <div
                     class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
                     <div class="auction__left">
@@ -123,38 +122,37 @@
                         <ul class="mb-2">
                             <li class="flex items-center justify-start mb-2 text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ number_format($car->price , 2) }} Dh
+                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ $car->user->first_name }} {{ $car->user->last_name }}
                             </li>
                             <li class="flex items-center justify-start text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Dernière enchère le :
+                                    <img src="{{  asset('assets/img/tab7.svg') }}" alt="l1"></span> Prix :
 
-                                {{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+									{{ number_format($car->price , 2) }} Dh
                             </li>
+							<li class="flex items-center justify-start text-sm md:text-base mt-2">
+                                <span class="inline-flex items-center mr-2">
+                                    <img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Date de publication :
+
+									{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+                            </li>
+							
                         </ul>
                         <div class="user__list flex items-center justify-start">
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('assets/img/us1.png') }}" alt="us">
-                            </div>
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('assets/img/us2.png') }}" alt="us">
-                            </div>
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('img/us3.png') }}" alt="us">
-                            </div>
+                            
                             <div class="el__user inline-flex items-center justify-center">
                                 <span>+{{ $car->number_view }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-                        <img src="{{  asset('img/smalllogo.svg') }}" alt="smalllogo">
+                        <img src="{{ asset('img/gallery1.webp') }}" alt="smalllogo">
                     </div>
                 </div>
                 @endforeach
             </div>
             <div class="auction__container container3" style="display:none;">
-                @foreach($carList as $car)
+			@foreach($carList as $car)
                 <div
                     class="auction__elem flex-col-reverse xl:flex-row mb-3 px-4 py-4 bg-white flex items-start justify-between">
                     <div class="auction__left">
@@ -162,32 +160,31 @@
                         <ul class="mb-2">
                             <li class="flex items-center justify-start mb-2 text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ number_format($car->price , 2) }} Dh
+                                    <img src="{{  asset('img/l1.svg') }}" alt="l1"></span> {{ $car->user->first_name }} {{ $car->user->last_name }}
                             </li>
                             <li class="flex items-center justify-start text-sm md:text-base">
                                 <span class="inline-flex items-center mr-2">
-                                    <img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Dernière enchère le :
+                                    <img src="{{  asset('assets/img/tab7.svg') }}" alt="l1"></span> Prix :
 
-                                {{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+									{{ number_format($car->price , 2) }} Dh
                             </li>
+							<li class="flex items-center justify-start text-sm md:text-base mt-2">
+                                <span class="inline-flex items-center mr-2">
+                                    <img src="{{  asset('assets/img/l2.svg') }}" alt="l1"></span> Date de publication :
+
+									{{ \Carbon\Carbon::parse($car->created_at)->format('M j Y') }}
+                            </li>
+							
                         </ul>
                         <div class="user__list flex items-center justify-start">
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('assets/img/us1.png') }}" alt="us">
-                            </div>
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('assets/img/us2.png') }}" alt="us">
-                            </div>
-                            <div class="el__user inline-flex items-center justify-center">
-                                <img src="{{  asset('img/us3.png') }}" alt="us">
-                            </div>
+                            
                             <div class="el__user inline-flex items-center justify-center">
                                 <span>+{{ $car->number_view }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="auction__right ml-auto mb-2 xl:mb-0 inline-flex items-center justify-center">
-                        <img src="{{  asset('img/smalllogo.svg') }}" alt="smalllogo">
+                        <img src="{{ asset('img/gallery1.webp') }}" alt="smalllogo">
                     </div>
                 </div>
                 @endforeach
@@ -195,7 +192,7 @@
         </div>
     </div>
     <div class="users__signup py-5 px-4 bg-white mt-7">
-        <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Les utilisateurs s'inscrivent</p>
+        <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Annonces</p>
         <div class="switcher__wrapper graph__switcher mb-5">
             <ul class="flex items-center justify-start">
                 <li class="mr-8  active__switcher"><a href="#" data-filter="filter1"
@@ -231,15 +228,15 @@
     <!-- list car with user -->
 
     <div class="container__table py-5 px-4 bg-white mt-7">
-        <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Nouvelles Voitures</p>
+        <p class="mb-3 md:mb-5 font-medium text-base md:text-lg">Liste des annonces</p>
         <div class="table__wrapper w-full ">
             <table class="regular-table w-full">
                 <tr>
                     <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Propriétaire</th>
-                    <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">auto</th>
-                    <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Model</th>
+                    <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Marque</th>
+                    <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Modèle</th>
                     <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">prix</th>
-                    <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date Added</th>
+                    <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de publication</th>
                     <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de clôture <br>
                         des enchères</th>
                     <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Status</th>
@@ -274,11 +271,11 @@
                     <td class="px-6 py-3 text-center">
                         <div class="payment__status flex items-center justify-center">
                             @if ($car->published === 1)
-                            <p class="confirmed text-xs font-medium">PUBLIER</p>
+                            <p class="confirmed text-xs font-medium">Publiée</p>
 							@elseif($car->visibility === 0 )
-                            <p class="waiting text-xs font-medium">EN CORBEIL</p>
+                            <p class="waiting text-xs font-medium">Brouillon</p>
                             @elseif($car->published === 0 || $car->published === 1 )
-                            <p class="canceled text-xs font-medium">NON PUBLIER</p>
+                            <p class="canceled text-xs font-medium">En attente</p>
                             
                             @endif
                         </div>

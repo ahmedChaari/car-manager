@@ -36,7 +36,9 @@
 				<div class="logo__wrapper inline-flex items-center justify-center py-5 px-4">
 					<a href="#" class="inline-flex items-center justify-center"><img src="{{ @asset('img/voiturecach.png') }}" alt="logo"></a></div>
 				<ul class="px-2">
-					<li class="flex w-full  mb-1 items-center"><a href="{{ route('dashboard') }}" class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm stroke"><span class="inline-flex mr-2 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<li class="flex w-full  mb-1 items-center"><a href="{{ route('dashboard') }}" 
+					class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm stroke"><span class="inline-flex mr-2 items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+					xmlns="http://www.w3.org/2000/svg">
 					<path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 					</span> Tableau de bord</a></li>
@@ -119,12 +121,7 @@
 					</form>
 				</div>
 				<div class="dash__controls flex items-center justify-end ml-3 lg:ml-5">
-					<div class="notification__wrapper mr-3  lg:mr-5">
-						<a href="#" class="inline-flex items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-						</a>
-					</div>
+					
 					<div class="profile__wrapper relative">
                         <a href="#" class="inline-flex items-center justify-center"><img src="{{ asset('img/profile.png ') }}" alt="profile"></a>
                    

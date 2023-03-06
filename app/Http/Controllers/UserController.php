@@ -13,7 +13,10 @@ class UserController extends Controller
     {
         $users = User::orderBy('created_at', 'DESC')
                         ->where('role_id', 2)
+                       ->with('cars')
                         ->paginate(10);
+                    //  dd($users);
+
         return view('user.list' , compact('users'));
     }
 
@@ -60,20 +63,32 @@ class UserController extends Controller
 
     public function seachUser(Request $request){
 
-        $users = User::whereHas('user', function ($query)  {
-            $query->where('role_id', 2);
-        })
-        ->when($request->filled('brand'), function ($query) use ($request) {
-            return $query->where('brand', $request->brand);
-            })->when($request->filled('model'), function ($query) use ($request) {
-                return $query->orWhere('model', $request->model);
-            })->when($request->filled('city'), function ($query) use ($request) {
-                return $query->orWhere('city', $request->city);
+        $users = User::where('role_id', 2)
+           ->when($request->filled('first_name'), function ($query) use ($request) {
+            return $query->where('first_name', $request->first_name);
+            })->when($request->filled('last_name'), function ($query) use ($request) {
+                return $query->orWhere('last_name', $request->last_name);
+            })->when($request->filled('type_vendeur'), function ($query) use ($request) {
+                return $query->orWhere('type_vendeur', $request->type_vendeur);
             })
         ->paginate(10);
             
-            return view('car.search' , compact('users'));
+            return view('user.search' , compact('users'));
 
+    }
+
+    public function seachUserAcheteur(Request $request){
+        $users = User::where('role_id', 3)
+        ->when($request->filled('first_name'), function ($query) use ($request) {
+         return $query->where('first_name', $request->first_name);
+         })->when($request->filled('last_name'), function ($query) use ($request) {
+             return $query->orWhere('last_name', $request->last_name);
+         })->when($request->filled('tel'), function ($query) use ($request) {
+             return $query->orWhere('tel', $request->tel);
+         })
+     ->paginate(10);
+         
+         return view('user.searchAcheteur' , compact('users'));
     }
 
     public function deleteUser($id){
@@ -94,9 +109,7 @@ class UserController extends Controller
         return redirect()->back();
 
 
-     
-
-           
+   
         
     }
 

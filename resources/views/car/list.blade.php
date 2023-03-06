@@ -5,7 +5,7 @@
 <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
 
     <div class="head__filter flex-col xl:flex-row flex items-start xl:items-center justify-between mb-4 md:mb-7">
-        <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Les voitures</h6>
+        <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Annonces</h6>
         <div
             class="controls__tab flex-wrap w-full md:w-auto  flex items-center justify-start md:justify-end ml-0  mt-3 xl:mt-0 xl:ml-4">
             <div class="button__wrapper">
@@ -28,7 +28,7 @@
 
             <!-- all brand list -->
             <div class="group__input group__dropdown relative">
-                <p class="font-semibold mb-1 text-sm"> Fabricant</p>
+                <p class="font-semibold mb-1 text-sm"> Marque</p>
                 <select name="brand" aria-label="Default select example"
                     style="padding-left: 12px; background-color: white;"
                     class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
@@ -40,7 +40,7 @@
             </div>
             <!-- end all brand list -->
             <div class="group__input group__dropdown relative">
-                <p class="font-semibold mb-1 text-sm"> Model</p>
+                <p class="font-semibold mb-1 text-sm"> Modèle</p>
                 <input type="text" style="padding-left: 12px;" name="model" id="model"
                     class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
             </div>
@@ -61,7 +61,7 @@
 
             <!-- end list city -->
             <div class="group__input group__dropdown relative">
-                <p class="font-semibold mb-1 text-sm"> Date d'ajout</p>
+                <p class="font-semibold mb-1 text-sm"> Date de publication</p>
                 <input type="date" style="padding-left: 12px;" name="created_at" id="created_at"
                     class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
             </div>
@@ -71,14 +71,14 @@
                 <div class="radio__wrapper flex items-center justify-start  flex-wrap">
 
                     <div class="elem__radio my-1 mr-3">
-                        <label class="container__input  cursor-pointer flex items-center justify-start text-sm">oui
+                        <label class="container__input  cursor-pointer flex items-center justify-start text-sm">Oui
 
                             <input class="form-check-input" type="checkbox" name="first_hand" value="1" id="">
                             <span class="checkmark ml-1"></span>
                         </label>
                     </div>
                     <div class="elem__radio my-1">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">no
+                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Non
 
                             <input class="form-check-input" type="checkbox" name="first_hand" value="0" id="">
                             <span class="checkmark ml-1"></span>
@@ -89,15 +89,9 @@
 
 
             <div class="group__input relative">
-                <p class="font-semibold mb-1 text-sm">Gearbox</p>
+                <p class="font-semibold mb-1 text-sm">Boite à vitesse</p>
                 <div class="radio__wrapper flex items-center justify-start  flex-wrap">
-                    <div class="elem__radio my-1 mr-3">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">All
-
-                            <input class="form-check-input" type="checkbox" name="all" value="all" id="">
-                            <span class="checkmark ml-1"></span>
-                        </label>
-                    </div>
+                    
                     <div class="elem__radio my-1 mr-3">
                         <label
                             class="container__input  cursor-pointer flex items-center justify-start text-sm">Automatique
@@ -119,18 +113,26 @@
 
 
 
-
-
-
-
-            <div class="group__input group__dropdown relative">
-                <p class="font-semibold mb-1 text-sm">origine</p>
-                <input type="text" style="padding-left: 12px;" name="origine" id="origine"
-                    class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
+			<div class="group__input group__dropdown relative">
+                <p class="font-semibold mb-1 text-sm"> origine</p>
+                <select name="origine" aria-label="Default select example"
+                    style="padding-left: 12px; background-color: white;"
+                    class="h-10 inline-flex items-center  justify-start 
+					relative w-full select-type-sellers">
+                    <option value="" selected disabled>origine</option>
+                    <option value="origine">Dédouanée</option>
+					<option value="Pas encore dédouanée">Pas encore dédouanée</option>
+					<option value="WW au Maroc">WW au Maroc</option>
+					<option value="Importée neuve">Importée neuve</option>
+                    
+                </select>
             </div>
 
+
+
+
             <div class="group__input relative">
-                <p class="font-semibold mb-1 text-sm">Car Condition</p>
+                <p class="font-semibold mb-1 text-sm">État de la voiture</p>
                 <div class="radio__wrapper flex items-center justify-start  flex-wrap">
                     <div class="elem__checkbox my-1 mr-3">
                         <label
@@ -142,8 +144,7 @@
                         </label>
                     </div>
                     <div class="elem__checkbox my-1 mr-3">
-                        <label class="container__input  cursor-pointer flex items-center justify-start text-sm">Very
-                            good
+                        <label class="container__input  cursor-pointer flex items-center justify-start text-sm">Très bon
 
                             <input class="form-check-input" type="checkbox" name="very_Good" value="very_Good"
                                 id="very_Good">
@@ -151,22 +152,21 @@
                         </label>
                     </div>
                     <div class="elem__checkbox my-1 mr-3">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Good
+                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Bon
 
                             <input class="form-check-input" type="checkbox" name="good" value="good" id="good">
                             <span class="checkmark ml-1"></span>
                         </label>
                     </div>
                     <div class="elem__checkbox my-1 mr-3">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Damaged
+                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Endommagé
 
                             <input class="form-check-input" type="checkbox" name="damaged" value="damaged" id="damaged">
                             <span class="checkmark ml-1"></span>
                         </label>
                     </div>
                     <div class="elem__checkbox my-1 mr-3">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">For
-                            pieces
+                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Pour Pièces
 
                             <input class="form-check-input" type="checkbox" name="pieces" value="pieces" id="pieces">
                             <span class="checkmark ml-1"></span>
@@ -185,10 +185,10 @@
 
 
             <div class="group__input relative">
-                <p class="font-semibold mb-1 text-sm">Fuel</p>
+                <p class="font-semibold mb-1 text-sm">Carburant</p>
                 <div class="radio__wrapper flex items-center justify-start  flex-wrap">
                     <div class="elem__radio my-1 mr-3">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">All
+                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Tout
                             <input type="checkbox" name="fuel" value="all">
                             <span class="checkmark ml-1"></span>
                         </label>
@@ -206,7 +206,7 @@
                         </label>
                     </div>
                     <div class="elem__radio my-1 mr-3">
-                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Electric
+                        <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Electrique
                             <input type="checkbox" name="fuel" value="electric">
                             <span class="checkmark ml-1"></span>
                         </label>
@@ -240,7 +240,7 @@
                 </div>
             </div>
             <div class="group__input relative range__group">
-                <p class="font-semibold mb-1 text-sm">An</p>
+                <p class="font-semibold mb-1 text-sm">Année</p>
                 <div class="values__range flex items-center justify-between">
                     <p class="text-sm font-medium">1980</p>
                     <p class="text-sm font-medium">{{ date('Y') }}</p>
@@ -281,10 +281,6 @@
     </div>
     <!-- end search -->
     <div class="gallery__wrapper mt-6 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-5">
-
-
-
-
         @if($cars->count() > 0 )
         @foreach($cars as $car)
         <a href="{{ route('car.info' , $car->id) }}" class="elem__gallery bg-white">
@@ -315,10 +311,10 @@
     <div class="table__wrapper w-full mt-7">
         <table class="regular-table w-full">
             <tr>
-                <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">auto</th>
+                <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Marque</th>
                 <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Propriétaire</th>
-                <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">prix</th>
-                <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date Added</th>
+                <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Prix</th>
+                <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de publication</th>
                 <!-- <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Date de clôture  <br>
 						des enchères</th> -->
                 <th class="text-xs uppercase  tracking-wider text-left font-medium x-6 py-3">Afficher
@@ -344,11 +340,12 @@
 						</td>
 						 -->
 
+						 
                 <td class="">
                     <a href="{{ route('car.info' , $car->id) }}">
                         <!-- icons8-eye.png -->
                         <!-- <p class="text-center validated text-sm">Publier</p> -->
-                        <img src="{{asset('assets/img/tab7.svg')}}" alt="edit">
+                        <img src="{{asset('assets/img/password.svg')}}" alt="edit">
                     </a>
 
                 </td>

@@ -3,36 +3,48 @@
 <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
     <div class="bidding__wrapper">
         <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
-            <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Liste des acheteurs</h6>
-            
+            <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Liste des vendeurs</h6>
+            <div class="controls__tab flex items-center justify-end mt-3 md:mt-0 ml-0 md:ml-4">
+
+                <!-- <div class="group__input relative mt-3">
+                    <button type="submit" class="regular-btn px-4 
+					rounded-md text-white inline-flex items-center 
+					justify-center text-sm font-medium" style="float: right;">
+                        <span class="inline-flex mr-2">
+                            <img src="  {{ asset('assets/img/searchbutton.svg') }}" alt="">
+                        </span> Recherche
+                    </button>
+                </div> -->
+            </div>
         </div>
         <div class="filter__container px-3 md:px-6 pt-5 md:pt-6 pb-5 md:pb-10 bg-white rounded-md">
 			<form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4  gap-y-3 sm:gap-y-4 md:gap-y-8"
-					action="{{ route('user.search.acheteur') }}" method="POST" role="search">
+                    action="{{ route('user.search.acheteur') }}" method="POST" role="search">
 					@csrf
 
                 <div class="group__input group__dropdown relative">
                     <p class="font-semibold mb-1 text-sm"> Nom</p>
                     <input type="text" style="padding-left: 12px; background-color: white;" 
-					name="first_name" value="{{ old('first_name') }}" id="first_name"
+					name="first_name" value="{{request('first_name')}}" id="first_name"
                         class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
                 </div>
                 <div class="group__input group__dropdown relative">
                     <p class="font-semibold mb-1 text-sm"> Prénom</p>
                     <input type="text" style="padding-left: 12px; background-color: white;"
-					name="last_name" value="{{ old('last_name') }}" id="last_name"
+					name="last_name" value="{{request('last_name')}}" id="last_name"
                         class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
                 </div>
                 <div class="group__input group__dropdown relative">
-                    <p class="font-semibold mb-1 text-sm"> Téléphone</p>
+                    <p class="font-semibold mb-1 text-sm"> TÉLÉPHONE</p>
                     <input type="text" style="padding-left: 12px; background-color: white;"
-					name="tel" value="{{ old('tel') }}" id="tel"
-                        class="h-10 inline-flex items-center  
-						justify-start relative w-full select-type-sellers">
+					name="tel" value="{{request('tel')}}" id="tel"
+                        class="h-10 inline-flex items-center  justify-start relative w-full select-type-sellers">
                 </div>
                 <div class="group__input relative ">
+
                 </div>
                 <div class="group__input relative ">
+
                 </div>
                 <div class="group__input relative ">
                     <button type="submit" class="regular-btn px-4 float-right
@@ -93,7 +105,7 @@
                 <td class="px-6 py-3 text-center">
                     <div class="remove__button flex items-center justify-center">
                         <a href="{{ route('user.delete', $user->id) }}" class="delete-confirm" title="supprimer">
-                            <img src="img/remove.svg" alt="remove"></a>
+                            <img src="{{ asset('img/remove.svg')}}" alt="remove"></a>
                     </div>
                 </td>
                 <td>
@@ -125,13 +137,11 @@
                                 <div class="mb-3">
                                     <label for="message-text" class="col-form-label">E-mail :
                                     </label>
-									<input type="text" value="{{ $user->email }}" class="form-control" id="email" name="email">
                                     <span class="style-popup-user" style="float: right;"> {{ $user->email }}</span>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label"> TÉLÉPHONE :</label>
-									<input type="text" name="tel" value="{{ $user->tel }}" class="form-control"  id="tel">
-                                    <!-- <span class="style-popup-user" style="float: right;"> {{ $user->tel }} </span> -->
+                                    <label for="recipient-name" class="col-form-label"> Telephone :</label>
+                                    <span class="style-popup-user" style="float: right;"> {{ $user->tel }} </span>
 
                                 </div>
                                 <div class="mb-3">
@@ -139,15 +149,19 @@
                                     <span class="style-popup-user" style="float: right;">
                                         {{ \Carbon\Carbon::parse($user->date_car)->format('M, j Y') }}</span>
                                 </div>
-                               
+                                <div class="mb-3">
+
+                                    @foreach($user->cars as $car)
+                                    <span class="style-popup-user"> {{ $car->brand }} - {{ $car->model }} -
+                                        {{ $car->price }} DH</span> <br>
+                                    @endforeach
+                                </div>
 
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-danger"
                                 data-bs-dismiss="modal">Annuler</button>
-								<button type="button" class="btn btn-outline-primary"
-                               >Mise à jour</button>
                         </div>
                     </div>
                 </div>
@@ -166,5 +180,10 @@
 </div>
 
 
+
+@endsection
+
+
+@section('scripts')
 
 @endsection

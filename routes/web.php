@@ -38,6 +38,8 @@ require __DIR__.'/auth.php';
 //car route
 Route::get('/car',        [CarController::class, 'listCar'])   ->name('car.list') ->middleware('auth');
 Route::post('/car/search',[CarController::class, 'careSearch'])->name('car.search')->middleware('auth');
+
+
 Route::get('/car/valid', [CarController::class, 'listCarNonValidate'])->name('car.valid')->middleware('auth');
 
 
@@ -50,6 +52,9 @@ Route::get('/car/valid/{car}', [CarController::class, 'validateCar'])->name('car
 Route::get('/vendeurs',    [UserController::class, 'listUser'])->name('user.list')->middleware('auth');
 Route::get('/acheteurs',   [UserController::class, 'listAcheteurs'])->name('user.acheteur')->middleware('auth');
 Route::get('/deleteUser/{id}',   [UserController::class, 'deleteUser'])->name('user.delete')->middleware('auth');
+
+Route::post('/user/search/vendeur', [UserController::class, 'seachUser'])->name('user.search')->middleware('auth');
+Route::post('/user/search/acheteur',[UserController::class, 'seachUserAcheteur'])->name('user.search.acheteur')->middleware('auth');
 
 // Route::get('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
 
