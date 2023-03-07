@@ -56,10 +56,10 @@
             <center>
                 <div class="flex justify-between gap-2">
                     <x-button>
-                        <a class="w-full h-full flex justify-center items-center" href="{{ route('sellers.create') }}">Devenir acheteur</a>
+                        <a class="w-full h-full flex justify-center items-center" href="{{ route('sellers.create') }}">Devenir vendeur</a>
                     </x-button>
                     <x-button>
-                        <a class="w-full h-full flex justify-center items-center" href="{{ route('register') }}">Devenir vendeur</a>
+                        <a class="w-full h-full flex justify-center items-center" href="{{ route('register') }}">Devenir acheteur</a>
                     </x-button>
                 </div>
             </center>

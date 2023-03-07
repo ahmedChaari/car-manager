@@ -115,7 +115,7 @@
                             </div>
                             <div class="group__input mb-5">
                                 <div class="group__input mb-5">
-                                    <input wire:model="password" type="password" placeholder="Mot de pass" class="text-base px-4 w-full bg-white h-11">
+                                    <input wire:model="password" type="password" placeholder="Mot de passe" class="text-base px-4 w-full bg-white h-11">
                                     <div class="tooltip__wrapper" style="position: absolute;right: initial;margin: 12px -25px;">
                                         <span><img src="{{ @asset('img/iconinfo.svg') }}" alt="iconinfo"></span>
                                             <div class="tooltip__box">

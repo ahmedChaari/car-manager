@@ -292,7 +292,7 @@
                     </div>
                 </div>
                 <div class="controls__wrapper flex items-center justify-end mt-4 md:mt-6">
-                    <a href="{{ route('complet-car-information.show-step1', ['id' => $car->id]) }}" class="outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm font-medium">Retou</a>
+                    <a href="{{ route('complet-car-information.show-step1', ['id' => $car->id]) }}" class="outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm font-medium">Retour</a>
                     <button type="submit" class="regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm font-medium text-white">Suivant</button>
                 </div>
             </form>
