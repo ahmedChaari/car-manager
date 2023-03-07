@@ -75,18 +75,26 @@
                                 Merci de remplir le formulaire ci-dessous pour commencer.</p>
                         </div>
                         <div class="form__box mx-auto">
-                            <div class="group__input mb-5">
-                                <input wire:model="first_name" type="text" placeholder="Nom" class="text-base px-4 w-full bg-white h-11">
+                            <div class="group__input mb-5 relative">
+                                <input id="first_name" wire:model="first_name" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="first_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Nom
+                                </label>
                                 @error('first_name')
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <input wire:model="last_name" type="text" placeholder="Prénom" class="text-base px-4 w-full bg-white h-11">
+
+                            <div class="group__input mb-5 relative">
+                                <input id="last_name" wire:model="last_name" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="last_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Prénom
+                                </label>
                                 @error('last_name')
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="group__input mb-5">
                                 <select wire:model="type_vendeur" class="text-base px-4 w-full bg-white h-11" style="border: 1px solid #D0D5DD;
                                     box-shadow: 0px 1px 2px rgb(16 24 40 / 5%); border-radius: 8px;">
@@ -98,39 +106,39 @@
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <input wire:model="email" type="text" placeholder="Email" class="text-base px-4 w-full bg-white h-11">
+
+                            <div class="group__input mb-5 relative">
+                                <input id="email" wire:model="email" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="email" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Email
+                                </label>
                                 @error('email')
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-6">
-                                <div class="group__input relative flex items-center">
-                                    <input wire:model="tel" type="text" placeholder="Téléphone" class="text-base pl-4 pr-10 w-full bg-white h-11">
 
-                                </div>
+                            <div class="group__input mb-5 relative">
+                                <input id="tel" wire:model="tel" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="tel" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Téléphone
+                                </label>
                                 @error('tel')
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <div class="group__input mb-5">
-                                    <input wire:model="password" type="password" placeholder="Mot de passe" class="text-base px-4 w-full bg-white h-11">
-                                    <div class="tooltip__wrapper" style="position: absolute;right: initial;margin: 12px -25px;">
-                                        <span><img src="{{ @asset('img/iconinfo.svg') }}" alt="iconinfo"></span>
-                                            <div class="tooltip__box">
-                                                <p>*</p>
-                                                <span>Veuillez choisir un mot de passe qui contient 8 caractères minimum.</span>
-                                            </div>
-                                    </div>
-                                </div>
+
+                            <div class="group__input mb-5 relative">
+                                <input id="password" wire:model="password" type="password" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="password" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Mot de passe
+                                </label>
                                 @error('password')
                                         <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="group__submit">
                                 <button type="submit" class="regular-btn w-full text-white font-semibold h-11" >Continuer</button>
-
                             </div>
                         </div>
                     </form>
@@ -155,12 +163,17 @@
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <input wire:model="model" type="text" placeholder="Modele" class="text-base px-4 w-full bg-white h-11">
+
+                            <div class="group__input mb-5 relative">
+                                <input id="model" wire:model="model" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="model" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Modele
+                                </label>
                                 @error('model')
-                                    <span class="error-validate">- {{ $message }}</span>
+                                        <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="group__input mb-5">
                                 {{-- <input wire:model="date_car" type="date" placeholder="Annee" class="text-base px-4 w-full bg-white h-11"> --}}
                                 <select wire:model="date_car" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
@@ -173,19 +186,17 @@
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input group__dropdown relative mb-6">
-                                <input wire:model="mileage" type="number" placeholder="Kilométrage" class="text-base px-4 w-full bg-white h-11">
-                                {{-- <select wire:model="mileage" class="text-base px-4 w-full bg-white h-11 select-type-sellers input">
-                                    <option value="">Odomètre (Compteur)</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select> --}}
+
+                            <div class="group__input mb-5 relative">
+                                <input id="mileage" wire:model="mileage" type="number" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="mileage" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Kilométrage
+                                </label>
                                 @error('mileage')
-                                    <span class="error-validate">- {{ $message }}</span>
+                                        <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="group__submit">
                                 <button type="submit" class="regular-btn w-full text-white font-semibold h-11">Continuer</button>
                                 <span wire:click="stepBack" wire:loading.attr="disabled" class="cursor-pointer outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm regular-btn w-full font-semibold h-11 mt-5">Retour</span>
@@ -201,30 +212,46 @@
                             {{-- <p class="m-0 text-base">Quelque information à ajouter ici.</p> --}}
                         </div>
                         <div class="form__box mx-auto">
-                            <div class="group__input mb-5">
-                                <input wire:model="gray_card_holder" type="text" placeholder="Titulaire de la carte gris" class="text-base px-4 w-full bg-white h-11">
+                            <div class="group__input mb-5 relative">
+                                <input id="gray_card_holder" wire:model="gray_card_holder" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="gray_card_holder" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Titulaire de la carte gris
+                                </label>
                                 @error('gray_card_holder')
-                                    <span class="error-validate">- {{ $message }}</span>
+                                        <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <input wire:model="gray_card_number" type="text" placeholder="Numero de carte grise (optionnel)" class="text-base px-4 w-full bg-white h-11">
+
+                            <div class="group__input mb-5 relative">
+                                <input id="gray_card_number" wire:model="gray_card_number" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="gray_card_number" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Numero de carte grise (optionnel)
+                                </label>
                                 @error('gray_card_number')
-                                    <span class="error-validate">- {{ $message }}</span>
+                                        <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <input wire:model="city" type="text" placeholder="Disponibilité" class="text-base px-4 w-full bg-white h-11">
+
+                            <div class="group__input mb-5 relative">
+                                <input id="city" wire:model="city" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="city" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Disponibilité
+                                </label>
                                 @error('city')
-                                    <span class="error-validate">- {{ $message }}</span>
+                                        <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="group__input mb-5">
-                                <input wire:model="price" type="text" placeholder="Prix souhaité" class="text-base px-4 w-full bg-white h-11">
+
+                            <div class="group__input mb-5 relative">
+                                <input id="price" wire:model="price" type="text" class="text-base px-4 block pb-2.5 pt-5 w-full bg-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="price" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">
+                                    Prix souhaité
+                                </label>
                                 @error('price')
-                                    <span class="error-validate">- {{ $message }}</span>
+                                        <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="mb-6">
                                 <div class="group__input relative flex items-center">
                                     {{-- <input wire:model="condition_car" type="text" placeholder="Etat de la voiture" class="text-base pl-4 pr-10 w-full bg-white h-11"> --}}
@@ -243,6 +270,7 @@
                                     <span class="error-validate">- {{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="group__submit">
                                 <button type="submit" class="regular-btn w-full text-white font-semibold h-11">Continuer</button>
                                 <span wire:click="stepBack" wire:loading.attr="disabled" class="cursor-pointer outline-btn inline-flex items-center justify-center px-4 rounded-md mr-2 text-sm regular-btn w-full font-semibold h-11 mt-5">Retour</span>
