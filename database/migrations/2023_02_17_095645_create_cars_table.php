@@ -22,7 +22,7 @@ class CreateCarsTable extends Migration
             $table->text('description')->nullable();
             $table->enum('gearbox',['all','automatique','manual'])->nullable();
             $table->string('gray_card_holder');
-            $table->string('gray_card_number');
+            $table->string('gray_card_number')->nullable();
             $table->string('mileage');
             $table->string('origin')->nullable();
             $table->date('date_cleared')->nullable();

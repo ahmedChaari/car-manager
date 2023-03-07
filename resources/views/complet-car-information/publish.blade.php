@@ -37,7 +37,19 @@
                         <div class="row__wrapper">
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Boîte de vitesses</p>
-                                <span class="text-sm light__grey text-right">{{ $car->gearbox }}</span>
+                                <span class="text-sm light__grey text-right">
+                                    @switch($car->gearbox)
+                                        @case('all')
+                                            Tous
+                                            @break
+                                        @case('automatique')
+                                            Automatique
+                                            @break
+                                        @case('manual')
+                                            Manuel
+                                            @break
+                                    @endswitch
+                                </span>
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Date ajoutée</p>
@@ -64,7 +76,28 @@
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Carburant</p>
-                                <span class="text-sm light__grey text-right">{{ $car->fuel }}</span>
+                                <span class="text-sm light__grey text-right">
+                                    @switch($car->fuel)
+                                        @case('all')
+                                            Tous
+                                            @break
+                                        @case('diasel')
+                                            Diasel
+                                            @break
+                                        @case('electric')
+                                            Electrique
+                                            @break
+                                        @case('essence')
+                                            Essence
+                                            @break
+                                        @case('lgp')
+                                            LPG
+                                            @break
+                                        @case('hybrid')
+                                            Hybride
+                                            @break
+                                    @endswitch
+                                </span>
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">Ville</p>
@@ -72,7 +105,25 @@
                             </div>
                             <div class="column__description flex items-center justify-between mb-2">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">État de la voiture</p>
-                                <span class="text-sm light__grey text-right">{{ $car->condition_car }}</span>
+                                <span class="text-sm light__grey text-right">
+                                    @switch($car->condition_car)
+                                        @case('excellent')
+                                            Excellent
+                                            @break
+                                        @case('very_Good')
+                                            Très bon
+                                            @break
+                                        @case('correct')
+                                            Correct
+                                            @break
+                                        @case('damaged')
+                                            Endommagé
+                                            @break
+                                        @case('pieces')
+                                            Pour Pièces
+                                            @break
+                                    @endswitch
+                                </span>
                             </div>
                             <div class="column__description flex items-center justify-between">
                                 <p class="m-0 text-sm font-medium dark__grey text-left mr-2">année de fabrication</p>
@@ -81,11 +132,6 @@
                         </div>
                     </div>
 
-                    {{-- <form action="" class="mt-7 w-full">
-                        <div class="bid__buttons w-full grid grid-cols-1 gap-y-3 sm:grid-cols-2  gap-x-3 xlgap-x-7">
-                            <a href="#" class="regular-btn inline-flex items-center justify-center font-medium text-sm text-white">Acheter le lead</a>
-                        </div>
-                    </form> --}}
                     <div class="product__grid grid mt-5 border">
                         <div class="elem__product pl-3 md:pl-6 pr-3 py-4 bg-white flex items-center justify-start">
                             <span class="inline-flex items-center justify-center  mr-4"><img src="{{ @asset('img/icon3.svg') }}" alt="icon"></span>
