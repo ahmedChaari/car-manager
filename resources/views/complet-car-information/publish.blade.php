@@ -164,40 +164,18 @@
                 </div>
 
                 <div class="product__gallery mb-5 md:mb-0 w-full  mr-0 md:ml-6 lg:ml-12 xl:ml-20">
+                    {{-- @php
+                        dd();
+                    @endphp --}}
                     <div class="main__image w-full">
-                        <img src="{{ @asset('img/mainimage.webp') }}" alt="mainimage">
+                        <img src="{{ @asset($car->images()->first()->path .'/'. $car->images()->first()->name) }}" alt="mainimage">
                     </div>
                     <div class="main__switcher grid grid-cols-5">
-                        <div class="elem__switch current__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage.webp">
-                            <img src="{{ @asset('img/mainimage.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage2.webp">
-                            <img src="{{ @asset('img/mainimage2.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage3.webp">
-                            <img src="{{ @asset('img/mainimage3.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage.webp">
-                            <img src="{{ @asset('img/mainimage.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage2.webp">
-                            <img src="{{ @asset('img/mainimage2.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage3.webp">
-                            <img src="{{ @asset('img/mainimage3.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage.webp">
-                            <img src="{{ @asset('img/mainimage.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage2.webp">
-                            <img src="{{ @asset('img/mainimage2.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage3.webp">
-                            <img src="{{ @asset('img/mainimage3.webp') }}" alt="mainimage">
-                        </div>
-                        <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="img/mainimage3.webp">
-                            <img src="{{ @asset('img/mainimage3.webp') }}" alt="mainimage">
-                        </div>
+                        @foreach ($car->images()->get() as $key => $image)
+                            <div class="elem__switch cursor-pointer inline-flex items-center justify-center" data-switch="/{{$image->path}}/{{$image->name}}">
+                                <img src="{{ @asset($image->path .'/'. $image->name) }}" alt="mainimage">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

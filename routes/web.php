@@ -5,6 +5,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CompletCarInformationsController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\RedirectUrlController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
 use App\Models\Brand;
@@ -30,9 +31,9 @@ Route::get('/', function () {
 Route::get('/car/info/{id}', [CarController::class, 'showCar'])->name('car.info')->middleware('auth');
 
 
-Route::get('/dashboard',        [dashboardController::class, 'dashboard'])   ->name('dashboard') ->middleware('auth');
 
 require __DIR__.'/auth.php';
+
 
 
 //car route
@@ -74,7 +75,7 @@ Route::get('/create',             [SellerController::class, 'create'])->name('se
 //cities
 
 
-Route::controller(CompletCarInformationsController::class)->prefix('complet-car-information')->as('complet-car-information.')->group(function() {
+Route::controller(CompletCarInformationsController::class)->prefix('complet-car-information')->as('complet-car-information.')->middleware('auth')->group(function() {
     Route::get('{id}/step1', 'showStep1')->name('show-step1');
     Route::post('{id}/step1', 'storeStep1')->name('store-step1');
     Route::get('{id}/step2', 'showStep2')->name('show-step2');
@@ -89,3 +90,10 @@ Route::controller(CompletCarInformationsController::class)->prefix('complet-car-
     Route::post('{id}/save-draft', 'saveDraft')->name('save-draft');
     Route::get('valiation', 'showValidation')->name('validation');
 });
+
+
+//  Redirect To Dashboard
+Route::get('/dashboard', [RedirectUrlController::class, 'redirect'])->name('dashboard');
+Route::get('/espace-admin', [dashboardController::class, 'espaceAdmin'])   ->name('espace-admin') ->middleware('auth');
+Route::get('/espace-vendeur', [dashboardController::class, 'espaceVendeur'])   ->name('espace-vendeur') ->middleware('auth');
+Route::get('/espace-acheteur', [dashboardController::class, 'espaceAcheteur'])   ->name('espace-acheteur') ->middleware('auth');

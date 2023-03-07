@@ -29,7 +29,6 @@
                             <p  class="font-semibold mb-1 text-sm">Origin</p>
                             <select name="origin" class="text-base px-4 w-full bg-white h-11" style="border: 1px solid #D0D5DD;
                                 box-shadow: 0px 1px 2px rgb(16 24 40 / 5%); border-radius: 8px;">
-                                <option value="">Origin</option>
                                 <option value="Dédouanée" {{ old('origin', $car->origin?? null) == 'Dédouanée' ? 'selected' : '' }}>Dédouanée</option>
                                 <option value="Pas encore dédouanée" {{ old('origin', $car->origin?? null) == 'Pas encore dédouanée' ? 'selected' : '' }}>Pas encore dédouanée</option>
                                 <option value="WW au Maroc" {{ old('origin', $car->origin?? null) == 'WW au Maroc' ? 'selected' : '' }}>WW au Maroc</option>
@@ -62,12 +61,12 @@
                         <div class="group__input relative">
                             <p  class="font-semibold mb-1 text-sm">Boîte de vitesses</p>
                             <div class="radio__wrapper flex items-center justify-start  flex-wrap">
-                                <div class="elem__radio my-1 mr-3">
+                                {{-- <div class="elem__radio my-1 mr-3">
                                     <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Tous
                                     <input type="radio" name="gearbox" value="all" {{ old('gearbox', $car->gearbox?? null) == 'all' ? 'checked' : '' }}>
                                     <span class="checkmark ml-1"></span>
                                     </label>
-                                </div>
+                                </div> --}}
                                 <div class="elem__radio my-1 mr-3">
                                     <label class="container__input  cursor-pointer flex items-center justify-start text-sm">Automatique
                                     <input type="radio" name="gearbox" value="automatique" {{ old('gearbox', $car->gearbox?? null) == 'automatique' ? 'checked' : '' }}>
@@ -88,12 +87,12 @@
                         <div class="group__input relative">
                             <p  class="font-semibold mb-1 text-sm">Carburant</p>
                             <div class="radio__wrapper flex items-center justify-start">
-                                <div class="elem__radio my-1 mr-3">
+                                {{-- <div class="elem__radio my-1 mr-3">
                                     <label class="container__input cursor-pointer  flex items-center justify-start text-sm">Tout
                                     <input type="radio" name="fuel" value="all" {{ old('fuel', $car->fuel?? null) == 'all' ? 'checked' : '' }}>
                                     <span class="checkmark ml-1"></span>
                                     </label>
-                                </div>
+                                </div> --}}
                                 <div class="elem__radio my-1 mr-3">
                                     <label class="container__input  cursor-pointer flex items-center justify-start text-sm">Diesel
                                     <input type="radio" name="fuel" value="diasel" {{ old('fuel', $car->fuel?? null) == 'diasel' ? 'checked' : '' }}>

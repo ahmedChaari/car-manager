@@ -20,14 +20,14 @@ class CreateCarsTable extends Migration
             $table->string('date_car');
             $table->string('city');
             $table->text('description')->nullable();
-            $table->enum('gearbox',['all','automatique','manual'])->nullable();
+            $table->enum('gearbox',['automatique','manual'])->nullable();
             $table->string('gray_card_holder');
             $table->string('gray_card_number')->nullable();
             $table->string('mileage');
             $table->string('origin')->nullable();
             $table->date('date_cleared')->nullable();
             $table->boolean('first_hand')->nullable();
-            $table->enum('fuel',['all','diasel','electric','essence','lgp','hybrid'])->nullable();
+            $table->enum('fuel',['diasel','electric','essence','lgp','hybrid'])->nullable();
             $table->foreignUuid('country_id')->nullable();
             $table->enum('condition_car',['excellent','very_Good','good','damaged','pieces','correct']);
             $table->integer('number_view')->default(0);
