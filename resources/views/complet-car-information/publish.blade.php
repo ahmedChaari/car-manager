@@ -11,17 +11,29 @@
         <div class="dashboard__container py-4 lg:py-7 px-4 lg:px-8">
             <div class="head__filter flex-col md:flex-row flex items-start md:items-center justify-between mb-4 md:mb-7">
                 <h6 class="font-medium m-0  text-base lg:text-lg dark__grey">Récapitulatif de votre annonce</h6>
-                <form method="POST" action="{{ route('complet-car-information.publish-car', ['id' => $car->id]) }}">
-                    @csrf
-                    <input type="number" name="published" hidden value="1">
-                    {{-- <button class="regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium">Publier</button> --}}
-                    <button type="submit" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium">
-                        <span class="inline-flex items-center justify-center mr-2">
-                            <img src="{{ @asset('img/public.svg') }}" alt="public">
-                        </span>
-                        Publier
-                    </button>
-                </form>
+                @if ($car->published)
+                    <form method="POST" action="{{ route('complet-car-information.unpublish-car', ['id' => $car->id]) }}">
+                        @csrf
+                        <input type="number" name="published" hidden value="0">
+                        <button type="submit" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium">
+                            <span class="inline-flex items-center justify-center mr-2">
+                                <img src="{{ @asset('img/public.svg') }}" alt="public">
+                            </span>
+                            Dépublier
+                        </button>
+                    </form>
+                @else
+                    <form method="POST" action="{{ route('complet-car-information.publish-car', ['id' => $car->id]) }}">
+                        @csrf
+                        <input type="number" name="published" hidden value="1">
+                        <button type="submit" class="mt-2 md:mt-0 regular-btn inline-flex items-center justify-center px-4 rounded-md text-sm text-white font-medium">
+                            <span class="inline-flex items-center justify-center mr-2">
+                                <img src="{{ @asset('img/public.svg') }}" alt="public">
+                            </span>
+                            Publier
+                        </button>
+                    </form>
+                @endif
             </div>
 
             @include('components.alert')
