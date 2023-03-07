@@ -8,7 +8,7 @@
         .swal-button--confirm {
             background-color: #a52b06 !important;
         }
-		
+
 		.style-popup-user{
    font-weight: 700;
     color: #385470;
@@ -55,7 +55,7 @@
 					</svg>
 
 					</span> En cours de validation</a></li>
-                   
+
 					<li class="flex w-full  mb-1"><a href="{{ route('user.list') }}" class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm fill"><span class="inline-flex mr-2 items-center justify-center"><svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M17.9999 3.27073H11.469M17.9999 6.10928H11.469M17.9999 8.94425H13.4475" stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round"/>
 					<path d="M6.26768 8.56687C4.17248 8.56687 0 9.61447 0 11.7007V13.2676H12.5354V11.7007C12.5354 9.61447 8.36287 8.56687 6.26768 8.56687ZM2.0952 11.4769C2.84732 10.9575 4.66494 10.3576 6.26768 10.3576C7.87041 10.3576 9.68804 10.9575 10.4402 11.4769H2.0952ZM6.26768 6.99995C7.99577 6.99995 9.40152 5.5942 9.40152 3.86611C9.40152 2.13802 7.99577 0.732274 6.26768 0.732274C4.53959 0.732274 3.13384 2.13802 3.13384 3.86611C3.13384 5.5942 4.53959 6.99995 6.26768 6.99995ZM6.26768 2.52304C7.01084 2.52304 7.61075 3.12295 7.61075 3.86611C7.61075 4.60928 7.01084 5.20919 6.26768 5.20919C5.52451 5.20919 4.9246 4.60928 4.9246 3.86611C4.9246 3.12295 5.52451 2.52304 6.26768 2.52304Z" fill="#9CA3AF"/>
@@ -81,7 +81,7 @@
 					</svg>
 
 					</span> Paiements</a></li>
-					
+
 				</ul>
 			</div>
 			<div class="dash__bottom px-2 pb-4 mt-12">
@@ -93,9 +93,9 @@
 					</span> Settings</a></li>
 					<li class="flex w-full">
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
-                            @csrf                            
-                        <a href="{{ route('logout') }}" 
-                        
+                            @csrf
+                        <a href="{{ route('logout') }}"
+
                         onclick="event.preventDefault();
                                                 this.closest('form').submit();"
                         class="flex w-full items-center justify-start px-2 py-2 rounded-md text-sm fill">
@@ -124,7 +124,7 @@
 					
 					<div class="profile__wrapper relative">
                         <a href="#" class="inline-flex items-center justify-center"><img src="{{ asset('img/profile.png ') }}" alt="profile"></a>
-                   
+
 					</div>
 					<div class="menu__button inline-flex items-center justify-center lg:hidden  ml-3">
 						<a href="#" class="inline-flex items-center justify-center flex-col">
@@ -135,7 +135,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 
 
 
@@ -182,5 +182,7 @@
 	<script src="{{ @asset('assets/js/script.js') }}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+
 </body>
 </html>

@@ -3,7 +3,9 @@
 @section('content')
 <div class="sign__box">
     <div class="inner__sign w-full mx-auto flex flex-col items-center justify-center px-4 py-7">
-        
+
+        @include('components.alert')
+
         <form class="w-full" method="POST" action="{{ route('password.email') }}">
             @csrf
 

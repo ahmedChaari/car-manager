@@ -26,7 +26,7 @@
             <div class="small__images  grid  grid-cols-3 sm:grid-cols-5  gap-x-2  xl:gap-x-4  gap-y-2 xl:gap-y-3">
                 @foreach ($images as $image)
                     <div class="el__small--image">
-                        <img src="{{ @asset('img/image.png') }}" alt="image">
+                        <img src="{{ @asset($image->path . '/' . $image->name) }}" alt="image">
                         <button wire:click="deleteImage('{{ $image->id }}')"><img src="{{ @asset('img/remove.svg') }}" alt="loadimage"></button>
                     </div>
                 @endforeach

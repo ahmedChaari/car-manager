@@ -82,7 +82,10 @@ Route::controller(CompletCarInformationsController::class)->prefix('complet-car-
     Route::get('{id}/step3', 'showStep3')->name('show-step3');
     Route::post('{id}/store-image', 'storeImage')->name('store-image');
     Route::post('{id}/step3', 'storeStep3')->name('store-step3');
+
     Route::get('{id}/publish', 'showPublishStep')->name('show-publish');
-    Route::post('{id}/publish', 'publishOrDraftAction')->name('publish-or-draft');
+    Route::post('{id}/publish-car', 'publishCar')->name('publish-car');
+    Route::post('{id}/unpublish-car', 'unpublishCar')->name('unpublish-car');
+    Route::post('{id}/save-draft', 'saveDraft')->name('save-draft');
     Route::get('valiation', 'showValidation')->name('validation');
 });
