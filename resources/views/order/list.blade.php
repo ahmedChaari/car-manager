@@ -28,7 +28,7 @@
 						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">statut de <br>
 							 paiement</th>
 						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">Éditer</th>
-						<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">effacer</th>
+						<!-- <th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">effacer</th> -->
 					</tr>
 					@if($payments->count() > 0 )
 					@foreach($payments as $payment)
@@ -63,13 +63,13 @@
 								title="Mise à jour" ><img src="img/editor.svg" alt="edit"></a>
 							</div>
 						</td>
-						<td  class="px-6 py-3 text-center">
+						<!-- <td  class="px-6 py-3 text-center">
 							<div class="remove__button flex items-center justify-center" >
 								<a href="{{ route('payment.delete', $payment->id) }}"
 									class="delete-confirm"  title="supprimer">
 									<img src="img/remove.svg"  alt="remove"></a>
 							</div>
-						</td>
+						</td> -->
 					</tr>
 					
 					<!-- model for update-->
@@ -83,8 +83,11 @@
 									{{ $payment->user->first_name }} {{ $payment->user->last_name }}
 									</span>	
 							</div>
-							
-							
+							<form action="{{ route('order.update' , $payment->id) }}" method="post">
+							@csrf
+								@if(isset($payment))
+									@method('PUT')
+								@endif
 							<div class="modal-body">
 								
 									<div class="mb-3">
@@ -95,15 +98,16 @@
 									</div>
 									<div class="mb-3">
 										<label for="recipient-name" class="col-form-label"> Montant du Paiement :</label>
-										<input type="number" value="{{ number_format($payment->somme, 2) }}" class="form-control" id="recipient-name">
+										<input type="number" value="{{ number_format($payment->somme, 2) }}" class="form-control" 
+										id="recipient-name" name="somme">
 									</div>
 									<div class="form-check form-switch">
+									<input type="hidden" name="status" value="0">
 										<input class="form-check-input" type="checkbox" 
-										name="status" value="{{ $payment->status == true ? 'checked' : ''}}"
-										id="" >
+										name="status" value="1" {{ $payment->status == true ? 'checked' : ''}}
+										 >
 										<label class="form-check-label" for="flexSwitchCheckChecked">Valider le paiement</label>
 									</div>
-								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Annuler</button>

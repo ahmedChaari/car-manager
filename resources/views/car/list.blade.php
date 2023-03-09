@@ -292,7 +292,7 @@
             <div class="gallery__desc px-3 pt-2 pb-3">
                 <p class="mb-2 text-sm font-medium dark__grey">{{ $car->brand }} {{ $car->model }}</p>
                 <ul class="flex items-center justify-start flex-wrap">
-                    <li class="text-sm  mr-3 light__grey">Date Limite: <span
+                    <li class="text-sm  mr-3 light__grey">Date Publication: <span
                             class="dark__grey font-semibold">{{ $car->created_at->diffForHumans() }}</span></li>
                     <!-- <li  class="text-sm  mr-3 light__grey">Montant de l'enchère: <span class="dark__grey font-semibold">123</span></li> -->
                 </ul>

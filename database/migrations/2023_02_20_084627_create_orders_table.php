@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id');
             $table->integer('somme');
+            $table->integer('somme_passe');
             $table->boolean('status');
             $table->foreignUuid('payement_method_id');
             $table->softDeletes();

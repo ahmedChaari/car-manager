@@ -63,7 +63,7 @@ Route::post('/user/search/acheteur',[UserController::class, 'seachUserAcheteur']
 //payment for order route
 Route::get('/payment',            [OrderController::class, 'listPayment'])->name('order.list')      ->middleware('auth');
 Route::get('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->name('payment.delete')->middleware('auth');
-Route::put('/updateOrder/{id}',[OrderController::class, 'updateOrder'])->name('order.update')->middleware('auth');
+Route::put('/updateOrder/{order}',[OrderController::class, 'updateOrder'])->name('order.update')->middleware('auth');
 
 Route::get('/supply',             [OrderController::class, 'listSupply'])->name('supply.list')      ->middleware('auth');
 

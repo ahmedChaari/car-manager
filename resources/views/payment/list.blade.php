@@ -4,8 +4,8 @@
 
 <div class="dashboard__container  py-4 lg:py-7 px-4 lg:px-8">
 				<div class="payment__head flex flex-col md:flex-row items-center justify-between mb-4 lg:mb-7">
-					<p class="m-0  text-base lg:text-lg font-medium text-center md:text-left">acheter des crédits</p>
-					<p class="m-0  text-base lg:text-lg font-medium text-center md:text-right flex flex-col md:block">les credits actuels comptent : <span class="active__color">12000 Dh</span></p>
+					<p class="m-0  text-base lg:text-lg font-medium text-center md:text-left">Charger des crédits</p>
+					<!-- <p class="m-0  text-base lg:text-lg font-medium text-center md:text-right flex flex-col md:block">les credits actuels comptent : <span class="active__color">12000 Dh</span></p> -->
 				</div>
 				<div class="payment__box bg-white">
 					<form action="" class="w-full flex-col md:flex-row flex justify-between">
@@ -32,11 +32,19 @@
 								</a>
 							</div>
 							<div class="custom__payment mt-6">
-								<p class="mb-2 text-base xl:text-lg font-medium">Saisissez le montant de crédits dont vous avez besoin</p>
+
+							<!-- user list -->
+								<p class="mb-2 text-base xl:text-lg font-medium">Choisissez utilisateur que vous avez besoin</p>
 								<div class="group__input w-full relative flex items-center">
-									<input type="text" class="numeric w-full pl-3 pr-12" placeholder="1520">
-									<span class="text-base md:text-lg">DH</span>
+									<select name="origin" class="text-base px-4 w-full bg-white h-11" style="border: 1px solid #D0D5DD;
+											box-shadow: 0px 1px 2px rgb(16 24 40 / 5%); border-radius: 8px;">
+											@foreach($users as $user)
+											<option value="Dédouanée" >{{ $user->first_name }}  {{ $user->last_name }}</option>
+											@endforeach					
+									</select>
+									<button type="submit" class="btn btn-outline-primary ml-4">Charger</button>
 								</div>
+								
 							</div>
 						</div>
 						<div class="payment__result py-10 flex items-center justify-center">
@@ -63,222 +71,51 @@
 				<div class="table__wrapper w-full mt-7">
 						<table class="regular-table w-full">
 							<tr>
+							<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">PROPRIÉTAIRE</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">facture</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Montant</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">date</th>
+								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">type payment</th>
 								<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">statut</th>
 							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
+							@foreach($orders as $order)
+								<tr class="bg-white">
 								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment confirmed text-xs font-medium">Conformed</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment waiting text-xs font-medium">Waiting</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment canceled text-xs font-medium">Canceled</p>
-								</td>
-								
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment confirmed text-xs font-medium">Conformed</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment waiting text-xs font-medium">Waiting</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment canceled text-xs font-medium">Canceled</p>
-								</td>
-								
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment confirmed text-xs font-medium">Conformed</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment waiting text-xs font-medium">Waiting</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment canceled text-xs font-medium">Canceled</p>
-								</td>
-								
-							</tr>
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment confirmed text-xs font-medium">Conformed</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment waiting text-xs font-medium">Waiting</p>
-								</td>
-								
-							</tr>
-
-							<tr class="bg-white">
-								<td class="px-6 py-3">
-									<p class="dmsans text-sm font-medium dark__grey">200DH - dec 2022</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">3,604DH</p>
-								</td>
-								<td  class="px-6 py-3">
-									<p class="text-sm light__grey">Dec, 1, 2022</p>
-								</td>
-								<td   class="px-6 py-3 text-center">
-									<p class="status__payment canceled text-xs font-medium">Canceled</p>
-								</td>
-								
-							</tr>
+										<p class="text-sm light__grey">{{$order->user->first_name }} {{$order->user->last_name }}</p>
+									</td>
+									<td class="px-6 py-3">
+										<p class="dmsans text-sm font-medium dark__grey">{{ $order->somme_passe }} Dh  - {{ \Carbon\Carbon::parse($order->created_at)->format('M j Y') }}</p>
+									</td>
+									<td  class="px-6 py-3">
+										<p class="text-sm light__grey">{{ number_format($order->somme , 2) }} Dh</p>
+									</td>
+									<td  class="px-6 py-3">
+										<p class="text-sm light__grey">{{ $order->created_at->format('Y-m-d') }}</p>
+									</td>
+									<td  class="px-6 py-3">
+										<p class="text-sm light__grey">{{ $order->payementMethod->name }}</p>
+									</td>
+									<td   class="px-6 py-3 text-center">										
+										<div class="payment__status flex items-center justify-center">
+											@if ($order->status == 1)
+											<p class="confirmed text-xs font-medium">Confirmed</p>
+											
+											@else($order->status == 0)
+											<p class="waiting text-xs font-medium">Waiting</p>
+											@endif
+										</div>
+									</td>
+									
+								</tr>
+							@endforeach	
+							
 
 						</table>
+
+
+						{{ $orders->links() }}
 					</div>
-				<div class="pagination flex items-center justify-between flex-col  lg:flex-row px-6 mt-3">
-					<p class="m-0 mr-0 mb-2 lg:mb-0 lg:mr-3 text-xs sm:text-sm text-center lg:text-left">Affichage de 1 à 10 sur 97 résultats</p>
-					<ul class="flex items-center justify-end rounded-md  ">
-						<li class="inline-flex items-center  justify-center"><a href="#" class=" bg-white inline-flex items-center justify-center w-full  h-full  font-medium text-sm relative"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7071 5.29289C13.0976 5.68342 13.0976 6.31658 12.7071 6.70711L9.41421 10L12.7071 13.2929C13.0976 13.6834 13.0976 14.3166 12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L7.29289 10.7071C6.90237 10.3166 6.90237 9.68342 7.29289 9.29289L11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289Z" fill="#6B7280"/>
-						</svg>
-						</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">1</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">2</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">3</a></li>
-						<li class="inline-flex items-center  justify-center dots">...</li>
-					 	<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">8</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">9</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full  font-medium text-xs sm:text-sm relative">10</a></li>
-						<li class="inline-flex items-center  justify-center"><a href="#" class="  inline-flex items-center justify-center w-full  h-full font-medium text-sm relative"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M7.29289 14.7071C6.90237 14.3166 6.90237 13.6834 7.29289 13.2929L10.5858 10L7.29289 6.70711C6.90237 6.31658 6.90237 5.68342 7.29289 5.29289C7.68342 4.90237 8.31658 4.90237 8.70711 5.29289L12.7071 9.29289C13.0976 9.68342 13.0976 10.3166 12.7071 10.7071L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071Z" fill="#6B7280"/>
-						</svg>
-						</a></li>
-					</ul>
-				</div>
+				
 			</div>
 
 @endsection

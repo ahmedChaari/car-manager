@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrederUpdateRequest;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,23 +24,36 @@ class OrderController extends Controller
         return redirect()->back();
     }
 
-    public function updateOrder(Request $request,$id){
-
-        // $userCreate  = Auth::user()->role_id === 1;
-        $order = Order::find($id)->get();
+    public function updateOrder(OrederUpdateRequest $request,Order $order){
 
         $order->update([
-            'somme'        => $request->somme,
+            'somme'         => $request->somme,
             'status'        => $request->status,
         ]);
-        return redirect()->back();
+        return  redirect()->back();
     }
 
 
     public function listSupply(Request $request)
     {
-        // $payments = Order::orderBy('created_at', 'DESC')
-        //             ->paginate(10);
-        return view('payment.list' );
+        $users = User::orderBy('created_at', 'DESC')
+                    ->where('role_id', 3)
+                    ->get();
+
+                    $orders = Order::orderBy('created_at', 'DESC')
+                    ->paginate(10);
+        return view('payment.list' , compact('orders'))->with('users', $users);
+    }
+
+    public function storeOrder(Request $request,Order $order){
+
+        Order::create([
+            'user_id'     => $request->user_id,
+            'somme'       => $request->somme,
+            'status'      => 0,
+        ]);
+
+        return view('payment.charge');
+
     }
 }

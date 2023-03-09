@@ -140,8 +140,6 @@ class UserController extends Controller
             $users = User::where('role_id', 3)
             ->paginate(10);
         }
-       
-    
          
          return view('user.searchAcheteur' , compact('users'));
     }

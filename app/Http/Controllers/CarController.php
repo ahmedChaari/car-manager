@@ -121,6 +121,8 @@ class CarController extends Controller
         return view('car.car-info', compact('car'));
     }
 
+    
+
 
 
 }
