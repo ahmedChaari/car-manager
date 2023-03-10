@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Car;
 use Livewire\Component;
 
 class UpdateCar extends Component
@@ -21,10 +22,68 @@ class UpdateCar extends Component
     public $condition_car;
     public $car;
 
-    public function updateField()
+    public function updateBrand()
     {
-        dd('Fields To Update');
+        Car::findOrfail($this->car->id)->update([
+            'brand' => $this->brand
+        ]);
     }
+
+    public function updateModel()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'model' => $this->model
+        ]);
+    }
+
+    public function updateDateCar()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'date_car' => $this->date_car
+        ]);
+    }
+
+    public function updateMileage()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'mileage' => $this->mileage
+        ]);
+    }
+
+    public function updateGrayCardHolder()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'gray_card_holder' => $this->gray_card_holder
+        ]);
+    }
+    public function updateGrayCardNumber()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'gray_card_number' => $this->gray_card_number
+        ]);
+    }
+
+    public function updateCity()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'city' => $this->city
+        ]);
+    }
+
+    public function updatePrice()
+    {
+        Car::findOrfail($this->car->id)->update([
+            'price' => $this->price
+        ]);
+    }
+
+    public function updateConditionCar()
+    {
+        // Car::findOrfail($this->car->id)->update([
+        //     'condition_car' => $this->condition_car
+        // ]);
+    }
+
     public function mount() {
         $this->brand = $this->car->brand;
         $this->model = $this->car->model;
