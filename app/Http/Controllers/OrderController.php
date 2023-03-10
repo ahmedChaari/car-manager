@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OrederUpdateRequest;
 use App\Models\Order;
+use App\Models\PayementMethod;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,13 +55,13 @@ class OrderController extends Controller
 
     public function storeOrder(Request $request,Order $order){
 
-       
+       $pymentMethod = PayementMethod::where('name', 'Cache')->first();
        $order = Order::create([
             'user_id'     => $request->user_id,
             'somme'       => $request->somme,
             'status'      => 0,
             'code'        => $this->rand_string(10),
-            'payement_method_id'=> 'ec9b8f08-9318-4563-a9c9-2e4acbedf67a',
+            'payement_method_id'=> $pymentMethod->id,
         ]);
         // dd( $order);
 
