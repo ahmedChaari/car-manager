@@ -91,7 +91,7 @@
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">facture</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Montant</th>
 								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">date</th>
-								<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">type payment</th>
+								<!-- <th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">type payment</th> -->
 								<th class="text-xs uppercase  tracking-wider text-center font-medium px-6 py-3">statut</th>
 							</tr>
 							@foreach($orders as $order)
@@ -111,9 +111,9 @@
 									<td  class="px-6 py-3">
 										<p class="text-sm light__grey">{{ $order->created_at->format('Y-m-d') }}</p>
 									</td>
-									<td  class="px-6 py-3">
+									<!-- <td  class="px-6 py-3">
 										<p class="text-sm light__grey">{{ $order->payementMethod->name }}</p>
-									</td>
+									</td> -->
 									<td   class="px-6 py-3 text-center">										
 										<div class="payment__status flex items-center justify-center">
 											@if ($order->status == 1)
