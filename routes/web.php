@@ -66,6 +66,7 @@ Route::get('/deletePayment/{id}',[OrderController::class, 'deletePayment'])->nam
 Route::put('/updateOrder/{order}',[OrderController::class, 'updateOrder'])->name('order.update')->middleware('auth');
 
 Route::get('/supply',             [OrderController::class, 'listSupply'])->name('supply.list')      ->middleware('auth');
+Route::post('/payment/charge',             [OrderController::class, 'storeOrder'])->name('payment.create')      ->middleware('auth');
 
 
 

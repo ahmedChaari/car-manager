@@ -21,6 +21,7 @@
 		<div class="table__wrapper w-full mt-4 md:mt-7">
 				<table class="regular-table w-full">
 					<tr>
+						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Code</th>
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">Revendeur</th>
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">date d'adhésion</th>
 						<th class="text-xs uppercase  tracking-wider text-left font-medium px-6 py-3">montant <br>
@@ -35,9 +36,11 @@
 
 					<tr class="bg-white">
 						<td class="px-6 py-3">
+							<p class="font-medium text-sm dark__grey">{{ $payment->code}} </p>
+						</td>
+						<td class="px-6 py-3">
 							<p class="font-medium text-sm dark__grey">{{ $payment->user->first_name }} {{ $payment->user->last_name }}</p>
 						</td>
-						
 						<td  class="px-6 py-3">
 							<p class="text-sm light__grey">{{ $payment->created_at->format('Y-m-d') }}</p>
 						</td>
@@ -98,7 +101,7 @@
 									</div>
 									<div class="mb-3">
 										<label for="recipient-name" class="col-form-label"> Montant du Paiement :</label>
-										<input type="number" value="{{ number_format($payment->somme, 2) }}" class="form-control" 
+										<input type="number" value="{{ $payment->somme }}" class="form-control" 
 										id="recipient-name" name="somme">
 									</div>
 									<div class="form-check form-switch">

@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('code');
             $table->foreignUuid('user_id');
             $table->integer('somme');
             $table->integer('somme_passe');

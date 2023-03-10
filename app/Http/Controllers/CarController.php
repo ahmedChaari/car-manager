@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Car;
+use App\Models\CarInfo;
 use App\Models\city;
 use App\Models\User;
 use Carbon\Carbon;
@@ -115,14 +116,12 @@ class CarController extends Controller
     public function showCar($id)
     {
         $car = Car::find($id);
+
+        $carInfo = CarInfo::where('car_id',$id)->first();
+
         if (!isset($car)) {
             return redirect()->back();
         }
-        return view('car.car-info', compact('car'));
+        return view('car.car-info', compact('car','carInfo'));
     }
-
-    
-
-
-
 }
