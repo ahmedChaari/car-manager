@@ -70,7 +70,7 @@ Route::get('/supply',             [OrderController::class, 'listSupply'])->name(
 
 
 // create new sallers
-Route::get('/create',             [SellerController::class, 'create'])->name('sellers.create');
+Route::get('/my-cars',             [CarController::class, 'myCars'])->name('mycars');
 
 //cities
 
@@ -90,7 +90,6 @@ Route::controller(CompletCarInformationsController::class)->prefix('complet-car-
     Route::post('{id}/save-draft', 'saveDraft')->name('save-draft');
     Route::get('valiation', 'showValidation')->name('validation');
 });
-
 
 //  Redirect To Dashboard
 Route::get('/dashboard', [RedirectUrlController::class, 'redirect'])->name('dashboard');

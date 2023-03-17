@@ -21,6 +21,16 @@ class CarController extends Controller
         $this->users = User::get();
     }
 
+    public function myCars() {
+        $cars = Car::orderBy('created_at', 'DESC')
+                    ->where('published' , 1)
+                    ->orWhereHas('user', function ($query)  {
+                            $query->where('deleted_at', null);
+                        })
+                    ->paginate(20);
+        return view('car.mycars' , compact('cars'));
+    }
+
     public function listCar(Request $request)
     {
 
@@ -83,6 +93,7 @@ class CarController extends Controller
             'carInfo' => $car->carInfo,
         ]);
     }
+
     public function publierCar(Request $request,Car $car)
     {   
         if ($car->published === 1 ) {
@@ -120,7 +131,5 @@ class CarController extends Controller
         }
         return view('car.car-info', compact('car'));
     }
-
-
 
 }

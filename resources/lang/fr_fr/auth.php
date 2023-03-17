@@ -12,6 +12,6 @@ return [
     |
     */
 
-    'failed'   => 'Les informations d’identification que vous avez fournies ne sont pas correctes.',
+    'failed'   => 'Ces identifiants ne correspondent pas à nos enregistrements',
     'throttle' => 'Tentatives de connexion trop nombreuses. Veuillez essayer de nouveau dans :seconds secondes.',
 ];

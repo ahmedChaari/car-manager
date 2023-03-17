@@ -16,7 +16,8 @@
             </a>
         </div>
         <div class="profile__wrapper relative">
-            <a href="#" class="inline-flex items-center justify-center"><img src="{{ @asset('img/profile.png') }}" alt="profile"></a>
+            <a href="#" class="inline-flex items-center justify-center"><img src="{{ @asset('user.png') }}" alt="profile"></a>
+            {{-- <a href="#" class="inline-flex items-center justify-center"><img src="{{ @asset('img/profile.png') }}" alt="profile"></a> --}}
         </div>
         <div class="menu__button inline-flex items-center justify-center lg:hidden  ml-3">
             <a href="#" class="inline-flex items-center justify-center flex-col">
